@@ -1,0 +1,232 @@
+/**
+ * =============================================================
+ * @package		RAXO All-mode PRO J4.x
+ * -------------------------------------------------------------
+ * @copyright	Copyright (C) 2009-2021 RAXO Group
+ * @link		https://www.raxo.org
+ * @license		RAXO Commercial License
+ * 				This file is forbidden for redistribution
+ * =============================================================
+ */
+
+
+/* ----- Module TAB Fix ----- */
+#general .control-group .control-label {
+	width: auto;
+}
+#general .info-labels + div,
+#general hr {
+	display: none;
+}
+#general .row > div {
+	padding-bottom: 1rem;
+}
+#general .card {
+	box-shadow: none;
+	border-radius: 0;
+	border: 1px solid #afc7e1;
+}
+
+
+/* ----- Fieldset HEADERS ----- */
+.options-form {
+	min-width: 220px;
+	border: 1px solid #afc7e1;
+}
+	.options-form > legend {
+		min-width: 208px;
+		font-weight: normal;
+		text-transform: uppercase;
+		color: #3967a2;
+		background-color: #eef2f5;
+		border-radius: 3px;
+	}
+
+
+/* ----- Module DESCRIPTION ----- */
+.description {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: -0.6rem;
+}
+	.description > div {
+		margin: 0 0.6rem;
+	}
+	.description .desc-image {
+		flex: 0 1 auto;
+	}
+	.description .desc-info {
+		flex: 1 1 240px;
+	}
+.description img {
+	margin: .6rem;
+}
+.description .desc-info p + p {
+	font-size: 14px;
+	line-height: 22px;
+}
+.description a::before {
+	display: none;
+}
+
+
+/* ----- FIELDS Styles ----- */
+.form-control,
+/*.custom-select,*/
+.form-select,
+.choices__inner,
+.input-group-text {
+	padding-top: 0.5rem; padding-bottom: 0.5rem;
+	/*height: calc(1.5em + 1rem + 2px);*/
+	min-height: 42px;
+}
+	.choices__list--single {
+		padding: 0; padding-right: 0.5rem;
+	}
+	.choices[data-type*="select-multiple"] .choices__input {
+		padding: 0;
+	}
+	.choices__list--multiple .choices__item {
+		margin: 0; margin-right: 4px;
+		padding: 2px 10px;
+		line-height: 20px;
+	}
+
+.control-group > label.control-label,
+.control-group > div.control-label label,
+.table thead th {
+	color: #0d3973;
+	font-weight: 500;
+}
+small.form-text {
+	color: #6780a6;
+}
+.subform-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: -8px -12px;
+	/*overflow: hidden;*/
+}
+.subform-wrapper .control-group {
+	flex: 1 1 50%;
+	margin: 8px 0;
+	padding: 0 12px;
+	min-width: 204px;
+}
+.subform-wrapper .control-group .controls {
+	min-width: 180px;
+}
+
+
+/* ----- INPUT Fields ----- */
+.subform-wrapper .input-group-text {
+	padding-left: .8rem; padding-right: : .8rem;
+	font-size: 0.88rem;
+	color: #516273;
+	background-color: #f3f6f9;
+	border: solid 1px #c9c9c9;
+}
+/*.input-group .input-group-append .btn {*/
+.input-group .btn {
+	padding: .5rem 1rem;
+}
+
+
+/* ----- RADIO Fields ----- */
+.subform-wrapper .switcher {
+	width: auto;
+}
+.control-group .btn-group {
+	min-width: calc(50% - 1rem);
+}
+.control-group .btn-group-yesno > .btn {
+	padding: .5rem .8rem;
+	min-width: 50%;
+}
+
+
+/* ----- CHECKBOX Fields ----- */
+.raxo-checkbox-toggle {
+	padding-top: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: -8px -12px;
+}
+.raxo-checkbox-toggle > div {
+	position: relative;
+	flex: 1;
+	margin: 8px 12px;
+	padding: 0;
+	width: 50%;
+	min-width: 180px;
+	background-color: #f3f6f9;
+	border-radius: 4px;
+}
+.raxo-checkbox-toggle input[type=checkbox] {
+	position: absolute;
+	width: 0; height: 0;
+	visibility: hidden;
+}
+.raxo-checkbox-toggle label {
+	position: relative;
+	padding: 0.5rem 1rem;
+	padding-left: calc(1.5rem + 56px);
+	display: block;
+	width: 100%; height: 42px;
+	line-height: 28px;
+	cursor: pointer;
+}
+	.raxo-checkbox-toggle label:before,
+	.raxo-checkbox-toggle label:after {
+		content: '';
+		position: absolute;
+		top: 0.5rem; left: 1rem;
+		transition: .4s;
+	}
+	.raxo-checkbox-toggle label:before {
+		width: 56px; height: 28px;
+		background: #ccc;
+		border-radius: 4px;
+	}
+	.raxo-checkbox-toggle label:after {
+		top: calc(0.5rem + 2px);
+		left: calc(1rem + 2px);
+		width: 24px; height: 24px;
+		background: #fff;
+		border-radius: 3px;
+	}
+.raxo-checkbox-toggle input:checked + label:before {
+	background: #0072bc;
+}
+.raxo-checkbox-toggle input:checked + label:after {
+	left: calc(1rem + 30px);
+}
+
+
+
+/* ----- RESPONSIVE breakpoints ----- */
+@media (max-width: 960px) {
+	.control-group .control-label {
+		width: 200px;
+	}
+}
+
+@media (min-width: 960px) {
+	.subform-wrapper .control-group {
+		padding: 0 1rem;
+	}
+	.raxo-checkbox-toggle > div {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+}
+
+@media (min-width: 1120px) {
+	.form-grid {
+		max-width: 960px;
+		row-gap: 0.6rem;
+	}
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="4.0.0" method="upgrade">
+	<dlid prefix="dlid=" suffix=""/>
+	<name>DJ-Tabs Package</name>
+	<packagename>dj-tabs</packagename>
+	<creationDate>May 2021</creationDate>
+	<author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2013-2021 DJ-Extensions.com, All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>2.1.2</version>
+	<url>http://dj-extensions.com</url>
+	<packager></packager>
+	<packagerurl></packagerurl>
+	<description></description>
+	<updateservers>
+		<server type="extension" priority="1" name="DJ-Tabs">https://dj-extensions.com/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=10</server>
+	</updateservers>
+	<files>
+		<file type="module" client="site" id="mod_djtabs">mod_djtabs.zip</file>
+		<file type="component" client="admin" id="com_djtabs">com_djtabs.zip</file>
+		<file type="plugin" group="editors-xtd" id="djtabs">plg_editors-xtd_djtabs.zip</file>
+		<file type="plugin" group="content" id="djtabs">plg_content_djtabs.zip</file>
+	</files>
+</extension>

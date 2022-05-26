@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="source_params">
+		<fieldset name="content_source">
+
+			<field
+				name="source_type"
+				type="hidden"
+			/>
+
+			<field
+				name="joomla_mode"
+				type="list"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_CONTENT_MODE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_CONTENT_MODE_DESC"
+				default="1"
+			>
+				<option value="ja">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_JOOMLA_ARTICLES</option>
+				<option value="jc">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_JOOMLA_CATEGORIES</option>
+			</field>
+
+			<field
+				name="joomla_offset"
+				type="number"
+				default="0"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_OFFSET_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_OFFSET_DESC"
+			/>
+
+			<field name="separator_1" type="separator" text="PLG_CONTENT_MSOURCECONTENT_FIELD_JOOMLA_ARTICLES_SEPARATOR" />
+
+			<field
+				name="ja_mode"
+				type="hidden"
+				default="normal"
+			/>
+
+			<field
+				name="ja_category_filtering_type"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_CATEGORY_FILTERING_TYPE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_CATEGORY_FILTERING_TYPE_DESC"
+			>
+				<option value="1">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_INCLUSIVE</option>
+				<option value="0">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_EXCLUSIVE</option>
+			</field>
+
+			<field
+				name="ja_catid"
+				type="category"
+				extension="com_content"
+				multiple="true"
+				layout="joomla.form.field.list-fancy-select"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_CATEGORIES_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_CATEGORIES_DESC"
+				default=""
+			/>
+
+			<field
+				name="ja_show_child_category_articles"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_INCLUDE_CHIDLREN_CATEGORIES_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_INCLUDE_CHIDLREN_CATEGORIES_DESC"
+			>
+				<option value="1">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_INCLUDE</option>
+				<option value="0">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_EXCLUDE</option>
+			</field>
+
+			<field
+				name="ja_levels"
+				type="number"
+				default="10"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_CATEGORY_DEPTH_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_CATEGORY_DEPTH_DESC"
+			/>
+
+			<field
+				name="ja_filter_levels"
+				type="number"
+				min="0"
+				step="1"
+				default="0"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_FILTER_LEVELS_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_FILTER_LEVELS_DESC"
+			/>
+
+			<field
+				name="ja_tag_filtering_type"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_TAG_FILTERING_TYPE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_TAG_FILTERING_TYPE_DESC"
+			>
+				<option value="1">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_INCLUSIVE</option>
+				<option value="0">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_EXCLUSIVE</option>
+			</field>
+
+			<field
+				name="ja_tag_id"
+				type="tag"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_TAGS_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_TAGS_DESC"
+				custom="deny"
+				multiple="true"
+			/>
+
+			<field
+				name="ja_tag_include_children"
+				type="list"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_TAG_INCLUDE_CHILDREN_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_TAG_INCLUDE_CHILDREN_DESC"
+				default="1"
+			>
+				<option value="1">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_INCLUDE</option>
+				<option value="0">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_EXCLUDE</option>
+			</field>
+
+			<field
+				name="ja_author_filtering_type"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_AUTHOR_FILTERING_TYPE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_AUTHOR_FILTERING_TYPE_DESC"
+			>
+				<option value="1">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_INCLUSIVE</option>
+				<option value="0">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_EXCLUSIVE</option>
+			</field>
+
+			<field
+				name="ja_created_by"
+				type="author"
+				multiple="true"
+				filter="int_array"
+				class="multipleAuthors"
+				default=""
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_AUTHORS_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_AUTHORS_DESC"
+			/>
+
+			<field
+				name="ja_date_filtering"
+				type="list"
+				default="off"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_DATE_FILTERING_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_DATE_FILTERING_DESC"
+			>
+				<option value="off">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_DATE_FILTERING_OFF</option>
+				<option value="range">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_DATE_FILTERING_DATE_RANGE</option>
+				<option value="relative">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_DATE_FILTERING_RELATIVE_DAY</option>
+			</field>
+
+			<field
+				name="ja_date_field"
+				type="list"
+				default="created"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_DATE_RANGE_FIELD_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_DATE_RANGE_FIELD_DESC"
+			>
+				<option value="created">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_CREATED_DATE</option>
+				<option value="modified">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_MODIFIED_DATE</option>
+				<option value="publish_up">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_START_PUBLISHING_DATE</option>
+			</field>
+
+			<field
+				name="ja_start_date_range"
+				type="calendar"
+				format="%Y-%m-%d %H:%M:%S"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_START_DATE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_START_DATE_DESC"
+				size="22"
+				filter="user_utc"
+			/>
+
+			<field
+				name="ja_end_date_range"
+				type="calendar"
+				format="%Y-%m-%d %H:%M:%S"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_END_DATE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_END_DATE_DESC"
+				size="22"
+				filter="user_utc"
+			/>
+
+			<field
+				name="ja_relative_date"
+				type="number"
+				default="30"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_RELATIVE_DATE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_RELATIVE_DATE_DESC"
+			/>
+
+			<field
+				name="ja_show_front"
+				type="list"
+				default="show"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_SHOW_FEATURED_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_SHOW_FEATURED_DESC"
+			>
+				<option value="hide">JHIDE</option>
+				<option value="show">JSHOW</option>
+				<option value="only">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_SHOW_ONLY_FEATURED</option>
+			</field>
+
+			<field
+				name="ja_excluded_articles"
+				type="textarea"
+				cols="10"
+				rows="3"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_EXCLUDED_ARTICLES_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_EXCLUDED_ARTICLES_DESC"
+			/>
+
+			<field
+				name="ja_article_ordering"
+				type="list"
+				default="a.title"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_ORDERING_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_JA_ORDERING_DESC"
+			>
+				<option value="a.ordering">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_ORDERING</option>
+				<option value="fp.ordering">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_ORDERING_FEATURED</option>
+				<option value="a.hits">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_HITS</option>
+				<option value="a.title">JGLOBAL_TITLE</option>
+				<option value="a.id">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_ID</option>
+				<option value="a.alias">JFIELD_ALIAS_LABEL</option>
+				<option value="a.created">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_CREATED_DATE</option>
+				<option value="modified">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_MODIFIED_DATE</option>
+				<option value="publish_up">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_START_PUBLISHING_DATE</option>
+				<option value="a.publish_down">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_FINISH_PUBLISHING_DATE</option>
+				<option value="RAND()">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_RANDOM</option>
+			</field>
+
+			<field
+				name="ja_article_ordering_direction"
+				type="list"
+				default="DESC"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_ORDERING_DIRECTION_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_ORDERING_DIRECTION_DESC"
+			>
+				<option value="ASC">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_ASCENDING</option>
+				<option value="DESC">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_DESCENDING</option>
+			</field>
+
+			<field
+				name="ja_image_type"
+				type="list"
+				default="introtext"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_IMAGE_TYPE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_IMAGE_TYPE_DESC"
+			>
+				<option value="introtext">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_INTROTEXT_IMAGE</option>
+				<option value="fulltext">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_FULLTEXT_IMAGE</option>
+				<option value="inline">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_INLINE_IMAGE</option>
+			</field>
+
+			<field name="separator_2" type="separator" text="PLG_CONTENT_MSOURCECONTENT_FIELD_JOOMLA_CATEGORIES_SEPARATOR" />
+
+			<field
+				name="jc_catid"
+				type="category"
+				extension="com_content"
+				multiple="true"
+				layout="joomla.form.field.list-fancy-select"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_JOOMLA_CATEGORIES_INCLUDE_CATEGORIES_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_JOOMLA_CATEGORIES_INCLUDE_CATEGORIES_DESC"
+				default=""
+			/>
+
+			<field
+				name="jc_include_categories_children"
+				type="list"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_JOOMLA_CATEGORIES_INCLUDE_CHILDREN_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_JOOMLA_CATEGORIES_INCLUDE_CHILDREN_DESC"
+				default="1"
+			>
+				<option value="1">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_INCLUDE</option>
+				<option value="0">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_EXCLUDE</option>
+			</field>
+
+			<field
+				name="jc_tagid"
+				type="tag"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_TAGS_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_TAGS_DESC"
+				custom="deny"
+				multiple="true"
+			/>
+
+			<field
+				name="jc_date_range"
+				type="radio"
+				layout="joomla.form.field.radio.switcher"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_DATE_RANGE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_DATE_RANGE_DESC"
+				default="0"
+				>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field
+				name="jc_start_date_range"
+				type="calendar"
+				format="%Y-%m-%d %H:%M:%S"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_START_DATE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_START_DATE_DESC"
+				size="22"
+				filter="user_utc"
+				showon="jc_date_range:1"
+			/>
+
+			<field
+				name="jc_end_date_range"
+				type="calendar"
+				format="%Y-%m-%d %H:%M:%S"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_END_DATE_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_END_DATE_DESC"
+				size="22"
+				filter="user_utc"
+				showon="jc_date_range:1"
+			/>
+
+			<field
+				name="jc_ordering"
+				type="list"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_ORDERING_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_JOOMLA_CATEGORIES_ORDERING_DESC"
+				default="alpha"
+			>
+				<option value="id">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_ID</option>
+				<option value="alpha">JGLOBAL_TITLE</option>
+				<option value="date">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_CREATED_DATE</option>
+			</field>
+
+			<field
+				name="jc_ordering_direction"
+				type="list"
+				default="DESC"
+				label="PLG_CONTENT_MSOURCECONTENT_FIELD_ORDERING_DIRECTION_LABEL"
+				description="PLG_CONTENT_MSOURCECONTENT_FIELD_ORDERING_DIRECTION_DESC"
+			>
+				<option value="ASC">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_ASCENDING</option>
+				<option value="DESC">PLG_CONTENT_MSOURCECONTENT_FIELD_OPTION_DESCENDING</option>
+			</field>
+
+		</fieldset>
+	</fields>
+</form>

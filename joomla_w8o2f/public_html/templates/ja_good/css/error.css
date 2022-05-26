@@ -1,0 +1,126 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Good Template
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2019-2020 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites:  http://www.joomlart.com -  http://www.joomlancers.com
+ * This file may not be redistributed in whole or significant part.
+ * ------------------------------------------------------------------------
+*/
+
+
+/* MAIN STYLE
+---------------------*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #555;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Faustina', serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#errorboxoutline {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+/* OutLine */
+#outline {
+	text-align: center;
+}
+
+/* Eror Code */
+.error-code {
+  color: #1a1a1a; 
+  font-size: 280px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 auto 30px;
+}
+
+/* Message Error */
+.error-message {
+}
+
+/* Message Error */
+.error-message h2 {
+	color: #1a1a1a; 
+  display: inline-block;
+  font-size: 45px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 0;
+  position: relative;
+}
+
+.error-message h2 span {
+  position: relative;
+  z-index: 3;
+}
+
+
+#errorboxbody p {
+	color: #555;
+	display: block;
+	margin: 0 0 30px;
+	z-index: 3;
+	position: relative;
+}
+
+/* Button Home */
+.button-home {
+  background-color: #151515;
+  border-color: #151515;
+  color: #fff;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 18px 30px;
+  text-decoration: navajowhite;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.button-home:hover,
+.button-home:focus,
+.button-home:active {
+  background-color: #2f2f2f;
+}
+
+@media (max-width: 767px){
+	/* OutLine */
+	#outline {
+	}
+
+	/* Eror Code */
+	.error-code {
+	  font-size: 150px;
+	}
+
+	/* Message Error */
+	.error-message {
+	}
+
+	/* Message Error */
+	.error-message h2 {
+	  font-size: 24px;
+	}
+}

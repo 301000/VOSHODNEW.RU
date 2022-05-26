@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="source_params">
+		<fieldset name="rss_source">
+
+			<field
+				name="source_type"
+				type="hidden"
+			/>
+
+			<field
+				name="rss_title"
+				type="text"
+				label="PLG_CONTENT_MSOURCERSS_FIELD_CONTENT_TYPE_TITLE_LABEL"
+				description="PLG_CONTENT_MSOURCERSS_FIELD_CONTENT_TYPE_TITLE_DESC"
+				class="inputbox"
+				size="5"
+				default="RSS_ITEMS"
+			/>
+
+			<field
+				name="rss_file_or_url"
+				type="text"
+				label="PLG_CONTENT_MSOURCERSS_FIELD_RSS_FILE_OR_URL_LABEL"
+				description="PLG_CONTENT_MSOURCERSS_FIELD_RSS_FILE_OR_URL_DESC"
+				class="inputbox"
+				size="50"
+				default=""
+			/>
+
+		</fieldset>
+	</fields>
+</form>

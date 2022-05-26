@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="display" label="Options" description="">
+
+            <field name="show_col" type="list" 
+                  class="btn-group btn-group-yesno"
+                  default="6"
+                  label="TPL_NUM_COLS_SHOW"
+                  description="TPL_NUM_COLS_SHOW_DESC"
+                  showon="layout:ja_good:news-6">
+                  <option value="12">1</option>
+                  <option value="6">2</option>
+                  <option value="4">3</option>
+                  <option value="3">4</option>
+            </field>
+    </fieldset>
+  </fields>
+</form>

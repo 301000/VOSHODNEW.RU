@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background: #fff;
+  color: #555;
+  font-family: 'Faustina', serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.offline-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid #e8e8e8;
+  border-radius: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 60px;
+  width: 450px;
+}
+
+.outline h1 {
+  color: #1a1a1a;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.outline p.message {
+  text-align: center;
+}
+
+#form-login fieldset {
+  border: 0;
+  padding: 0;
+}
+
+#form-login-secretkey,
+#form-login-username,
+#form-login-password {
+  margin-bottom: 10px;
+}
+
+#form-login-secretkey label,
+#form-login-username label,
+#form-login-password label {
+  color: #555555;
+  text-align: left;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+#form-login-secretkey input,
+#form-login-username input,
+#form-login-password input {
+  background-color: #ffffff;
+  border-radius: 0;
+  border: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  color: #555555;
+  font-size: 15px;
+  height: 50px;
+  line-height: 1.666667;
+  padding: 6px 12px;
+  transition: all 0.35s;
+  width: 100%;
+}
+
+#form-login-secretkey input:focus,
+#form-login-username input:focus,
+#form-login-password input:focus {
+  border-color: #999;
+}
+
+#submit-buton {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+#submit-buton .button {
+  background-color: #151515;
+  border-color: #151515;
+  color: #fff;
+  font-family: "IBM Plex Sans", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  height: 50px;
+  line-height: 36px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+#submit-buton .button:hover,
+#submit-buton .button:focus,
+#submit-buton .button:active {
+  background-color: #2f2f2f;
+  cursor: pointer;
+}
+
+/* Message Error */
+#system-message-container {
+  width: 100%;
+}
+
+#system-message .error,
+#system-message .alert {
+  background: #f2dede;
+  color: #b94a48;
+  margin: auto;
+  padding: 20px;
+  width: 700px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 100%;
+}
+
+.error.message ul {
+  padding: 0;
+  list-style: none;
+}
+
+.alert {
+  position: relative;
+}
+
+.alert h4 {
+  font-size: 18px;
+  margin: 0 0 5px;
+}
+
+.alert p {
+  margin: 5px 0 0 0;
+}
+
+.close {
+  right: 15px;
+  top: 15px;
+  position: absolute;
+  cursor: pointer;
+  color: #333;
+  height: 16px;
+  text-align: center;
+  width: 16px;
+  line-height: 16px;
+  font-size: 20px;
+}
+
+.close:hover {
+  color: #555;
+}

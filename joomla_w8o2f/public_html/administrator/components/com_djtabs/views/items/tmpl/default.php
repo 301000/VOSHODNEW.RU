@@ -1,0 +1,168 @@
+<?php
+/**
+ * @package DJ-Tabs
+ * @copyright Copyright (C) DJ-Extensions.com, All rights reserved.
+ * @license http://www.gnu.org/licenses GNU/GPL
+ * @author url: http://dj-extensions.com
+ * @author email: contact@dj-extensions.com
+ */
+
+defined('_JEXEC') or die('Restricted access');
+
+JHtml::_('bootstrap.tooltip');
+//JHtml::_('formbehavior.chosen', 'select');
+Jhtml::_('behavior.multiselect');
+
+$listOrder	= $this->state->get('list.ordering');
+$listDirn	= $this->state->get('list.direction');
+
+?>
+<form action="<?php echo JRoute::_('index.php?option=com_djtabs&view=items');?>" method="post" name="adminForm" id="adminForm">
+<div class="row-fluid">
+	<?php if(!empty($this->sidebar)): ?>
+	<div id="j-sidebar-container" class="span2">
+		<?php echo $this->sidebar; ?>
+	</div>
+	<div id="j-main-container" class="span10">
+	<?php else: ?>
+	<div id="j-main-container">
+	<?php endif;?>	
+
+		<div id="filter-bar" class="btn-toolbar mb-3">
+			<div class="filter-search btn-group pull-left m-1">
+				<label class="element-invisible" for="filter_search"><?php echo JText::_('JSEARCH_FILTER_LABEL'); ?></label>
+				<input type="text" name="filter_search" id="filter_search" value="<?php echo $this->escape($this->state->get('filter.search')); ?>" title="<?php echo JText::_('COM_CONTENT_FILTER_SEARCH_DESC'); ?>" />
+			</div>
+			<div class="btn-group pull-left m-1">
+				<button type="submit" class="btn btn-primary"><?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?></button>
+				<button type="button" class="btn btn-secondary" onclick="document.getElementById('filter_search').value='';jQuery('[name^=filter_]').prop('selectedIndex',0);this.form.submit();"><?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?></button>
+			</div>
+
+			<div class="btn-group pull-right ml-auto">
+				<div class="btn-group m-1">
+					<select name="filter_group" class="inputbox input-medium" onchange="this.form.submit()">
+						<option value=""><?php echo JText::_('COM_DJTABS_SELECT_GROUP');?></option>
+						<?php echo JHtml::_('select.options', $this->group_options, 'value', 'text', $this->state->get('filter.group'));?>
+					</select>
+				</div>	
+				<div class="btn-group hidden-phone m-1">
+					<select name="filter_published" class="inputbox" onchange="this.form.submit()">
+						<option value=""><?php echo JText::_('JOPTION_SELECT_PUBLISHED');?></option>
+						<?php echo JHtml::_('select.options', array(JHtml::_('select.option', '1', 'JPUBLISHED'),JHtml::_('select.option', '0', 'JUNPUBLISHED')), 'value', 'text', $this->state->get('filter.published'), true);?>
+					</select>
+				</div>
+				<div class="btn-group hidden-phone m-1">
+					<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
+					<?php echo $this->pagination->getLimitBox(); ?>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+
+		<table class="table table-striped">
+		<thead>
+			<tr>	
+				<th width="1%">
+					<input type="checkbox" name="checkall-toggle" value="" onclick="Joomla.checkAll(this)" />
+				</th>
+				<th width="1%"></th>
+				<th>
+					<?php echo JHtml::_('grid.sort',  'JGLOBAL_TITLE', 'a.name', $listDirn, $listOrder); ?>
+				</th>			
+				<th width="10%">
+					<?php echo JHtml::_('grid.sort', 'COM_DJTABS_GROUP', 'group_name',   $listDirn, $listOrder); ?>
+				</th>   	
+				<th width="10%">
+					<?php echo JHtml::_('grid.sort', 'JPUBLISHED', 'a.published', $listDirn, $listOrder); ?>
+				</th>
+				<th width="12%">
+					<?php echo JHtml::_('grid.sort',  'JGRID_HEADING_ORDERING', 'a.ordering', $listDirn, $listOrder); ?>
+					<?php if ($listOrder == 'a.ordering') : ?>
+						<?php echo JHtml::_('grid.order',  $this->items, 'filesave.png', 'items.saveorder'); ?>
+					<?php endif; ?>
+				</th>
+				<th width="5%">
+					<?php echo JHtml::_('grid.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
+				</th>
+			</tr>
+		</thead>
+			<tfoot>
+				<tr>
+					<td colspan="10">
+						<?php echo $this->pagination->getListFooter(); ?>
+					</td>
+				</tr>
+			</tfoot>
+			<tbody>
+			<?php foreach ($this->items as $i => $item) : ?>
+				<tr class="row<?php echo $i % 2; ?>">
+					<td>
+						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
+					</td>
+					<td align="center">
+						<?php 
+							if($item->type == '1'){
+								echo '<i style="color:#CECECE" class="icon-list"></i>';
+							}
+							elseif($item->type == '2'){
+								echo '<i style="color:#CECECE" class="icon-file-2"></i>';
+							}
+							elseif($item->type == '3'){
+								echo '<i style="color:#CECECE" class="icon-puzzle"></i>';
+							}
+							elseif($item->type == '4'){
+								echo '<i style="color:#CECECE" class="icon-play-2"></i>';
+							}
+							elseif($item->type == '5'){
+								echo '<i style="color:#CECECE" class="icon-list icon-k2"></i>';
+							}
+							elseif($item->type == '6'){
+								echo '<i style="color:#CECECE" class="icon-file-2 icon-k2"></i>';
+							}elseif($item->type == '7'){
+								echo '<i style="color:#CECECE" class="icon-paragraph-left"></i>';
+							}
+						?>
+					</td>
+					<td>
+						<a href="<?php echo JRoute::_('index.php?option=com_djtabs&task=item.edit&id='.(int) $item->id); ?>">
+							<?php echo $this->escape($item->name); ?>
+						</a>
+					</td>
+					<td align="center">
+						<?php echo (empty($item->group_name) == false) ? $item->group_name : '<span style="color: red">'.JText::_('COM_DJTABS_UNASSIGNED').'</span>'; ?>
+					</td>
+					<td align="center">
+						<?php echo JHtml::_('jgrid.published', $item->published, $i, 'items.', true, 'cb'	); ?>
+					</td>
+					<td align="center">
+						<?php            	
+						if($listOrder=='a.ordering'){
+							$ordering = 'true'; ?>
+								<span><?php echo $this->pagination->orderUpIcon($i,true,'items.orderup', 'JLIB_HTML_MOVE_UP', $ordering); ?></span>								
+								<span><?php echo $this->pagination->orderDownIcon($i, count($this->items), true, 'items.orderdown', 'JLIB_HTML_MOVE_DOWN', $ordering); ?></span>
+								<?php $disabled = $ordering ?  '' : 'disabled="disabled"'; ?>
+								<input type="text" name="order[]" size="5" value="<?php echo $item->ordering;?>" <?php echo $disabled ?> class="input-mini text-area-order" />
+							<?php	
+						}else{
+							echo $item->ordering;
+						}?>					
+					</td>
+					<td>
+						<?php echo $item->id; ?>
+					</td>
+				</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+	
+		<div>
+			<input type="hidden" name="task" value="" />
+			<input type="hidden" name="boxchecked" value="0" />
+			<input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>" />
+			<input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>" />
+			<?php echo JHtml::_('form.token'); ?>
+		</div>
+	</div>
+</div>
+</form>
+<?php echo DJTABSFOOTER; ?>

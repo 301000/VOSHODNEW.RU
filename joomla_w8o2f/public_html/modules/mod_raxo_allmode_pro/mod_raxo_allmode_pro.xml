@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>RAXO All-mode PRO</name>
+	<author>RAXO Group</author>
+	<copyright>Copyright (C) 2009-2021 RAXO Group. All rights reserved.</copyright>
+	<authorEmail>support@raxo.org</authorEmail>
+	<authorUrl>https://www.raxo.org</authorUrl>
+	<license>
+		GNU General Public License v2.0 for PHP files.
+		If not otherwise stated, all other files (CSS, JS, images, icons, etc) are NOT GPL, these files are under RAXO Commercial License.
+	</license>
+	<version>2.01</version>
+	<creationDate>August 2021</creationDate>
+	<description>MOD_RAXO_RAMP_XML_DESCRIPTION</description>
+	<namespace path="src">Joomla\Module\RaxoAllmodePro</namespace>
+
+
+	<files>
+		<filename module="mod_raxo_allmode_pro">mod_raxo_allmode_pro.php</filename>
+		<folder>admin</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+		<folder>tools</folder>
+		<filename>mod_raxo_allmode_pro.png</filename>
+	</files>
+
+	<scriptfile>installer.php</scriptfile>
+
+
+	<languages>
+		<language tag="de-DE">language/de-DE/mod_raxo_allmode_pro.ini</language>
+		<language tag="de-DE">language/de-DE/mod_raxo_allmode_pro.sys.ini</language>
+		<language tag="en-GB">language/en-GB/mod_raxo_allmode_pro.ini</language>
+		<language tag="en-GB">language/en-GB/mod_raxo_allmode_pro.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/mod_raxo_allmode_pro.ini</language>
+		<language tag="ru-RU">language/ru-RU/mod_raxo_allmode_pro.sys.ini</language>
+	</languages>
+
+
+	<updateservers>
+		<server type="collection" name="RAXO Extensions Updates">https://www.raxo.org/updates/joomla-extensions.xml</server>
+	</updateservers>
+
+
+	<config>
+	<fields name="params" addfieldpath="/modules/mod_raxo_allmode_pro/admin/elements">
+
+		<fieldset name="basic">
+
+			<field type="description" />
+
+		</fieldset>
+
+
+		<fieldset name="module"
+			label="MOD_RAXO_RAMP_FIELD_GROUP_BASIC">
+
+			<fieldset name="module_source"
+				label="MOD_RAXO_RAMP_SPACER_SOURCE">
+				<field name="source_selection" type="list" default="selected"
+					label="MOD_RAXO_RAMP_SOURCE_SELECTION"
+					description="MOD_RAXO_RAMP_SOURCE_SELECTION_DESC">
+					<option value="items">MOD_RAXO_RAMP_SOURCE_SELECTION_ITEMS</option>
+					<option value="current">MOD_RAXO_RAMP_SOURCE_SELECTION_CURRENT</option>
+					<option value="selected">MOD_RAXO_RAMP_SOURCE_SELECTION_SELECTED</option>
+					<option value="all">MOD_RAXO_RAMP_SOURCE_SELECTION_ALL</option>
+				</field>
+				<field name="selected_categories" type="category" showon="source_selection:selected"
+					extension="com_content" multiple="true" filter="intarray"
+					layout="joomla.form.field.list-fancy-select"
+					label="MOD_RAXO_RAMP_SELECTED_CATEGORIES"
+					description="MOD_RAXO_RAMP_SELECTED_CATEGORIES_DESC" />
+				<field name="category_filter" type="radio" showon="source_selection:current,selected" class="btn-group btn-group-yesno"
+					default="1" filter="integer"
+					label="MOD_RAXO_RAMP_CATEGORY_FILTER"
+					description="MOD_RAXO_RAMP_CATEGORY_FILTER_DESC">
+					<option value="1">MOD_RAXO_RAMP_INCLUDE</option>
+					<option value="0">MOD_RAXO_RAMP_EXCLUDE</option>
+				</field>
+				<field name="selected_items" type="text" default="" showon="source_selection:items"
+					label="MOD_RAXO_RAMP_SELECTED_ITEMS"
+					description="MOD_RAXO_RAMP_SELECTED_ITEMS_DESC" />
+			</fieldset>
+
+			<fieldset name="module_filters"
+				label="MOD_RAXO_RAMP_SPACER_FILTERS">
+				<field name="count" type="subform"
+					label="MOD_RAXO_RAMP_COUNT"
+					description="MOD_RAXO_RAMP_COUNT_DESC">
+					<form>
+						<field name="top" type="text" filter="integer"
+							default="2" maxlength="3"
+							hiddenLabel="true"
+							inputmode="numeric"
+							addonAfter="MOD_RAXO_RAMP_TOP" />
+						<field name="nor" type="text" filter="integer"
+							default="4" maxlength="3"
+							hiddenLabel="true"
+							inputmode="numeric"
+							addonAfter="MOD_RAXO_RAMP_NORMAL" />
+					</form>
+				</field>
+				<field name="tags" type="tag"
+					multiple="true" mode="nested" filter="intarray"
+					label="MOD_RAXO_RAMP_TAGS"
+					description="MOD_RAXO_RAMP_TAGS_DESC" />
+				<field name="featured_items" type="list" default="show"
+					label="MOD_RAXO_RAMP_FEATURED_ITEMS"
+					description="MOD_RAXO_RAMP_FEATURED_ITEMS_DESC">
+					<option value="show">MOD_RAXO_RAMP_FEATURED_ITEMS_SHOW</option>
+					<option value="only">MOD_RAXO_RAMP_FEATURED_ITEMS_ONLY</option>
+					<option value="hide">MOD_RAXO_RAMP_FEATURED_ITEMS_HIDE</option>
+				</field>
+				<field name="date_filtering" type="list" default="disabled"
+					label="MOD_RAXO_RAMP_DATE_FILTERING"
+					description="MOD_RAXO_RAMP_DATE_FILTERING_DESC">
+					<option value="disabled">MOD_RAXO_RAMP_DATE_FILTERING_DISABLED</option>
+					<option value="today">MOD_RAXO_RAMP_DATE_FILTERING_TODAY</option>
+					<option value="yesterday">MOD_RAXO_RAMP_DATE_FILTERING_YESTERDAY</option>
+					<option value="this_week">MOD_RAXO_RAMP_DATE_FILTERING_THISWEEK</option>
+					<option value="last_week">MOD_RAXO_RAMP_DATE_FILTERING_LASTWEEK</option>
+					<option value="this_month">MOD_RAXO_RAMP_DATE_FILTERING_THISMONTH</option>
+					<option value="last_month">MOD_RAXO_RAMP_DATE_FILTERING_LASTMONTH</option>
+					<option value="this_year">MOD_RAXO_RAMP_DATE_FILTERING_THISYEAR</option>
+					<option value="last_year">MOD_RAXO_RAMP_DATE_FILTERING_LASTYEAR</option>
+					<option value="history_day">MOD_RAXO_RAMP_DATE_FILTERING_DAYINHISTORY</option>
+					<option value="history_month">MOD_RAXO_RAMP_DATE_FILTERING_MONTHINHISTORY</option>
+					<option value="range">MOD_RAXO_RAMP_DATE_FILTERING_RANGE</option>
+					<option value="relative">MOD_RAXO_RAMP_DATE_FILTERING_RELATIVE</option>
+				</field>
+				<field name="date_range" type="subform" showon="date_filtering:range"
+					label="MOD_RAXO_RAMP_DATE_FILTERING_RANGE"
+					description="MOD_RAXO_RAMP_DATE_RANGE_DESC">
+					<form>
+						<field name="start" type="calendar"
+							format="%Y-%m-%d %H:%M" filter="SERVER_UTC" showtime="true"
+							label="MOD_RAXO_RAMP_DATE_RANGE_START"
+							/>
+						<field name="end" type="calendar"
+							format="%Y-%m-%d %H:%M" filter="SERVER_UTC" showtime="true"
+							label="MOD_RAXO_RAMP_DATE_RANGE_END"
+							/>
+					</form>
+				</field>
+				<field name="date_relative" type="subform" showon="date_filtering:relative"
+					label="MOD_RAXO_RAMP_DATE_FILTERING_RELATIVE"
+					description="MOD_RAXO_RAMP_DATE_RELATIVE_DESC">
+					<form>
+						<field name="from" type="text"
+							inputmode="numeric" default="0" filter="integer"
+							label="MOD_RAXO_RAMP_DATE_RELATIVE_FROM"
+							addonAfter="MOD_RAXO_RAMP_DATE_RELATIVE_UNIT"
+							/>
+						<field name="to" type="text"
+							inputmode="numeric" default="0" filter="integer"
+							label="MOD_RAXO_RAMP_DATE_RELATIVE_TO"
+							addonAfter="MOD_RAXO_RAMP_DATE_RELATIVE_UNIT"
+							/>
+					</form>
+				</field>
+
+
+				<field name="authors" type="list" default="all"
+					label="MOD_RAXO_RAMP_AUTHORS"
+					description="MOD_RAXO_RAMP_AUTHORS_DESC">
+					<option value="all">MOD_RAXO_RAMP_AUTHORS_ALL</option>
+					<option value="selected">MOD_RAXO_RAMP_AUTHORS_SELECTED</option>
+					<option value="by_me">MOD_RAXO_RAMP_AUTHORS_BYME</option>
+					<option value="not_me">MOD_RAXO_RAMP_AUTHORS_NOTME</option>
+				</field>
+				<field name="author_id" type="sql" showon="authors:selected"
+					query="select id, name, username from #__users where id IN (select distinct(created_by) from #__content) order by name ASC"
+					key_field="id" value_field="name"
+					multiple="true" filter="integer"
+					layout="joomla.form.field.list-fancy-select"
+					label="MOD_RAXO_RAMP_AUTHORID"
+					description="MOD_RAXO_RAMP_AUTHORID_DESC" />
+				<field name="author_alias" type="sql" showon="authors:selected"
+					query="select distinct(created_by_alias) from #__content where created_by_alias != '' order by created_by_alias ASC"
+					key_field="created_by_alias" value_field="created_by_alias"
+					multiple="true" filter="integer"
+					layout="joomla.form.field.list-fancy-select"
+					label="MOD_RAXO_RAMP_AUTHORALIAS"
+					description="MOD_RAXO_RAMP_AUTHORALIAS_DESC" />
+
+				<field name="ordering" type="list" default="created_dsc"
+					label="MOD_RAXO_RAMP_ORDERING"
+					description="MOD_RAXO_RAMP_ORDERING_DESC">
+					<option value="created_dsc">MOD_RAXO_RAMP_ORDER_DATE_DSC</option>
+					<option value="created_asc">MOD_RAXO_RAMP_ORDER_DATE_ASC</option>
+					<option value="title_az">MOD_RAXO_RAMP_ORDER_TITLE_AZ</option>
+					<option value="title_za">MOD_RAXO_RAMP_ORDER_TITLE_ZA</option>
+					<option value="popular_first">MOD_RAXO_RAMP_ORDER_POPULAR_FIRST</option>
+					<option value="popular_last">MOD_RAXO_RAMP_ORDER_POPULAR_LAST</option>
+					<option value="rated_most">MOD_RAXO_RAMP_ORDER_MOST_RATED</option>
+					<option value="rated_least">MOD_RAXO_RAMP_ORDER_LEAST_RATED</option>
+					<option value="commented_most">MOD_RAXO_RAMP_ORDER_COMMENTED_MOST</option>
+					<option value="commented_latest">MOD_RAXO_RAMP_ORDER_COMMENTED_LATEST</option>
+					<option value="ordering_fwd">MOD_RAXO_RAMP_ORDER_MANAGER_FWD</option>
+					<option value="ordering_rev">MOD_RAXO_RAMP_ORDER_MANAGER_REV</option>
+					<option value="id_asc">MOD_RAXO_RAMP_ORDER_ID_ASC</option>
+					<option value="id_dsc">MOD_RAXO_RAMP_ORDER_ID_DSC</option>
+					<option value="exact">MOD_RAXO_RAMP_ORDER_EXACT</option>
+					<option value="random">MOD_RAXO_RAMP_ORDER_RANDOM</option>
+				</field>
+			</fieldset>
+
+		</fieldset>
+
+
+		<fieldset name="display"
+			label="MOD_RAXO_RAMP_FIELD_GROUP_DISPLAY">
+
+			<fieldset name="module_layout"
+				label="MOD_RAXO_RAMP_SPACER_LAYOUT">
+				<field name="layout" type="modulelayout" class="form-select"
+					default="_:raxo-default" validate="moduleLayout"
+					label="MOD_RAXO_RAMP_MODULE_LAYOUT"
+					description="MOD_RAXO_RAMP_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text"
+					label="MOD_RAXO_RAMP_MODULE_CLASS"
+					description="MOD_RAXO_RAMP_MODULE_CLASS_DESC" />
+			</fieldset>
+
+			<fieldset name="module_block"
+				label="MOD_RAXO_RAMP_SPACER_MODULE_BLOCK">
+				<field name="block_name" type="text"
+					label="MOD_RAXO_RAMP_BLOCK_NAME"
+					description="MOD_RAXO_RAMP_BLOCK_NAME_DESC"
+					parentclass="stack span-3" />
+				<field name="block_name_link" type="text" inputmode="url"
+					label="MOD_RAXO_RAMP_BLOCK_NAME_LINK"
+					description="MOD_RAXO_RAMP_BLOCK_NAME_LINK_DESC"
+					parentclass="stack span-3-inline" />
+				<field name="block_intro" type="textarea"
+					rows="5" filter="raw"
+					label="MOD_RAXO_RAMP_BLOCK_INTRO"
+					description="MOD_RAXO_RAMP_BLOCK_INTRO_DESC"
+					parentclass="stack" />
+				<field name="block_button" type="text"
+					label="MOD_RAXO_RAMP_BLOCK_BUTTON"
+					description="MOD_RAXO_RAMP_BLOCK_BUTTON_DESC"
+					parentclass="stack span-3" />
+				<field name="block_button_link" type="text" inputmode="url"
+					label="MOD_RAXO_RAMP_BLOCK_BUTTON_LINK"
+					description="MOD_RAXO_RAMP_BLOCK_BUTTON_LINK_DESC"
+					parentclass="stack span-3-inline" />
+			</fieldset>
+
+			<fieldset name="module_text"
+				label="MOD_RAXO_RAMP_SPACER_TEXT">
+				<field name="show_title" type="checkboxed" default="top,nor"
+					label="MOD_RAXO_RAMP_SHOW_TITLE">
+					<option value="top">MOD_RAXO_RAMP_TOP</option>
+					<option value="nor">MOD_RAXO_RAMP_NORMAL</option>
+				</field>
+				<field name="limit_title" type="subform" multiple="false"
+					label="MOD_RAXO_RAMP_LIMIT_TITLE"
+					description="MOD_RAXO_RAMP_LIMIT_TITLE_DESC">
+					<form>
+						<field name="top" type="text"
+							inputmode="numeric" filter="integer"
+							label="MOD_RAXO_RAMP_TOP" hiddenLabel="true"
+							addonAfter="MOD_RAXO_RAMP_LIMIT_UNIT"
+							/>
+						<field name="nor" type="text"
+							inputmode="numeric" filter="integer"
+							label="MOD_RAXO_RAMP_NORMAL" hiddenLabel="true"
+							addonAfter="MOD_RAXO_RAMP_LIMIT_UNIT"
+							/>
+					</form>
+				</field>
+				<field name="show_text" type="checkboxed" default="top,nor"
+					label="MOD_RAXO_RAMP_SHOW_TEXT">
+					<option value="top">MOD_RAXO_RAMP_TOP</option>
+					<option value="nor">MOD_RAXO_RAMP_NORMAL</option>
+				</field>
+				<field name="limit_text" type="subform" multiple="false"
+					label="MOD_RAXO_RAMP_LIMIT_TEXT"
+					description="MOD_RAXO_RAMP_LIMIT_TEXT_DESC">
+					<form>
+						<field name="top" type="text" default="280"
+							inputmode="numeric" filter="integer"
+							label="MOD_RAXO_RAMP_TOP" hiddenLabel="true"
+							addonAfter="MOD_RAXO_RAMP_LIMIT_UNIT"
+							/>
+						<field name="nor" type="text" default="140"
+							inputmode="numeric" filter="integer"
+							label="MOD_RAXO_RAMP_NORMAL" hiddenLabel="true"
+							addonAfter="MOD_RAXO_RAMP_LIMIT_UNIT"
+							/>
+					</form>
+				</field>
+				<field name="read_more" type="subform"
+					label="MOD_RAXO_RAMP_READ_MORE"
+					description="MOD_RAXO_RAMP_READ_MORE_DESC">
+					<form>
+						<field name="top" type="text"
+							label="MOD_RAXO_RAMP_TOP" hiddenLabel="true"
+							/>
+						<field name="nor" type="text"
+							label="MOD_RAXO_RAMP_NORMAL" hiddenLabel="true"
+							/>
+					</form>
+				</field>
+			</fieldset>
+
+			<fieldset name="module_images"
+				label="MOD_RAXO_RAMP_SPACER_IMAGES">
+				<field name="show_image" type="checkboxed"
+					label="MOD_RAXO_RAMP_SHOW_IMAGE"
+					description="MOD_RAXO_RAMP_SHOW_IMAGE_DESC">
+					<option value="top" checked="true">MOD_RAXO_RAMP_TOP</option>
+					<option value="nor" checked="true">MOD_RAXO_RAMP_NORMAL</option>
+				</field>
+				<field name="image_top" type="subform"
+					label="MOD_RAXO_RAMP_IMAGE_THUMBNAIL_TOP"
+					description="MOD_RAXO_RAMP_IMAGE_THUMBNAIL_DESC">
+					<form>
+						<field name="width" type="text"
+							inputmode="numeric" filter="integer"
+							label="MOD_RAXO_RAMP_IMAGE_WIDTH" hiddenLabel="true"
+							addonBefore="MOD_RAXO_RAMP_IMAGE_WIDTH"
+							addonAfter="MOD_RAXO_RAMP_IMAGE_UNIT"
+							/>
+						<field name="height" type="text"
+							inputmode="numeric" filter="integer"
+							label="MOD_RAXO_RAMP_IMAGE_HEIGHT" hiddenLabel="true"
+							addonBefore="MOD_RAXO_RAMP_IMAGE_HEIGHT"
+							addonAfter="MOD_RAXO_RAMP_IMAGE_UNIT"
+							/>
+					</form>
+				</field>
+				<field name="image_nor" type="subform"
+					label="MOD_RAXO_RAMP_IMAGE_THUMBNAIL_NORMAL"
+					description="MOD_RAXO_RAMP_IMAGE_THUMBNAIL_DESC">
+					<form>
+						<field name="width" type="text"
+							inputmode="numeric" filter="integer"
+							label="MOD_RAXO_RAMP_IMAGE_WIDTH" hiddenLabel="true"
+							addonBefore="MOD_RAXO_RAMP_IMAGE_WIDTH"
+							addonAfter="MOD_RAXO_RAMP_IMAGE_UNIT"
+							/>
+						<field name="height" type="text"
+							inputmode="numeric" filter="integer"
+							label="MOD_RAXO_RAMP_IMAGE_HEIGHT" hiddenLabel="true"
+							addonBefore="MOD_RAXO_RAMP_IMAGE_HEIGHT"
+							addonAfter="MOD_RAXO_RAMP_IMAGE_UNIT"
+							/>
+					</form>
+				</field>
+			</fieldset>
+
+			<fieldset name="module_fields"
+				label="MOD_RAXO_RAMP_SPACER_FIELDS">
+				<field name="show_date" type="checkboxed"
+					label="MOD_RAXO_RAMP_SHOW_DATE">
+					<option value="top" checked="true">MOD_RAXO_RAMP_TOP</option>
+					<option value="nor" checked="true">MOD_RAXO_RAMP_NORMAL</option>
+				</field>
+				<field name="show_category" type="checkboxed"
+					label="MOD_RAXO_RAMP_SHOW_CATEGORY">
+					<option value="top" checked="true">MOD_RAXO_RAMP_TOP</option>
+					<option value="nor">MOD_RAXO_RAMP_NORMAL</option>
+				</field>
+				<field name="show_author" type="checkboxed"
+					label="MOD_RAXO_RAMP_SHOW_AUTHOR">
+					<option value="top" checked="true">MOD_RAXO_RAMP_TOP</option>
+					<option value="nor">MOD_RAXO_RAMP_NORMAL</option>
+				</field>
+				<field name="show_rating" type="checkboxed"
+					label="MOD_RAXO_RAMP_SHOW_RATING">
+					<option value="top">MOD_RAXO_RAMP_TOP</option>
+					<option value="nor">MOD_RAXO_RAMP_NORMAL</option>
+				</field>
+				<field name="show_hits" type="checkboxed"
+					label="MOD_RAXO_RAMP_SHOW_HITS">
+					<option value="top">MOD_RAXO_RAMP_TOP</option>
+					<option value="nor" checked="true">MOD_RAXO_RAMP_NORMAL</option>
+				</field>
+				<field name="show_comments" type="checkboxed"
+					label="MOD_RAXO_RAMP_SHOW_COMMENTS">
+					<option value="top">MOD_RAXO_RAMP_TOP</option>
+					<option value="nor">MOD_RAXO_RAMP_NORMAL</option>
+				</field>
+			</fieldset>
+
+		</fieldset>
+
+
+		<fieldset name="pro"
+			label="MOD_RAXO_RAMP_FIELD_GROUP_ADDITIONAL">
+
+			<fieldset name="module_advanced"
+				label="MOD_RAXO_RAMP_SPACER_ADVANCED">
+				<field name="count_skip" type="number" filter="integer"
+					default="0" min="0" maxlength="3"
+					label="MOD_RAXO_RAMP_COUNT_SKIP"
+					description="MOD_RAXO_RAMP_COUNT_SKIP_DESC" />
+				<field name="current_item" type="radio" default="0" filter="integer" class="btn-group btn-group-yesno"
+					label="MOD_RAXO_RAMP_CURRENT_ITEM"
+					description="MOD_RAXO_RAMP_CURRENT_ITEM_DESC">
+					<option value="1">MOD_RAXO_RAMP_INCLUDE</option>
+					<option value="0">MOD_RAXO_RAMP_EXCLUDE</option>
+				</field>
+				<field name="exclude_items" type="text" default=""
+					label="MOD_RAXO_RAMP_EXCLUDE_ITEMS"
+					description="MOD_RAXO_RAMP_EXCLUDE_ITEMS_DESC" />
+				<field name="not_public" type="radio" default="0" filter="integer" class="btn-group btn-group-yesno"
+					label="MOD_RAXO_RAMP_NOT_PUBLIC"
+					description="MOD_RAXO_RAMP_NOT_PUBLIC_DESC">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field name="hide_option" type="radio" default="0" filter="integer" class="btn-group btn-group-yesno"
+					label="MOD_RAXO_RAMP_HIDE_OPTION"
+					description="MOD_RAXO_RAMP_HIDE_OPTION_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="intro_clean" type="radio" default="1" filter="integer" class="btn-group btn-group-yesno"
+					label="MOD_RAXO_RAMP_INTRO_CLEAN"
+					description="MOD_RAXO_RAMP_INTRO_CLEAN_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="allowable_tags" type="text" default=""
+					label="MOD_RAXO_RAMP_ALLOWABLE_TAGS"
+					description="MOD_RAXO_RAMP_ALLOWABLE_TAGS_DESC" />
+				<field name="plugin_support" type="radio" default="0" filter="integer" class="btn-group btn-group-yesno"
+					label="MOD_RAXO_RAMP_PLUGIN_SUPPORT"
+					description="MOD_RAXO_RAMP_PLUGIN_SUPPORT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="module_advanced_images"
+				label="MOD_RAXO_RAMP_SPACER_ADVANCED_IMAGES">
+				<field name="image_source" type="list" default="automatic"
+					label="MOD_RAXO_RAMP_IMAGE_SOURCE"
+					description="MOD_RAXO_RAMP_IMAGE_SOURCE_DESC">
+					<option value="intro">MOD_RAXO_RAMP_IMAGE_SOURCE_INTRO</option>
+					<option value="full">MOD_RAXO_RAMP_IMAGE_SOURCE_FULL</option>
+					<option value="text">MOD_RAXO_RAMP_IMAGE_SOURCE_TEXT</option>
+					<option value="automatic">MOD_RAXO_RAMP_IMAGE_SOURCE_AUTOMATIC</option>
+				</field>
+				<field name="image_crop" type="radio" default="1" filter="integer" class="btn-group btn-group-yesno"
+					label="MOD_RAXO_RAMP_IMAGE_CROP"
+					description="MOD_RAXO_RAMP_IMAGE_CROP_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="image_link" type="radio" default="1" filter="integer" class="btn-group btn-group-yesno"
+					label="MOD_RAXO_RAMP_IMAGE_LINK"
+					description="MOD_RAXO_RAMP_IMAGE_LINK_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="image_title" type="radio" default="1" filter="integer" class="btn-group btn-group-yesno"
+					label="MOD_RAXO_RAMP_IMAGE_TITLE"
+					description="MOD_RAXO_RAMP_IMAGE_TITLE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="image_default" type="filelist" default="noimage-medium.png" directory="/modules/mod_raxo_allmode_pro/tools" filter="\.png$|\.gif$|\.jpg$|\.webp$" stripext="0" hide_none="0" hide_default="1"
+					label="MOD_RAXO_RAMP_NOIMAGE"
+					description="MOD_RAXO_RAMP_NOIMAGE_DESC" />
+			</fieldset>
+
+			<fieldset name="module_advanced_fields"
+				label="MOD_RAXO_RAMP_SPACER_ADVANCED_FIELDS">
+				<field name="category_link" type="radio" default="0" filter="integer" class="btn-group btn-group-yesno"
+					label="MOD_RAXO_RAMP_CATEGORY_LINK"
+					description="MOD_RAXO_RAMP_CATEGORY_LINK_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="date_type" type="list" default="created"
+					label="MOD_RAXO_RAMP_DATE_TYPE"
+					description="MOD_RAXO_RAMP_DATE_TYPE_DESC">
+					<option value="created">MOD_RAXO_RAMP_DATE_TYPE_CREATED</option>
+					<option value="modified">MOD_RAXO_RAMP_DATE_TYPE_MODIFIED</option>
+					<option value="publish_up">MOD_RAXO_RAMP_DATE_TYPE_PUBLISH</option>
+				</field>
+				<field name="date_format" type="subform"
+					label="MOD_RAXO_RAMP_DATE_FORMAT"
+					description="MOD_RAXO_RAMP_DATE_FORMAT_DESC">
+					<form>
+						<field name="top" type="text" default="F d, Y"
+							label="MOD_RAXO_RAMP_TOP" hiddenLabel="true"
+							/>
+						<field name="nor" type="text" default="M d, Y"
+							label="MOD_RAXO_RAMP_NORMAL" hiddenLabel="true"
+							/>
+					</form>
+				</field>
+				<field name="comment_system" type="list" default="0"
+					label="MOD_RAXO_RAMP_COMMENT_SYSTEM"
+					description="MOD_RAXO_RAMP_COMMENT_SYSTEM_DESC">
+					<option value="0">MOD_RAXO_RAMP_COMMENT_SYSTEM_NONE</option>
+					<option value="jcomments">JComments</option>
+					<option value="jacomment">JA Comment</option>
+					<option value="jlexcomment">JLex Comment</option>
+					<option value="komento">Komento</option>
+					<option value="compojoom">CComment</option>
+					<option value="rscomments">RSComments!</option>
+					<option value="slicomments">sliComments</option>
+				</field>
+			</fieldset>
+
+		</fieldset>
+
+
+		<fieldset name="advanced"
+			label="MOD_RAXO_RAMP_FIELD_GROUP_ADVANCED">
+
+			<field name="owncache" type="list" default="1" filter="integer" validate="options"
+				label="COM_MODULES_FIELD_CACHING_LABEL">
+				<option value="1">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+			</field>
+			<field name="cache_time" type="number"
+				default="3600" step="60" filter="integer"
+				label="COM_MODULES_FIELD_CACHE_TIME_LABEL" />
+			<field type="interface" path="modules/mod_raxo_allmode_pro/admin/interface/" />
+
+		</fieldset>
+
+	</fields>
+	</config>
+</extension>

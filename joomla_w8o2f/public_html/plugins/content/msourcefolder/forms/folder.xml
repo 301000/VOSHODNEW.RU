@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="source_params">
+		<fieldset name="folder_source">
+
+			<field
+				name="source_type"
+				type="hidden"
+			/>
+
+			<field
+				name="fold_title"
+				type="text"
+				label="PLG_CONTENT_MSOURCEFOLDER_FIELD_CONTENT_TYPE_TITLE_LABEL"
+				description="PLG_CONTENT_MSOURCEFOLDER_FIELD_CONTENT_TYPE_TITLE_DESC"
+				class="inputbox"
+				size="5"
+				default="FOLDER_ITEMS"
+			/>
+
+			<field
+				name="image_folder"
+				type="text"
+				default=""
+				label="PLG_CONTENT_MSOURCEFOLDER_FIELD_FOLDER_SELECT_FOLDER_LABEL"
+				description="PLG_CONTENT_MSOURCEFOLDER_FIELD_FOLDER_SELECT_FOLDER_DESC"
+			/>
+
+			<field
+				name="fold_ordering"
+				type="list"
+				default="created"
+				label="PLG_CONTENT_MSOURCEFOLDER_FIELD_FOLDER_ORDERING_LABEL"
+				description="PLG_CONTENT_MSOURCEFOLDER_FIELD_FOLDER_ORDERING_DESC"
+			>
+				<option value="title">JGLOBAL_TITLE</option>
+				<option value="created">PLG_CONTENT_MSOURCEFOLDER_FIELD_OPTION_CREATED_DATE</option>
+				<option value="random">PLG_CONTENT_MSOURCEFOLDER_FIELD_OPTION_RANDOM</option>
+			</field>
+
+			<field
+				name="fold_ordering_direction"
+				type="list"
+				default="ASC"
+				label="PLG_CONTENT_MSOURCEFOLDER_FIELD_ORDERING_DIRECTION_LABEL"
+				description="PLG_CONTENT_MSOURCEFOLDER_FIELD_ORDERING_DIRECTION_DESC"
+			>
+				<option value="ASC">PLG_CONTENT_MSOURCEFOLDER_FIELD_OPTION_ASCENDING</option>
+				<option value="DESC">PLG_CONTENT_MSOURCEFOLDER_FIELD_OPTION_DESCENDING</option>
+			</field>
+
+		</fieldset>
+	</fields>
+</form>

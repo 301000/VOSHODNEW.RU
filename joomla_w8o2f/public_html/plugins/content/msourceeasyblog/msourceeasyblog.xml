@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="content" method="upgrade">
+	<name>plg_content_msourceeasyblog</name>
+	<author>Minitek.gr</author>
+	<creationDate>November 2021</creationDate>
+	<copyright>Copyright (C) 2011 - 2021 Minitek.gr. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorUrl>https://www.minitek.gr</authorUrl>
+	<version>4.0.0</version>
+	<description>EasyBlog source plugin for Minitek components.</description>
+
+	<files>
+		<folder>forms</folder>
+		<folder>helpers</folder>
+		<folder>images</folder>
+		<filename>index.html</filename>
+		<filename plugin="msourceeasyblog">msourceeasyblog.php</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">plg_content_msourceeasyblog.ini</language>
+		<language tag="en-GB">plg_content_msourceeasyblog.sys.ini</language>
+	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Minitek Source - EasyBlog"><![CDATA[https://update.minitek.gr/joomla-extensions/minitek-source-plugins/plg_content_msourceeasyblog.xml]]></server>
+	</updateservers>
+
+</extension>

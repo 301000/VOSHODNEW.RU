@@ -1,0 +1,499 @@
+/**
+ * =============================================================
+ * @package		RAXO Bricks Module Layout
+ * -------------------------------------------------------------
+ * @copyright	Copyright (C) 2009-2021 RAXO Group
+ * @link		https://www.raxo.org
+ * @license		RAXO Commercial License
+ * 				This file is forbidden for redistribution
+ * =============================================================
+ */
+
+
+/* ----- RESET & DEFAULT Styles ----- */
+.raxo-bricks {
+	margin: 20px 0 24px;
+	box-sizing: border-box;
+}
+	.raxo-bricks *,
+	.raxo-bricks ::before, .raxo-bricks ::after {
+		box-sizing: inherit;
+	}
+.raxo-bricks article,
+.raxo-bricks h3, .raxo-bricks h4,
+.raxo-bricks img,
+.raxo-bricks a {
+	margin: 0; padding: 0;
+	background: transparent none;
+	border: 0 none;
+}
+/* --- Item LINKS --- */
+.raxo-bricks a {
+	text-decoration: none;
+	outline: 0;
+	transition: all .2s ease-out;
+}
+	.raxo-bricks a:hover {
+		background: transparent none;
+	}
+
+
+
+/* ----- Module BLOCK ----- */
+.raxo-bricks .raxo-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: flex-start;
+	margin-bottom: 14px; padding: 4px 10px;
+	border-width: 2px 0 0; border-style: solid;
+}
+
+/* --- Block NAME --- */
+.raxo-bricks .raxo-block-name {
+	flex: 1 1 128px;
+	margin: 0 2px;
+	font: bold 18px/24px Tahoma, Helvetica, Arial, sans-serif;
+	color: #1a1a1a;
+}
+	.raxo-bricks .raxo-block-name a {
+		color: #1a1a1a;
+	}
+
+/* --- Block BUTTON --- */
+.raxo-bricks .raxo-block-button {
+	margin: 2px; padding: 0 12px;
+	font-size: 13px; line-height: 20px;
+	color: #ffffff;
+	border-radius: 2px;
+}
+	.raxo-bricks .raxo-block-button a {
+		display: inline-block;
+		margin: 0 -12px; padding: 0 12px;
+		color: #ffffff;
+	}
+	.raxo-bricks .raxo-block-button a:hover {
+		opacity: 0.75;
+	}
+
+/* --- Block INTRO --- */
+.raxo-bricks .raxo-block-intro {
+	flex: 1 100%;
+	order: 3;
+	margin: 12px 2px 4px;
+	font-size: 16px;
+	color: #4c4c4c;
+}
+
+
+
+/* ----- Module ITEMS ----- */
+.raxo-bricks article {
+	position: relative;
+	margin-bottom: 32px;
+	font-size: 13px; line-height: 18px;
+}
+.raxo-bricks article .raxo-wrap {
+	background-color: #fcfcfc;
+	border-radius: 3px 3px 2px 2px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	overflow: hidden;
+}
+	.raxo-bricks .raxo-wrap > div:first-child {
+		border-width: 3px 0 0; border-style: solid;
+	}
+
+/* --- TOP Items --- */
+.raxo-bricks .raxo-top article {
+	margin-bottom: 48px;
+	font-size: 14px; line-height: 20px;
+}
+.raxo-bricks .raxo-top .raxo-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	border-top: 1px solid rgba(0,0,0,0.05);
+}
+.raxo-bricks .raxo-top .raxo-wrap > div {
+	margin-left: -3px;
+	flex: 1 1 320px;
+	min-width: 192px;
+}
+
+/* --- NORMAL Items --- */
+.raxo-bricks .raxo-normal {
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 2px;
+}
+	.raxo-bricks .raxo-normal article {
+		flex: 1 0 240px;
+		/*min-width: 192px;*/
+	}
+
+
+
+/* ----- Item IMAGE ----- */
+.raxo-bricks .raxo-image {
+	margin: -3px;
+ 	border-width: 3px !important;
+}
+	.raxo-bricks .raxo-normal .raxo-image {
+		margin-bottom: 0;
+	}
+.raxo-bricks .raxo-image img {
+	display: block;
+	width: 100%; max-width: 100%; height: auto;
+	transition: opacity .3s ease-out;
+	image-rendering: -webkit-optimize-contrast;
+}
+	.raxo-bricks article:hover .raxo-image img {
+		opacity: 0.85;
+	}
+	.raxo-bricks .raxo-top .raxo-image img {
+		height: 100%;
+			-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+
+
+/* ----- Item CATEGORY ----- */
+.raxo-bricks .raxo-category {
+	position: absolute;
+	left: -4px; top: 32px;
+	padding: 0 10px 0 12px;
+	line-height: 20px;
+	color: #ffffff;
+	border-radius: 2px;
+}
+	.raxo-bricks .raxo-top .raxo-category {
+		top: 48px;
+	}
+.raxo-bricks .raxo-category a {
+	display: inline-block;
+	margin: 0 -10px 0 -12px; padding: 0 10px 0 12px;
+	color: #ffffff;
+}
+	.raxo-bricks .raxo-category a:hover {
+		opacity: 0.75;
+	}
+
+
+
+/* ----- CONTENT Styles ----- */
+.raxo-bricks .raxo-content {
+	padding: 24px 10%;
+	overflow: hidden;
+}
+	.raxo-bricks .raxo-top .raxo-content {
+		margin: auto;
+		padding: 32px 48px;
+	}
+	.raxo-bricks .raxo-content > div:first-child {
+		margin-top: 0;
+	}
+
+/* --- Item TITLE --- */
+.raxo-bricks .raxo-title {
+	font-size: 16px; line-height: 20px;
+	font-weight: bold;
+	text-transform: none;
+}
+	.raxo-bricks .raxo-top .raxo-title {
+		font-size: 26px; line-height: 28px;
+	}
+	.raxo-bricks .raxo-title a {
+		color: #1a1a1a;
+	}
+
+/* --- Item DATE & AUTHOR --- */
+.raxo-bricks .raxo-info {
+	margin-top: 6px;
+	color: #808080;
+	overflow: hidden;
+}
+	.raxo-bricks .raxo-info span + span {
+		margin-left: 12px;
+	}
+
+/* --- Item TEXT --- */
+.raxo-bricks .raxo-text {
+	margin-top: 18px;
+	color: #4c4c4c;
+}
+	.raxo-bricks .raxo-top .raxo-text {
+		font-size: 15px; line-height: 22px;
+	}
+	.raxo-bricks .raxo-text a:hover {
+		text-decoration: underline;
+	}
+
+
+
+/* ----- DETAILS Styles ----- */
+.raxo-bricks .raxo-details {
+	padding: 8px 0 0;
+	font-size: 12px;
+	color: #666666;
+	overflow: hidden;
+}
+	.raxo-bricks .raxo-normal .raxo-details {
+		padding: 8px 10%;
+		background-color: #f4f4f4;
+		border-top: 1px solid #e0e0e0;
+	}
+
+/* ----- Content ELEMENTS ----- */
+.raxo-bricks .raxo-hits,
+.raxo-bricks .raxo-rating,
+.raxo-bricks .raxo-comments {
+	display: inline-block;
+	padding-left: 18px;
+	line-height: 16px;
+	background: transparent url("icons.png") no-repeat 0 0;
+	background-size: 14px 96px;
+}
+	.raxo-bricks .raxo-hits {
+		background-position: 0 0;
+	}
+	.raxo-bricks .raxo-rating {
+		background-position: 0 -40px;
+	}
+	.raxo-bricks .raxo-comments {
+		background-position: 0 -80px;
+	}
+	.raxo-bricks .raxo-details span + span {
+		margin-left: 12px;
+	}
+
+
+
+/* ----- READMORE Button ----- */
+.raxo-bricks .raxo-readmore {
+	display: inline-block;
+	border-radius: 2px;
+}
+	.raxo-bricks .raxo-top .raxo-readmore {
+		margin-top: 24px;
+	}
+.raxo-bricks .raxo-readmore a {
+	display: inline-block;
+	padding: 0 8px;
+	line-height: 18px;
+	color: #ffffff;
+}
+	.raxo-bricks .raxo-readmore a:hover {
+		opacity: 0.75;
+	}
+	.raxo-bricks .raxo-top .raxo-readmore a {
+		padding: 0 16px;
+		font-size: 14px;
+		line-height: 32px;
+	}
+	.raxo-bricks .raxo-normal .raxo-readmore {
+		float: right;
+	}
+
+
+
+/* ----- Left/Right alignment ----- */
+.raxo-bricks .raxo-top article:nth-child(2n) .raxo-wrap {
+	flex-direction: row-reverse;
+}
+.raxo-bricks .raxo-top article:nth-child(2n) .raxo-category {
+	left: auto;
+	right: -4px;
+}
+
+
+/* ----- HIGH RESOLUTION Media Queries ----- */
+@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.3),
+	only screen and (min-device-pixel-ratio: 1.3),
+	only screen and (min-resolution: 120dpi)
+{
+	.raxo-bricks .raxo-hits,
+	.raxo-bricks .raxo-rating,
+	.raxo-bricks .raxo-comments {
+		background-image: url(icons@3x.png);
+	}
+}
+
+
+/* ----- Responsive breakpoints ----- */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+	.raxo-bricks .raxo-top .raxo-content {
+		padding: 24px 10%;
+	}
+	.raxo-bricks .raxo-top .raxo-title {
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+}
+
+
+/* ----- COLOR Schemes ----- */
+
+/* --- Light Blue Color (default) --- */
+.raxo-bricks .raxo-block-name a:hover,
+.raxo-bricks .raxo-title a:hover,
+.raxo-bricks .raxo-text a:hover {
+	color: #3598dc;
+}
+.raxo-bricks .raxo-block-button,
+.raxo-bricks .raxo-category,
+.raxo-bricks .raxo-readmore {
+	background-color: #3598dc;
+}
+.raxo-bricks .raxo-header,
+.raxo-bricks .raxo-wrap > div:first-child {
+	border-color: #3598dc;
+}
+
+/* --- Red Color --- */
+.bricks-red .raxo-block-name a:hover,
+.bricks-red .raxo-title a:hover,
+.bricks-red .raxo-text a:hover {
+	color: #cc1f1f;
+}
+.bricks-red .raxo-block-button,
+.bricks-red .raxo-category,
+.bricks-red .raxo-readmore {
+	background-color: #cc1f1f;
+}
+.bricks-red .raxo-header,
+.bricks-red .raxo-wrap > div:first-child {
+	border-color: #cc1f1f;
+}
+
+/* --- Pink Color --- */
+.bricks-pink .raxo-block-name a:hover,
+.bricks-pink .raxo-title a:hover,
+.bricks-pink .raxo-text a:hover {
+	color: #d24087;
+}
+.bricks-pink .raxo-block-button,
+.bricks-pink .raxo-category,
+.bricks-pink .raxo-readmore {
+	background-color: #d24087;
+}
+.bricks-pink .raxo-header,
+.bricks-pink .raxo-wrap > div:first-child {
+	border-color: #d24087;
+}
+
+/* --- Orange Color --- */
+.bricks-orange .raxo-block-name a:hover,
+.bricks-orange .raxo-title a:hover,
+.bricks-orange .raxo-text a:hover {
+	color: #d94d16;
+}
+.bricks-orange .raxo-block-button,
+.bricks-orange .raxo-category,
+.bricks-orange .raxo-readmore {
+	background-color: #d94d16;
+}
+.bricks-orange .raxo-header,
+.bricks-orange .raxo-wrap > div:first-child {
+	border-color: #d94d16;
+}
+
+/* --- Yellow Color --- */
+.bricks-yellow .raxo-block-name a:hover,
+.bricks-yellow .raxo-title a:hover,
+.bricks-yellow .raxo-text a:hover {
+	color: #ebc300;
+}
+.bricks-yellow .raxo-block-button,
+.bricks-yellow .raxo-category,
+.bricks-yellow .raxo-readmore {
+	background-color: #ebc300;
+}
+.bricks-yellow .raxo-header,
+.bricks-yellow .raxo-wrap > div:first-child {
+	border-color: #ebc300;
+}
+
+/* --- Green Color --- */
+.bricks-green .raxo-block-name a:hover,
+.bricks-green .raxo-title a:hover,
+.bricks-green .raxo-text a:hover {
+	color: #4d9926;
+}
+.bricks-green .raxo-block-button,
+.bricks-green .raxo-category,
+.bricks-green .raxo-readmore {
+	background-color: #4d9926;
+}
+.bricks-green .raxo-header,
+.bricks-green .raxo-wrap > div:first-child {
+	border-color: #4d9926;
+}
+
+/* --- Turquoise Color --- */
+.bricks-turquoise .raxo-block-name a:hover,
+.bricks-turquoise .raxo-title a:hover,
+.bricks-turquoise .raxo-text a:hover {
+	color: #1bb39e;
+}
+.bricks-turquoise .raxo-block-button,
+.bricks-turquoise .raxo-category,
+.bricks-turquoise .raxo-readmore {
+	background-color: #1bb39e;
+}
+.bricks-turquoise .raxo-header,
+.bricks-turquoise .raxo-wrap > div:first-child {
+	border-color: #1bb39e;
+}
+
+/* --- Blue Color --- */
+.bricks-blue .raxo-block-name a:hover,
+.bricks-blue .raxo-title a:hover,
+.bricks-blue .raxo-text a:hover {
+	color: #0a55bf;
+}
+.bricks-blue .raxo-block-button,
+.bricks-blue .raxo-category,
+.bricks-blue .raxo-readmore {
+	background-color: #0a55bf;
+}
+.bricks-blue .raxo-header,
+.bricks-blue .raxo-wrap > div:first-child {
+	border-color: #0a55bf;
+}
+
+/* --- Violet Color --- */
+.bricks-violet .raxo-block-name a:hover,
+.bricks-violet .raxo-title a:hover,
+.bricks-violet .raxo-text a:hover {
+	color: #6c3aad;
+}
+.bricks-violet .raxo-block-button,
+.bricks-violet .raxo-category,
+.bricks-violet .raxo-readmore {
+	background-color: #6c3aad;
+}
+.bricks-violet .raxo-header,
+.bricks-violet .raxo-wrap > div:first-child {
+	border-color: #6c3aad;
+}
+
+/* --- Gray Color --- */
+.bricks-gray .raxo-block-name a:hover,
+.bricks-gray .raxo-title a:hover,
+.bricks-gray .raxo-text a:hover {
+	color: #636363;
+}
+.bricks-gray .raxo-block-button,
+.bricks-gray .raxo-category,
+.bricks-gray .raxo-readmore {
+	background-color: #636363;
+}
+.bricks-gray .raxo-header,
+.bricks-gray .raxo-wrap > div:first-child {
+	border-color: #636363;
+}

@@ -1,0 +1,166 @@
+/*
+ * ================================================================
+   RAXO All-mode PRO J2.5 - Template CSS
+ * ----------------------------------------------------------------
+ * @package		RAXO All-mode PRO
+ * @subpackage	All-mode Rational Template
+ * @copyright	Copyright (C) 2009-2012 RAXO Group
+ * @license		RAXO Commercial Licence
+ * 				This file is forbidden for redistribution
+ * @link		http://raxo.org
+ * ================================================================
+*/
+
+
+/* ----- RESET Styles ----- */
+.allmode-rational .allmode_name, .allmode-rational .allmode_showall,
+.allmode-rational .allmode_item,
+.allmode-rational .allmode_title, .allmode-rational img {
+	margin: 0; padding: 0;
+	text-transform: none;
+	background: none; border: 0 none;
+}
+.allmode-rational a {
+	color: #a0dcf0;
+	text-decoration: none;
+}
+.allmode-rational a:hover {
+	color: #fff;
+}
+
+
+/* ----- MODULE BOX Styles ----- */
+.allmode-rational {
+	overflow: hidden;
+	background-color: #202428;
+}
+.allmode-rational .allmode_name {
+	margin: 12px 20px 0;
+	font-size: 15px; font-weight: bold !important;
+	color: #d7dce1;
+}
+.allmode-rational .allmode_showall {
+	margin: -12px 20px 12px;
+	font-size: 12px; text-align: right;
+	color: #d7dce1;
+}
+
+
+/* ----- ITEMS Styles ----- */
+.allmode-rational .allmode_itemsbox {
+	margin: 4px 8px 12px;
+	overflow: hidden;
+}
+.allmode-rational .allmode_item {
+	float: left;
+	margin: 12px 6px; padding: 5px 0;
+	overflow: hidden;
+	border-radius: 4px;
+	background-color: #0f0f0f;
+	box-shadow: 0 2px 3px #272b2e;
+}
+
+
+/* ----- FIELDS Styles ----- */
+.allmode-rational .allmode_title {
+	margin: 1px 6px 4px;
+	font-size: 13px; line-height: 16px;
+	color: #a0dcf0;
+}
+.allmode-rational .allmode_title a {
+	font-size: 13px; font-weight: bold;
+}
+.allmode-rational .allmode_img {
+	margin: 0 5px;
+	border: 1px solid #2a2e32;
+}
+.allmode-rational .allmode_text {
+	margin: 4px 7px 9px;
+	font-size: 11px; line-height: 14px;
+	font-style: italic;
+	color: #bfbfbf;
+}
+.allmode-rational .allmode_readmore {
+	float: right;
+	margin: -2px 8px 0 0;
+	font-size: 10px; line-height: 14px;
+}
+
+
+/* ----- INFO FIELDS Styles ----- */
+.allmode-rational .allmode_info {
+	margin: -1px 5px 5px; padding: 2px 2px 0 6px;
+	overflow: hidden; clear: both;
+	font-size: 10px; line-height: 17px;
+	text-transform: uppercase;
+	color: #647882;
+	border: 1px solid #2a2e32;
+}
+.allmode-rational .allmode_info span {
+	margin-right: 4px; padding-right: 7px;
+	border-right: 1px solid #647882;
+}
+.allmode-rational .allmode_info span:last-child {
+	padding-right: 0;
+	border-right: none;
+}
+.allmode-rational .allmode_comments {												/* Items COMMENTS */
+	float: right;
+	padding: 1px 6px 0 20px;
+	font-size: 12px; line-height: 16px;
+	color: #bebebe;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABCElEQVR4nGNgGBBQWl5humbdusblK1duwYdXrl5d39DYpA/X2DdhwtQr1679P3PuHF584eKF//MWLGyDa+yfOPEySOLIsWN48YnTp/8vWrJkD1xjT/+EiyCNh44exYuPnTyFqRFk2v6DB/Hiw0DN8xct3o3Q2Nt7EeSU3fv24cUgzfMXLUJo7O7pvQJyyvZdu/BikGZUp/b1F4A0giS2bN8OxiDTsflx+qzZzXCNxiamljGxcWmlZWV7du3ZAzYdyH4UGRk5MTIqaioMx8bFZRoYGhpiJAQjY+MoUACkpKXtJTbxsICwjY1NcVpG5i0gmwOKWQhpBCkS4OfnV2dmZpYBsYGYG59GANBORjGDN4mkAAAAAElFTkSuQmCC) no-repeat 4px 50%;
+	/*background: url(ico-comments.png) no-repeat 4px 50%;*/
+}
+.allmode-rational .allmode_rating {													/* Items RATING */
+	float: left;
+	/*margin: -2px 0 0 6px;*/
+	margin-left: 5px;
+	white-space: nowrap;
+}
+	.allmode-rational .allmode_rating span {
+		display: inline-block; margin: 0 1px 0 2px;
+		width: 9px; height: 9px;
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAABFCAYAAACYC8wHAAACN0lEQVR42u2VzYsSYRzHfz0FZgZK+JIgEkL9A7K5BF0j7Cysy9BKsB522JNINBftIMR29hKEd29BHjpGByEkqK3tUASbrfhy8GV9mxnHp+frYYl5prsHf/A5zOczz/PAMMxQoVCICdKCrAPwMdI0bbfT6Rxzh4FHp1wut29ZFjdNUwIenQ7EzOdzPp1OJeDRKZPJqOPxmA8GAwl4dEqlUof9fh/nS8CjUzKZVHu9Hm82mxLw6LS9vb3TaDROsLLdbl+Aa3h0CofD0UAgoAjyDijotJn1nEfv/YItwX0HtladHr67u/eaF1681bkdeHRGi4nrtt8oGgsiO/DojIzRZWPBaW7KwKOLm4ZkWET6QgYeXdw0uKSbROM5l4BHZ6T3ObZ13AnHic5oejb5+Pvqc9cVIjvw6ETeOzfo+q2E4IEDiVXfzFpOq9WKdrtdRZB3QEGner2+E4/HT4LBIA+FQhfgGh6darWa6vf7eSQSkYBHp2q1eujz+VYr7cCjU6VSUT0eD/d6vRLw6FQulw9cLhd3u90S8OhsNpuJ34hJ/wOdSqXSrjj/WDwNbgcenYrFYkyQFmQdgI9t3qb1nB9/zqOnnYkiyDugoLNvp6N7yZfnWkJrHiW0s39oHsGjU/nNT/Xmk+88vP9LAh6dDccmI74gvjQk4Ff96asvaujxJx7a+ywjPDobTkzOLbHK0iXg0dloKl7kpSm2l4FHZzPdmrBrga+0FF93G/DolHz2ISZIC7IOwMf+Avg42/XwPv6bAAAAAElFTkSuQmCC) no-repeat 0 -40px;
+		/*background: url(ico-rating.png) no-repeat 0 0;*/
+	}
+	.allmode-rational .allmode_star span {
+		margin: 0;
+		background-position: 0 -60px;
+	}
+
+
+
+/* ----- WHITE Theme (default) ----- */
+.rational-white {
+	background-color: #e0e4e8;
+}
+.rational-white .allmode_name, .rational-white .allmode_showall {
+	color: #323a42;
+}
+.rational-white .allmode_item {
+	background-color: #fff;
+	box-shadow: 0 2px 3px #c9cdd1;
+}
+.rational-white a, .rational-white .allmode_title {
+	color: #1b5786;
+}
+.rational-white a:hover {
+	color: #333;
+}
+.rational-white .allmode_text {
+	color: #404040;
+}
+.rational-white .allmode_img, .rational-white .allmode_info {
+	color: #7d879b;
+	border-color: #cdd1d5;
+}
+.rational-white .allmode_info span {
+	border-color: #7d879b;
+}
+.rational-white .allmode_rating span {
+	background-position: 0 0;
+}
+.rational-white .allmode_star span {
+	background-position: 0 -20px;
+}

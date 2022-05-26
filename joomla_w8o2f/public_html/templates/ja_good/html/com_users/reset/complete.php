@@ -1,0 +1,54 @@
+<?php
+/**
+ * ------------------------------------------------------------------------
+ * JA Aiga Template
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites:  http://www.joomlart.com -  http://www.joomlancers.com
+ * This file may not be redistributed in whole or significant part.
+ * ------------------------------------------------------------------------
+*/
+defined('_JEXEC') or die;
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
+
+JHtml::_('behavior.keepalive');
+if(version_compare(JVERSION, '3.0', 'lt')){
+	JHtml::_('behavior.tooltip');
+	JHtml::_('behavior.formvalidation');
+}
+
+JHtml::_('behavior.formvalidator');
+?>
+<div class="reset-complete<?php echo $this->pageclass_sfx?>">
+	<?php if ($this->params->get('show_page_heading')) : ?>
+		<div class="page-header">
+			<h1>
+				<?php echo $this->escape($this->params->get('page_heading')); ?>
+			</h1>
+		</div>
+	<?php endif; ?>
+
+	<form action="<?php echo Route::_('index.php?option=com_users&task=reset.complete'); ?>" method="post" class="form-validate">
+
+		<?php foreach ($this->form->getFieldsets() as $fieldset) : ?>
+		<p><?php echo Text::_($fieldset->label); ?></p>
+		<fieldset>
+			<dl>
+			<?php foreach ($this->form->getFieldset($fieldset->name) as $name => $field) : ?>
+				<dt><?php echo $field->label; ?></dt>
+				<dd><?php echo $field->input; ?></dd>
+			<?php endforeach; ?>
+			</dl>
+		</fieldset>
+		<?php endforeach; ?>
+
+		<div class="action-wrap">
+			<button type="submit" class="validate"><?php echo Text::_('JSUBMIT'); ?></button>
+			<?php echo JHtml::_('form.token'); ?>
+		</div>
+	</form>
+</div>

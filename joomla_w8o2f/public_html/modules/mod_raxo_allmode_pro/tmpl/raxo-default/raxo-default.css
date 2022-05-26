@@ -1,0 +1,318 @@
+/**
+ * =============================================================
+ * @package		RAXO Default Module Layout
+ * -------------------------------------------------------------
+ * @copyright	Copyright (C) 2009-2021 RAXO Group
+ * @link		https://www.raxo.org
+ * @license		RAXO Commercial License
+ * 				This file is forbidden for redistribution
+ * =============================================================
+ */
+
+
+/* ----- RESET & DEFAULT Styles ----- */
+.raxo-default {
+	box-sizing: border-box;
+}
+	.raxo-default *,
+	.raxo-default ::before, .raxo-default ::after {
+		box-sizing: inherit;
+	}
+.raxo-default article,
+.raxo-default h3, .raxo-default h4,
+.raxo-default img,
+.raxo-default a {
+	margin: 0; padding: 0;
+	background: transparent none;
+	border: 0 none;
+}
+.raxo-default a {
+	text-decoration: none;
+	outline: 0;
+	transition: all .2s ease-out;
+}
+	.raxo-default a:hover {
+		color: #333333 !important;
+		text-decoration: underline;
+	}
+
+
+
+/* ----- Module BLOCK ----- */
+.raxo-default {
+	margin: 20px 0 24px;
+}
+.raxo-default .raxo-header {
+	border-top: 2px solid #dddddd;
+}
+
+/* --- Block NAME --- */
+.raxo-default .raxo-block-name {
+	padding: 6px 4px;
+	font-size: 16px; font-weight: normal !important;
+	color: #373737;
+}
+
+/* --- Block INTRO --- */
+.raxo-default .raxo-block-intro {
+	padding: 8px 4px 12px;
+}
+
+/* --- Block BUTTON --- */
+.raxo-default .raxo-block-button {
+	margin-top: 4px; padding: 4px;
+	text-align: right !important;
+	border-top: 1px solid #dddddd;
+}
+
+
+
+/* ----- Module ITEMS ----- */
+.raxo-default article {
+	padding: 20px 0;
+	overflow: hidden;
+	background: linear-gradient(90deg, #dddddd 60%, transparent 60%) repeat-x;
+	background-size: 10px 1px;
+}
+.raxo-default .raxo-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: -8px -12px;
+}
+	.raxo-default .raxo-wrap > div {
+		margin: 8px 12px;
+	}
+
+
+
+/* ----- Item IMAGE ----- */
+.raxo-default .raxo-image {
+	flex: 0 1 auto;
+	align-self: flex-start;
+	padding: 3px;
+	background-color: #f6f5f5;
+	border: 1px solid #8e8c8c; border-radius: 2px;
+	transition: border 0.4s ease;
+}
+	.raxo-default .raxo-image img {
+		max-width: 100%;
+		height: auto;
+	}
+
+
+/* ----- CONTENT Styles ----- */
+.raxo-default .raxo-content {
+	flex: 1 1 144px;
+}
+.raxo-default .raxo-title {
+	margin-bottom: 4px;
+	font-size: 14px; line-height: 18px;
+	font-weight: bold;
+}
+	.raxo-default .raxo-top .raxo-title {
+		font-size: 16px; line-height: 20px;
+	}
+.raxo-default .raxo-text {
+	font-size: 13px; line-height: 18px;
+	color: #373737;
+}
+	.raxo-default .raxo-top .raxo-text {
+		font-size: 14px; line-height: 20px;
+	}
+.raxo-default .raxo-readmore {
+	float: right;
+	margin-right: 4px;
+}
+
+
+
+/* ----- INFO Fields ----- */
+.raxo-default .raxo-info {
+	margin-top: -2px; padding-bottom: 4px;
+	font-size: 12px; line-height: 17px;
+	font-style: italic;
+	color: #b4b4b4;
+}
+	.raxo-default .raxo-info > span {
+		font-style: normal;
+		color: #808080;
+	}
+	.raxo-default .raxo-info > span:not(:last-child) {
+		padding-right: 8px;
+	}
+
+
+
+/* ----- META Elements ----- */
+.raxo-default .raxo-meta {
+	margin-bottom: 2px;
+	line-height: 14px;
+	font-size: 12px;
+	color: #525252;
+}
+	.raxo-default .raxo-date,
+	.raxo-default .raxo-hits,
+	.raxo-default .raxo-comments {
+		display: inline-block;
+		padding: 0 10px 0 15px;
+		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAASwCAYAAADCLNu9AAAFNElEQVR4Xu2YAWhVVRzGz3nuas7lpakj3sttiZNYNhhsMJ5jm3ZHI7gUUniBgMYGVQk9CzC0dcNACQohgpzUyApJKCD2CrKodJkzJJjxylWQKAXLosAZe5vz9v3hCvetXe+Bl/CI7wcf57D/93Y2wP/kp/5z9OmGhlmcFnIC+RjZgwg+sgXpRuZSb69bZ31TW7sDgwIyhPSGeRY5JzPpKNd1A6RTxSAz6aQWfHH42imJzlD8N6Ojo4/ImViU7yblxYpL5JBh9IzOND79K87jyOtqcQaR7qrw8gayLab4CzKgbgyEEB2zAGwcXyHNyFXk3Sq1OHeFpb7w/mJKxSMbQ/blOJKqwjOHw3/8KeQ7JKsWIRWWdobPNMtTcUXJePiMMCZJWnsH8QEtkbuK8uTmzcHB1tYclr4z1NmZlzN6l5l0In8VrsucukEQQrBS6pGjSBEJFqQYzuqrwv943IZ4yCVVys3IXuSQCj/lXudF4YqslKXIn+EXX5Yzeg9nSxK/46dNTR62ybxG5xMMMsiu7ZOTalWxOB3p1YQ/45Ss5oHwFzqC0tJFds4xZFAtBM/YiI8EygQUP1JmEEIIIYToMz37zLzZSHXBOm1NxXozmaFTgd6M3owQejN6s9y9DwUjvbkclr7j9w3k5YzeZSYdjUGZ3owQQm92bMvz3kTPvlJvtuNyq1p9dXmyN0PJ3JthadmIj5h5MxRNvRkhhBBCiJ5068y82bC6wzql6mK9mczQqUBvRm9GCL0ZvdlTblfwlrsxh6Xv7HE78nJG7zKTjsagTG9GCKE3O+mu9c66daXebKeaUGvUTLI3Q8ncm2Fp2YiPmHkzFE29GSGEEEKIvjimzLzZS0c6rONn6mO9mczQqTxvRm9GCL0ZvVmqueGierhvog1L39m08UJGzuhdZtLRGJTpzQgh9Gbf56u938ZUqTfbO/iZurX2crI3Q8ncm2Fp2YiPmHkzFE29GSGEEEKIdoc3mHkzNb7WUuftWG8mM3Qqz5vRmxFCb0Zvptz+uwN3d3sOS99xH+/Kyxm9y0w6GoMyvRkhhN7M3X+nh21S6s3U5p+VWjGb7M1QMvdmeMZGfMTMm6Fo6s0IIYQQQnRmdMTMmzV9eMJaffZcrDeTGTqV583ozQihN6M3S13K1KnzXa1tWPrOHxvqM3JG7zKTjsagTG9GCKE3u/3wqx62Sak3K2zrVUW7JtmboWTuzfCMjfiImTdD0dSbEUIIIYTo6gc/N/NmrbPvWen5b2O9mczQqTxvRm9GCL0ZvZnadN8Twfqtr+Sw9J22+5/Jyxm9y0w6GoMyvRkhhN6s9oEPPGyTUm92clm/+lvfkuzNUDL3ZnjGRnzEzJuhaOrNCCGEEEJ0+4GfzLxZ7anXrOUXxmO9mczQqUBvRm9GCL0Zvdk9/U8HXbvfyWHpO85jL+TljN5lJh2NQZnejBBCb9ax/2uv/cCPpd7s955d6sqKNcneDCVzb4alZSM+YubNUDT1ZoQQQgghenv2fTNvNrXyqDW97IdYbyYzdCrPm9GbEUJvRm+WumkurVZNZ9uw9J2a4vqMnNG7zKSjMSjTmxFC6M0e7TzkYZuUerP0X1uVNb8y2ZuhZO7N8IyN+IiZN0PR2JsRQgghhKTT6VkkQL5EhuQe5jnki/A+q7q7u4OWlpYcBsPhhxxJeH9TZtKpOG9Gb0YIvRm9WXSHO9lsNi9n9H5th2sMyvRmhBB6s8bGRg/bpNSbFQoFNTMzk+zNUDL3ZnjGRnzEzJuh+H/1ZoQQQgj5B783rlwJ6bRoAAAAAElFTkSuQmCC");
+		/*background-image: url("icons.png");*/
+		background-repeat: no-repeat;
+		background-size: 10px 1200px;
+	}
+	.raxo-default .raxo-meta span:last-child {
+		padding-right: 0;
+	}
+
+/* --- Item RATING --- */
+.raxo-default .raxo-rating {
+	white-space: nowrap;
+}
+	.raxo-default .raxo-rating span {
+		display: inline-block;
+		width: 10px; height: 10px;
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAG4CAYAAAB8R3Z3AAABm0lEQVR42u2VYUQDYRzGrwzqe9GKoSmgKqVEtM/rOJICIlgIoajvUQAIFQIEibG+FxEUGKRMDC2qz33uGXdcS3vh1Z/8fjzudu/jOTf4ZYIWyuVylNymn2daSn26nMU/B5XX5KyzZXBL6Yqz/W1RK6u6Lih5ZTR1tqkUlJpy2Xz1njIQ/KRDGYsz03x1UXkOfqd5VuyMoqiqm5U2xWWlmnzMeJviRPqrw9TBR5wgfZb8jw/KtHKiHMTPdpRSfAYA8E/ItD64z+XcnlHJg2e0YuWZyXodzwAAmHimOr/v9oxKHjyjFSvPjFzv4hkAABPPPIa9bs+o5MEzWrHyzHDlDc8AAJh45v0mcHtGJQ+e0YqVZ3rmAjwDAGDimfB4yO0ZlTx4RitWnqmUnvAMAICJZ/orp27PqOTBM1qx8sxLuIZnAABMPNO9dOX2jEoePKMVK898nhfwDACAiWemjmpuz6jkwTNasfLM3XoezwAAmHhmY/bC7RmVPHhGK1aeObxdxDMAACaeyWazbs+o5MEzWrHyTKPRwDMAAH/BF4g4Fgjsmfc3AAAAAElFTkSuQmCC") no-repeat 0 0;
+		/*background: url("rating.png") no-repeat 0 0;*/
+		background-size: 10px 440px;
+	}
+	.raxo-default .raxo-star {
+		margin: 0 1px;
+	}
+	.raxo-default .raxo-star span {
+		display: block;
+	}
+
+
+
+/* ----- RESPONSIVE Breakpoints ----- */
+@media (max-width: 480px) {
+	.raxo-default .raxo-top .raxo-image {
+		width: 100%
+	}
+	.raxo-default .raxo-top .raxo-image img {
+		width: 100%
+	}
+}
+
+
+
+/* ----- HIGH RESOLUTION Media Queries ----- */
+@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.3),
+	only screen and (min-device-pixel-ratio: 1.3),
+	only screen and (min-resolution: 120dpi)
+{
+	.raxo-default .raxo-date,
+	.raxo-default .raxo-hits,
+	.raxo-default .raxo-comments {
+		background-image: url(icons@3x.png);
+	}
+	.raxo-default .raxo-rating span {
+		background-image: url(rating@3x.png);
+	}
+}
+
+
+
+/* ----- COLOR Schemes ----- */
+
+/* --- Red Color (default) --- */
+.raxo-default a {color: #cc1f1f !important;}
+.raxo-default .raxo-header,
+.raxo-default .raxo-block-button,
+.raxo-default article:hover .raxo-image {border-color: #cc1f1f;}
+.raxo-default .raxo-date {background-position: 0 0;}
+.raxo-default .raxo-hits {background-position: 0 -30px;}
+.raxo-default .raxo-comments {background-position: 0 -60px;}
+.raxo-default .raxo-star span {background-position: 0 -40px;}
+
+/* --- Pink Color --- */
+.default-pink a {color: #d24087 !important;}
+.default-pink .raxo-header,
+.default-pink .raxo-block-button,
+.default-pink article:hover .raxo-image {border-color: #d24087;}
+.default-pink .raxo-date {background-position: 0 -120px;}
+.default-pink .raxo-hits {background-position: 0 -150px;}
+.default-pink .raxo-comments {background-position: 0 -180px;}
+.default-pink .raxo-star span {background-position: 0 -80px;}
+
+/* --- Orange Color --- */
+.default-orange a {color: #d94d16 !important;}
+.default-orange .raxo-header,
+.default-orange .raxo-block-button,
+.default-orange article:hover .raxo-image {border-color: #d94d16;}
+.default-orange .raxo-date {background-position: 0 -240px;}
+.default-orange .raxo-hits {background-position: 0 -270px;}
+.default-orange .raxo-comments {background-position: 0 -300px;}
+.default-orange .raxo-star span {background-position: 0 -120px;}
+
+/* --- Yellow Color --- */
+.default-yellow a {color: #ebc300 !important;}
+.default-yellow .raxo-header,
+.default-yellow .raxo-block-button,
+.default-yellow article:hover .raxo-image {border-color: #ebc300;}
+.default-yellow .raxo-date {background-position: 0 -360px;}
+.default-yellow .raxo-hits {background-position: 0 -390px;}
+.default-yellow .raxo-comments {background-position: 0 -420px;}
+.default-yellow .raxo-star span {background-position: 0 -160px;}
+
+/* --- Green Color --- */
+.default-green a {color: #4d9926 !important;}
+.default-green .raxo-header,
+.default-green .raxo-block-button,
+.default-green article:hover .raxo-image {border-color: #4d9926;}
+.default-green .raxo-date {background-position: 0 -480px;}
+.default-green .raxo-hits {background-position: 0 -510px;}
+.default-green .raxo-comments {background-position: 0 -540px;}
+.default-green .raxo-star span {background-position: 0 -200px;}
+
+/* --- Turquoise Color --- */
+.default-turquoise a {color: #1bb39e !important;}
+.default-turquoise .raxo-header,
+.default-turquoise .raxo-block-button,
+.default-turquoise article:hover .raxo-image {border-color: #1bb39e;}
+.default-turquoise .raxo-date {background-position: 0 -600px;}
+.default-turquoise .raxo-hits {background-position: 0 -630px;}
+.default-turquoise .raxo-comments {background-position: 0 -660px;}
+.default-turquoise .raxo-star span {background-position: 0 -240px;}
+
+/* --- Blue Color --- */
+.default-blue a {color: #0a55bf !important;}
+.default-blue .raxo-header,
+.default-blue .raxo-block-button,
+.default-blue article:hover .raxo-image {border-color: #0a55bf;}
+.default-blue .raxo-date {background-position: 0 -720px;}
+.default-blue .raxo-hits {background-position: 0 -750px;}
+.default-blue .raxo-comments {background-position: 0 -780px;}
+.default-blue .raxo-star span {background-position: 0 -280px;}
+
+/* --- Light Blue Color --- */
+.default-lightblue a {color: #3598dc !important;}
+.default-lightblue .raxo-header,
+.default-lightblue .raxo-block-button,
+.default-lightblue article:hover .raxo-image {border-color: #3598dc;}
+.default-lightblue .raxo-date {background-position: 0 -840px;}
+.default-lightblue .raxo-hits {background-position: 0 -870px;}
+.default-lightblue .raxo-comments {background-position: 0 -900px;}
+.default-lightblue .raxo-star span {background-position: 0 -320px;}
+
+/* --- Violet Color --- */
+.default-violet a {color: #6c3aad !important;}
+.default-violet .raxo-header,
+.default-violet .raxo-block-button,
+.default-violet article:hover .raxo-image {border-color: #6c3aad;}
+.default-violet .raxo-date {background-position: 0 -960px;}
+.default-violet .raxo-hits {background-position: 0 -990px;}
+.default-violet .raxo-comments {background-position: 0 -1020px;}
+.default-violet .raxo-star span {background-position: 0 -360px;}
+
+/* --- Gray Color --- */
+.default-gray a {color: #1a1a1a !important;}
+.default-gray .raxo-header,
+.default-gray .raxo-block-button,
+.default-gray article:hover .raxo-image {border-color: #1a1a1a;}
+.default-gray .raxo-date {background-position: 0 -1080px;}
+.default-gray .raxo-hits {background-position: 0 -1110px;}
+.default-gray .raxo-comments {background-position: 0 -1140px;}
+.default-gray .raxo-star span {background-position: 0 -400px;}

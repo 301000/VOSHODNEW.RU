@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+    <name>Simple Callback Module</name>
+    <author>Eugene Kopylov</author>
+    <authoremail>cb9toiiia@gmail.com</authoremail>
+    <authorurl>https://github.com/CB9TOIIIA/simplecallback_fork_cb9t</authorurl>
+    <version>1.61</version>
+    <creationdate>24.02.2015</creationdate>
+    <description>
+        <![CDATA[Продвинутый модуль формы обратной связи для CMS Joomla! <br><b><span style="color: red;font-size: 1.1em;">Для настройки и добавление новых возможностей (мои контакты):</span> Сайт: <a target="_blank" href="https://seosm.ru/">www.SEOSM.ru</a> Skype: cb9t.ru / Telegram: <a href="https://t.me/cb9toiiia" target="_blank">@CB9TOIIIA</a> / Почта: cb9toiiia@gmail.com </b><br><iframe frameborder='0' allowtransparency='true' scrolling='no' src='https://tpv.sr/1QoBXDF/' width='750' height='350'></iframe>]]>
+    </description>
+    <files>
+        <filename>mod_simplecallback.xml</filename>
+        <filename module="mod_simplecallback">mod_simplecallback.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/defaultinline-nomodal.php</filename>
+        <filename>tmpl/defaultold.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>README.md</filename>
+        <folder>language</folder>
+        <folder>lib</folder>
+        <folder>crm</folder>
+    </files>
+    <media folder="media/mod_simplecallback" destination="mod_simplecallback">
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>images</folder>
+    </media>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_simplecallback.sys.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_simplecallback.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.mod_simplecallback.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.mod_simplecallback.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset
+                name="basic"
+                label="MOD_SIMPLECALLBACK_PARAMS_LABEL"
+                description="MOD_SIMPLECALLBACK_PARAMS_DESC">
+                <field
+                    type="radio"
+                    name="simplecallback_overlay"
+                    label="MOD_SIMPLECALLBACK_RECEPIENTS_OVERLAY_LABEL"
+                    description="MOD_SIMPLECALLBACK_RECEPIENTS_OVERLAY_DESC"
+                    default="0">
+                    <option value="0">MOD_SIMPLECALLBACK_RECEPIENTS_OVERLAY_MODULE</option>
+                    <option value="1">MOD_SIMPLECALLBACK_RECEPIENTS_OVERLAY_OVERLAY</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_js_body"
+                    label="Использовать JS скрипты в BODY?"
+                    description="Если Вы например вставляете через шорткод модуль, то скрипты могут не подключиться в HEAD документа, поэтому используйте эту опцию"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="spacer"
+                    name="myspacer1"
+                    class="text"
+                    label="MOD_SIMPLECALLBACK_FORM_PARAMS"/>
+                <field
+                    type="text"
+                    name="simplecallback_name_field_label"
+                    label="MOD_SIMPLECALLBACK_NAME_FIELD_LABEL"
+                    description="MOD_SIMPLECALLBACK_NAME_FIELD_LABEL_DESC"
+                    default="MOD_SIMPLECALLBACK_NAME_FIELD"
+                    translate_default="true"></field>
+                <field
+                    type="text"
+                    name="simplecallback_emailclient_field_label"
+                    label="Название поля E-mail"
+                    description=""
+                    default="E-mail"></field>
+                <field
+                    type="text"
+                    name="simplecallback_file_field_label"
+                    label="Название поля Файлы"
+                    description=""
+                    default="Изображение"></field>
+                <field
+                    type="text"
+                    name="simplecallback_phone_field_label"
+                    label="MOD_SIMPLECALLBACK_PHONE_FIELD_LABEL"
+                    description="MOD_SIMPLECALLBACK_PHONE_FIELD_LABEL_DESC"
+                    default="MOD_SIMPLECALLBACK_PHONE_FIELD"
+                    translate_default="true"></field>
+                <field
+                    type="text"
+                    name="simplecallback_phone_field_mask"
+                    label="MOD_SIMPLECALLBACK_PHONE_FIELD_MASK"
+                    description="MOD_SIMPLECALLBACK_PHONE_FIELD_MASK_DESC"
+                    hint="+7 (999) 999-99-99"></field>
+                <field
+                    type="text"
+                    name="simplecallback_phone_field_pattern"
+                    label="Паттерн проверки (RegExp)"
+                    description=""
+                    default="(\+?\d[- .]*){6,14}"></field>
+                    <field
+                    type="spacer"
+                    name="myspacerexexp4"
+                    class="text"
+                    label=" &amp;nbsp;  &lt;b&gt; Универсальный RexExp:  &amp;nbsp;  &lt;/b&gt;  /(+|7|8|9)\d{14}/  "/>
+
+                <field
+                    type="text"
+                    name="simplecallback_city_field_label_main"
+                    label="Название пункта: город, район или свое"
+                    description=""
+                    default=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_city_field_label"
+                    label="Впишите город или регион 1"
+                    description="Задайте имя города для radio элемента"
+                    default=""></field>
+                <field
+                    type="text"
+                    name="simplecallback_city_field_labe2"
+                    label="Впишите город или регион 2"
+                    description="Задайте имя города для radio элемента"
+                    default=""></field>
+                <field
+                    type="text"
+                    name="simplecallback_city_field_labe3"
+                    label="Впишите город или регион 3"
+                    description="Задайте имя города для radio элемента"
+                    default=""></field>
+
+                <field
+                    type="radio"
+                    name="simplecallback_custom_textsimple_enabled"
+                    label="Включить  поле текста"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+
+                </field>
+
+                <field
+                    type="text"
+                    name="simplecallback_custom_textsimple"
+                    label="Произвольное поле текста"
+                    description="Произвольное поле текста"
+                    default=""></field>
+
+                <field
+                    type="radio"
+                    name="simplecallback_rating_enabled"
+                    label="Включить рейтинг"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+
+                </field>
+
+                <field
+                    type="text"
+                    name="simplecallback_rating_field_label"
+                    label="Впишите label рейтинга"
+                    description=""
+                    default=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_message_field_label"
+                    label="MOD_SIMPLECALLBACK_MESSAGE_FIELD_LABEL"
+                    description="MOD_SIMPLECALLBACK_MESSAGE_FIELD_LABEL_DESC"
+                    default="MOD_SIMPLECALLBACK_MESSAGE_FIELD"
+                    translate_default="true"></field>
+                <field
+                    type="text"
+                    name="simplecallback_submit_field_label"
+                    label="MOD_SIMPLECALLBACK_SUBMIT_FIELD_LABEL"
+                    description="MOD_SIMPLECALLBACK_SUBMIT_FIELD_LABEL_DESC"
+                    default="MOD_SIMPLECALLBACK_SUBMIT_FIELD"
+                    translate_default="true"></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_submit_field_css"
+                    label="CSS классы - Отправить"
+                    description=""
+                    default="btn btn-success my-1 button21"></field>
+
+                <field
+                    type="spacer"
+                    name="myspacer2"
+                    class="text"
+                    label="MOD_SIMPLECALLBACK_EMAIL_PARAMS"/>
+                <field
+                    type="text"
+                    name="simplecallback_emails"
+                    label="MOD_SIMPLECALLBACK_RECEPIENTS_EMAILS_LABEL"
+                    description="MOD_SIMPLECALLBACK_RECEPIENTS_EMAILS_DESC"
+                    default=""></field>
+                <field
+                    type="radio"
+                    name="simplecallback_emails_from"
+                    label="Почта от кого = отправитель (аналог reply-to)"
+                    description="Подменяет почту отправителя"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+
+                </field>
+
+                <field
+                    type="text"
+                    name="simplecallback_email_subject"
+                    label="MOD_SIMPLECALLBACK_EMAIL_SUBJECT"
+                    description="MOD_SIMPLECALLBACK_EMAIL_SUBJECT_DESC"
+                    default="MOD_SIMPLECALLBACK_EMAIL_SUBJECT_DEFAULT"
+                    translate_default="true"></field>
+                <field
+                    type="spacer"
+                    name="myspacer3"
+                    class="text"
+                    label="MOD_SIMPLECALLBACK_AJAX_MESSAGES"/>
+                <field
+                    type="textarea"
+                    rows="3"
+                    name="simplacallback_ajax_success_msg"
+                    label="MOD_SIMPLECALLBACK_AJAX_MSG_SUCCESS_LABEL"
+                    default="MOD_SIMPLECALLBACK_AJAX_MSG_SUCCESS_DEFAULT"
+                    translate_default="true"></field>
+                <field
+                    type="textarea"
+                    rows="3"
+                    name="simplacallback_ajax_error_msg"
+                    label="MOD_SIMPLECALLBACK_AJAX_MSG_ERROR_LABEL"
+                    default="MOD_SIMPLECALLBACK_AJAX_MSG_ERROR_DEFAULT"
+                    translate_default="true"></field>
+                <field
+                    type="textarea"
+                    rows="3"
+                    name="simplacallback_ajax_error_captcha_msg"
+                    label="Неверная recaptcha"
+                    default="Неверная captcha! Пожалуйста, попробуйте снова!"
+                    translate_default="true"></field>
+             
+
+                <field
+                    type="radio"
+                    name="simplecallback_mail_enabled"
+                    label="Отключить отправку почты"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="radio"
+                    name="simplecallback_jq_enabled"
+                    label="Подключить насильно jQuery (из Joomla!)"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="radio"
+                    name="simplecallback_zakonrf_mode"
+                    label="Обработка личных данных"
+                    description="Обработка персональных данных"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="text"
+                    name="simplacallback_zakonrf_link_text"
+                    label="Текст ссылки для  Оферты"
+                    description="Текст ссылки для Вашей Оферты"
+                    default="Я СОГЛАСЕН на обработку и хранение моих персональных данных, указанных мною в Форме обратной связи в соответствии с условиями настоящего согласия на обработку персональных данных."></field>
+
+                <field
+                    type="text"
+                    name="simplacallback_zakonrf_link"
+                    label="Ссылка на статью Оферты"
+                    description="Ссылка на статью Оферты http://www.molbulak.ru/docs/soglasen.pdf"
+                    default=""></field>
+
+                <field
+                    type="radio"
+                    name="simplecallback_recaptcha_enabled"
+                    label="Включить капчу"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+
+                </field>
+
+              <field
+                    type="spacer"
+                    name="myspacer2747553"
+                    class="text"
+                    label="&lt;a target=&quot;_blank&quot; style=&quot;color: black;font-weight:bold;font-size:1.1em;background: linear-gradient(270deg, rgb(255, 255, 255), rgb(65, 222, 0)) 0% 0% / 200% 200%;padding: 15px;    display: inline-block;&quot; href=&quot;https://seosm.ru/simplecallback/&quot;&gt; Продвинутый антиспам и другие поля в неограниченном кол-ве - есть в PRO версии &lt;/a&gt; "/>
+
+
+                <field
+                    type="radio"
+                    name="simplecallback_page_url"
+                    label="Прикреплять URL страницы"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+              </field>
+
+                <field
+                    type="radio"
+                    name="simplecallback_textarea_width"
+                    label="Задать cols и rows textarea"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_textarea_width_cols"
+                    label="Ширина поля (сообщение)"
+                    description=""
+                    default="45"></field>
+                <field
+                    type="text"
+                    name="simplecallback_textarea_width_rows"
+                    label="Высота поля (сообщение)"
+                    description=""
+                    default="5"></field>
+               
+               <field
+                    type="radio"
+                    name="simplacallback_my_inline_css_enabled"
+                    label="Включить свой CSS?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>          
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="simplacallback_my_inline_css"
+                    label="Свои CSS правила"
+                    default=".simplecallback textarea { width: 100%; height: 125px;  display: table; } .sweet-alert input[type='text'] { display: none !important; }" >
+                    </field>
+               <field
+                    type="radio"
+                    name="simplacallback_reachgoal_enabled"
+                    label="Включить цели в GA/Ya?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field> 
+                <field
+                    type="text"
+                    name="simplacallback_reachgoal_text"
+                    label="Reachgoal (цель)"
+                    description=""
+                    default="yaCounterXXXXXX.reachGoal('buy_button');"></field>
+               <field
+                    type="radio"
+                    name="simplacallback_redirect_enabled"
+                    label="Включить перенаправление?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field> 
+                <field
+                    type="text"
+                    name="simplacallback_redirect_url"
+                    label="URL страницы"
+                    description=""
+                    default=""></field>
+               <field
+                    type="radio"
+                    name="simplacallback_redirect_url_title"
+                    label="Title страницы?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field> 
+               <field
+                    type="radio"
+                    name="simplacallback_my_text_before_enabled"
+                    label="Включить текст до формы?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field> 
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="simplacallback_my_text_before"
+                    label="Текст до формы"
+                    filter="safehtml"
+                    default="" >
+                    </field>
+               <field
+                    type="radio"
+                    name="simplacallback_my_text_after_enabled"
+                    label="Включить текст после?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field> 
+               <field
+                    type="textarea"
+                    rows="5"
+                    name="simplacallback_my_text_after"
+                    label="Текст после формы"
+                    filter="safehtml"
+                    default="" >
+                    </field>
+               <field
+                    type="radio"
+                    name="simplacallback_label_enabled"
+                    label="Включить label у полей?"
+                    description=""
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field> 
+               <field
+                    type="radio"
+                    name="simplacallback_placeholder_enabled"
+                    label="Включить placeholder?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field> 
+            </fieldset>
+            <fieldset name="crossposting" label="Кросспостинг">
+
+                <field
+                    type="spacer"
+                    name="myspacer516"
+                    class="text"
+                    label="&lt;a target=&quot;_blank&quot;  style=&quot;color: black;font-weight:bold;font-size:1.5em;background: linear-gradient(270deg, rgb(255, 255, 255), rgb(65, 222, 0)) 0% 0% / 200% 200%;padding: 15px;    display: inline-block;&quot; href=&quot;https://seosm.ru/simplecallback/&quot;&gt;ЛЮБЫЕ ИНТЕГРАЦИИ и ПРАВКИ &lt;/a&gt; "/>
+
+                <field
+                    type="spacer"
+                    name="myspacer4"
+                    class="text"
+                    label="MOD_SIMPLECALLBACK_SMSRU_INTEGRATION"/>
+                <field
+                    type="spacer"
+                    name="myspacer5"
+                    class="text"
+                    label="&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAARCAMAAAAc0/kUAAAAb1BMVEVMaXGUxEEAVvQAVvQAVvQAVvQAVvQAVvSUxEEAVvSUxEEAVvQAVvQAVvSUxEGUxEGUxEEAVvQAVvQAVvSUxEGUxEGUxEEAVvSUxEGUxEGUxEGUxEGUxEEAVvSUxEF2pPkpcfaSt/qRwkcAVvSUxEFpjIJ0AAAAI3RSTlMAQCCfMEDff3/v7xDPjxAgcGBQr1Bgv7/fnzCvj3DPEEBAQItL8rkAAAGhSURBVHjavVTZgoMwCESN1vuo9aztHu3/f+MmBHLYPO+8hJDJgAQEwvXiIAZI0RDuYRokQpR76NjVK/ZNWwiRvVzIuyMaxSAPq0R7r0FiW749lDLKXRl3JfwkS10tvKu1dLFnAFGTWQWJ2/uEHADjqvw79EwYBGUsGlktu2HdJUj8fZ8xQ4SrqttkLKguPoR6kg+kQWKfnzHRKzlP8m9YbAGKUeC38d45CRJV/U+4gV7k2U6WQuKJqcsDmgnJ4TIGiKhzwhNuuKrDHq1WWlrSImO1Ag8yoaWHIBHyU4xyh8O07awbQaPxOlNmmFHuoqgrvXnFASIPgsUq0165gVtqaQ8PfTcFYXKXOnpTB4jfPAhbpLDq2nTctlS33Q+SUhASiV3FJkD84UGIwOQdadcKPKelNNyRyHiyFzf3hSJ/Er/kD4R1OB65ZtN4mz/uZrIrL3ftDRF9nY2+YPZfaQqNRBHDlXJXoM0YInLVJzswB/WtRUci5+5v0ODOQ/cjSITDDsLOr9w+/bH5nMQkBtPACG7gIBFWOwiHee+2dyp2KM8fY3SAdJh1/SwAAAAASUVORK5CYII=&quot; alt=&quot;joomla.sms.ru&quot;&gt; &amp;nbsp;  &lt;b&gt;Регистрация: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://joomla.sms.ru/&quot;&gt;www.Joomla.SMS.ru&lt;/a&gt;  —  &lt;b&gt;10% скидка&lt;/b&gt;"/>
+                <field
+                    type="radio"
+                    name="simplecallback_smsru_enable"
+                    label="MOD_SIMPLECALLBACK_SMSRU_ENABLE_LABEL"
+                    description="MOD_SIMPLECALLBACK_SMSRU_ENABLE_DESC"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_smsru_test"
+                    label="Имитировать отправку (debug)"
+                    description="Имитирует отправку сообщения для тестирования ваших программ на правильность обработки ответов сервера. При этом само сообщение не отправляется и баланс не расходуется."
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_smsru_translit"
+                    label="Использовать транслит текста"
+                    description="Переводит кирилицу в транслит"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_smsru_api_id"
+                    label="MOD_SIMPLECALLBACK_SMSRU_API_ID_LABEL"
+                    description="MOD_SIMPLECALLBACK_SMSRU_API_ID_DESC"></field>
+                <field
+                    type="text"
+                    name="simplecallback_smsru_phone"
+                    label="MOD_SIMPLECALLBACK_SMSRU_PHONE_LABEL"
+                    description="MOD_SIMPLECALLBACK_SMSRU_PHONE_DESC"></field>
+
+                <field
+                    type="spacer"
+                    name="myspacer6"
+                    class="text"
+                    label="&lt;br&gt;&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM8AAAAyCAMAAADMU3+qAAAC/VBMVEX////+/v8AAAD9/v38/PwxreD7+/v6+vocl9P///4indgxruEfmtY0suL5+vodmNQuqt4rp935/f4lodwEBAT4+Pg/Pz9GRkYREREuq9z29/cnot3X19d+fn719fUtqeAuquD6/v+AgIAloNsNDQ0dmdVWVlYyr+IgnNckJCQ1NTUjntn7//////1SUlIICAhNTU0jn9r4/PwKCgo5OTkoKChUVFReXl4qpty/v78vLy8Pj9AZldWBgYH6/v5xcXEgmNYopNqQkJDMzMzs7OwsLCxPT09mZmZ2dnZ7e3srotwsp9sxrt+Tk5Pb5+7y8/IUFBQcHBw9PT1BQUFgYGBubm4Uk9N3d3eFhYXExMTJycnD1+TZ2dnk5OTu7u7w8PAyMjJZWVkZlNIam9ooqeAyruKbm5uenp7CwsLU1NTH2ufp6en///v+//8YGBhEREQdltIemdkintggod2MjIwvruA0rOGXl5ejo6OmpqapqamwsLDp9Pb9//0TExNcXFwbmNMdmNY4odSIiIgqreI1seS1tbW5ubm8vLyx3OrF5O3i4uL5/P78/f7///xKSkocl9UjmNMkp9sopt4spd80r+CSkpKgv9nGxsbS0tLo8vPu9fbx+Pf9/v8PkNMTktcbndYjntQxndIzqt83sOVxwuHN3ujf39/W4+vW7fH7/vr+/vv9//8gICBqamp1dXUflMweoNknpN4uqt8+p9Y3sOBHr9dPsNlntNitra2HzOaX0uiq0uOm2eex2uW94evj8fTz+vn3+/gVmNYmoNiJiYkrruVZrdBUs95esddctt54u9p6yOag1eXW1tbD4erb29vR5+zS7PL8//8Zl9Alpt85ruBLs+Flu+CNx9+d0eDN3+3d3d0mmc0sndY0pNhBos5JptJCsd1dvuB6wtqFxN+Uydynw9yPz+CYy+POzs7f7vD7/fUdlNkjo+A1n8snqtwrrN5RrNFir9NtuNxowN/m5ubb7fH3+Pj//v1pq9a30OG51+Ph4eH+/vf23/wYAAAPJUlEQVR42tVaB1QUSbeurm66d8DtdWF6wBHGwBiGlSBRyUsQQSSj6AooOUkQUBQRAyqoYF5zznHNec05r27O6d/85/zSebequ2cEhvfvOc/nO3yTqiv1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&quot; alt=&quot;telegram&quot;&gt; &lt;br&gt; &lt;br&gt; &lt;b&gt; Telegram: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://t.me/mod_simplecallback_bot/&quot;&gt;@mod_simplecallback_bot&lt;/a&gt;"/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_telegram_enabled"
+                    label="Присылать сообщение в Telegram"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_telegram_chat_id"
+                    label="Telegram chat_id"
+                    description="Свой chat_id можете узнать у бота"></field>
+
+              <field
+                    type="spacer"
+                    name="myspacer2747553"
+                    class="text"
+                    label="&lt;a target=&quot;_blank&quot; style=&quot;color: black;font-weight:bold;font-size:1.1em;background: linear-gradient(270deg, rgb(255, 255, 255), rgb(65, 222, 0)) 0% 0% / 200% 200%;padding: 15px;    display: inline-block;&quot; href=&quot;https://seosm.ru/simplecallback/&quot;&gt; Неограниченное кол-во пользователей и другие поля в неограниченном кол-ве - есть в PRO версии &lt;/a&gt; "/>
+
+                <field
+                    type="spacer"
+                    name="myspacer293"
+                    class="text"
+                    label="&lt;br&gt;&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;pozvonim&quot;&gt; &lt;b&gt; &amp;nbsp;   Pozvonim: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://pozvonim.com/?i=706417665&quot;&gt;  Регистрация в Pozvonim.com &lt;/a&gt; &lt;b&gt; +1000 руб. на счет&lt;/b&gt;  "/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_pozvonim_enabled"
+                    label="Включить Callback pozvonim (сразу перезвонить клиенту)"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_pozvonim_key"
+                    label="API key pozvonim"
+                    description=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_pozvonim_uid"
+                    label="uid pozvonim"
+                    description=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_pozvonim_siteid"
+                    label="ID сайта"
+                    description=""></field>
+
+
+                <field
+                    type="spacer"
+                    name="myspacer290983"
+                    class="text"
+                    label="&lt;br&gt;&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;pozvonim&quot;&gt; &lt;b&gt; &amp;nbsp;   Я.Телефония: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://yandex.mightycall.ru/&quot;&gt;  Регистрация в Я.Телефония &lt;/a&gt; &lt;b&gt; &lt;/b&gt;  "/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_yatelefon_enabled"
+                    label="Включить Я.Телефония"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_yatelefon_key"
+                    label="API Key"
+                    description=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_yatelefon_uid"
+                    label="auth_token"
+                    description=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_yatelefon_siteid"
+                    label="ID сайта"
+                    description=""></field>
+
+                <field
+                    type="spacer"
+                    name="myspacer7"
+                    class="text"
+                    label="&lt;br&gt;&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;pushall&quot;&gt; &lt;b&gt; &amp;nbsp;   Pushall: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://pushall.ru/admin&quot;&gt; Регистрация в Pushall&lt;/a&gt;"/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_pushall_enabled"
+                    label="Присылать сообщение в Pushall"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_pushall_id"
+                    label="Pushall chat_id"
+                    description="Свой id в Pushall"></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_pushall_key"
+                    label="Pushall key"
+                    description="Свой key в Pushall"></field>
+
+
+<field type="spacer" name="myspacer261" class="text" label="&lt;br&gt;&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;Slack&quot;&gt; &lt;b&gt; &amp;nbsp;   Mattermost: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://my.mattermost.com/services/new/incoming-webhook/&quot;&gt;  Webhook integration mattermost&lt;/a&gt; " />
+
+                       <field
+                        type="radio"
+                        name="simplecallback_mattermost_enabled"
+                        label="Присылать сообщение в mattermost"
+                        description=""
+                        default="0"
+                        class="btn-group btn-group-yesno"
+                        >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field> 
+                <field
+                        type="text"
+                        name="simplecallback_mattermost_webhookurl"
+                        label="Mattermost webhookurl"
+                        description=""
+                        >
+                </field>
+
+                <field
+                        type="text"
+                        name="simplecallback_mattermost_username"
+                        label="Username BOT"
+                        description="Username BOT"
+                        >
+                </field>
+
+                <field
+                        type="text"
+                        name="simplecallback_mattermost_icon_emoji"
+                        label="Emoji (icon)"
+                        description="icon_emoji BOT"
+                        >
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspacer21"
+                    class="text"
+                    label="&lt;br&gt;&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;Slack&quot;&gt; &lt;b&gt; &amp;nbsp;   Slack: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://my.slack.com/services/new/incoming-webhook/&quot;&gt;  Webhook integration Slack&lt;/a&gt; "/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_slack_enabled"
+                    label="Присылать сообщение в Slack"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_slack_webhookurl"
+                    label="Slack webhookurl"
+                    description=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_slack_username"
+                    label="Username BOT"
+                    description="Username BOT Slack"></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_slack_icon_emoji"
+                    label="Emoji (icon)"
+                    description="icon_emoji BOT Slack"></field>
+
+                <field
+                    type="spacer"
+                    name="myspacer23"
+                    class="text"
+                    label="&lt;br&gt;&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;Trello&quot;&gt; &lt;b&gt; &amp;nbsp;   Trello: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://developers.trello.com/sandbox/&quot;&gt;  Developers.Trello.com/sandbox&lt;/a&gt; "/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_trello_enabled"
+                    label="Присылать сообщение в Trello"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_trello_key"
+                    label="Key Trello"
+                    description=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_trello_token"
+                    label="Token Trello"
+                    description=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_trello_idlist"
+                    label="ID List Trello"
+                    description=""></field>
+
+                <field
+                    type="spacer"
+                    name="myspacer26"
+                    class="text"
+                    label="&lt;br&gt;&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;VK&quot;&gt; &lt;b&gt; &amp;nbsp;   VK: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/CB9TOIIIA/simplecallback_fork_cb9t/blob/master/vktoken.md&quot;&gt; Получить access_token VK&lt;/a&gt; "/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_vk_enabled"
+                    label="Присылать сообщение в VK"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_vk_access_token"
+                    label="ACCESS_TOKEN VK"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="simplecallback_vk_group_id"
+                    label="ID группы (group_id) VK"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="simplecallback_vk_topic_id"
+                    label="ID поста (topic_id) VK"
+                    description=""></field>
+
+                <field
+                    type="text"
+                    name="simplecallback_vk_filter"
+                    label="Фильтрация"
+                    default="owner"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="simplecallback_vk_sort"
+                    label="Сортировка"
+                    default="desc"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="simplecallback_vk_userpush"
+                    label="Упомянуть пользователя"
+                    default="@joomla #заявкассайта"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="simplecallback_vk_from_group"
+                    label="Постинг от лица группы"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_vk_board_comment"
+                    label="Постинг в обсуждениях"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_vk_wall_post"
+                    label="Постинг на стене группы"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+     <field
+                    type="spacer"
+                    name="myspacer20099676"
+                    class="text"
+                    label="&lt;br&gt;&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF8AAAAyCAMAAAAN+PdDAAADAFBMVEX///99fX1nZ2dMTEzz8ezFxcXo6OiHh4fp6en7+/rw8fH+/v7q6up5eXmtra2+vr78/f28ydZmZmbExMTb3Nzd3d319PT8/Py8zt/z8/P19/qnp6exsbG0tLTOzs7Pz8/U1NTj4+Ps7Ozx9fj29vYAZpmdnZ2svWGvr6+1xtW3xtXHyMjM2OLX19fm5ubm7fPt7e3u7u7v7+/5+fl4enujpKTD1OPW1tbg4ODh4eHi4d/l5OTn5+fg6fDy8vLv9Pdub29ycnJ3eXuIioqYmJiqqqqwsLCzs7O1tbW2tra6urq8vL3AwMC0xNO0xdTV1dXe3t7a4eji4uLh5evr6+nn7fHr79/p7/Ts8PX4+Pj2+fv9/f5NTU0AgrZ4eHh+fn6Cg4OSk5OUlZebnJ2srKyurq63t7e5ubq7u7ulwdesxtqzxdTI04fJycm8zd3H0d3K097H1uTR2uPc29jX3ubU4evg5uzr6+vs7+Dv8uHw8O76+/z9/v5QUFAAb6NaWlpdXl9hYWFfYmRhY2VjY2NpaWlqamptbW1xc3R1dXV6fH58fHyMjIxsocaZmpqgoKCioqKlpaampqaysrK1xG+9vb2ow9m/v8CvxtnCwsKxyNy5yNbLy8u9z+DMzMzNzc3S0czR0dHR0dLW1NHH2OXN2+fZ2dna2trW4OrZ4OjY4+za5O3l5eXe5+/m6s/i6O3i6O7i6vHv8fTz9vj39/f6+/b8+/tUVFQAc6ZYWFhaXF5iZWd3d3d4eXp/gYOGhoaHiIiKiYZrkrOOjo6OkJF4l7WUlJSampqIo72Prcebscetrq+XtcyXuNKauNGevNSpu82qvM6jv9a5x3Ssvc+svs+uv9Cpwdamw9iwwNGwwtOzxNS0xtbDw8O0yt3Gxsa8yti9y9i6zN2/zNnOzMjEz9vFz9vF0+DJ0t3J1N/X1dLK2OXP2OLT3+jT3+rW3+ne5Mnd4+rk6c7k6e/s6+ru7ezs8fbt8vbx8fLz8uz08+719vf2+PH3+fH5+Pj4+vzB7983AAAEbklEQVR42u2XdVQjRxyAf2FLmt2UkECc5CJ4QkgguLscznEFDg73HlCg6NFzd3e/3l3Petqru7u7u7t7Zzc0d0BoA5N7fX2v3x8z82Znv7czO/Ib+Peh9HmBXnDxyEoKSbq9NqNVqCXhYhDK+5FtcPerWZaUvDZLFUnxwVwKjoNMVjH5YFzh3sZ7Q0KW3Hm/i4vBcQPWm5SPUjH70I4mj+pKFivRDTE/ofoRZ2EQH7Ah94VkZ/s9UMWyYPHP9dmXFVp1y3weF8PMjQnXZ65ZwRrBYje3OeW16DlfW5OM4z9YybLBcie32eVEJSPO8MAZGXXFchv+WxfcQBDETTK6Re1mHH+k08LFiUtdRvgXXU3QRNO/JkSNtW4XOtEsSlha4WIl0aInXmOzZaZ5MTh+SZXTaGYTVhY4LzmLNTV9aOGqwMsuhG1lM7GqBm/qp9N+1+F1Jd3d3fLf+vv7r+cQyxR4/jds+KXTp9845boZM565nEPM0+P5DTb9s7yRf4Mv8t8sxPMH2vC3zfL2nvL1Bl/aPycIzy9OGO0XeCP/l76M/zYJ4LFitP90QUGB/Ne+vj70f1MAk3Xn/aPhEApc/2TGf8gDsdoHsXG43xnXv5vxe1lXFTXcb8D1ixi/SKngWXAf7hfh+mXJFQmuEDOJIRJVONgPZGlKFmjcGYQO8HN/umQEdzWMPX/2DGv584R6cE/oWDGC0AHjA5BSzrrUJnfMJQoBH63eeSzUDoh+/mtwDUplRoMQRTdmlVKp3OUlybM8iN5eYinww4aaHj1aHDtu/yR3MQocmsJBXBdeCmZRXVyjhrF6PNpsaXFg5VDTndJrrxm3P43Z0qkGaDpmOWJcg+u59E6R3bKJ+do/nn4Rvg+TdsTDKanRaPwhTPo5H8qO7AwzGmfa4Q8G0ksWrFKa6/+KQaExH+WpcS3FzYOoEHakJb45tuT4E3Ip+v7HNsUWH3i9bNsnxae2rfS0wy9M9Uvzy9yoCE4/H2at44ImE16d9sFhAPkL3C3H6Y68bWxr+6LjcTkqbvmsg/6Sh+zwx60lmV4ovHhDNWx0CkQCzwT+02Y+yYd3voFcuUAn2P7gVIHgqitfoZtc8eYJOsuxw6/ZymRqBdRZ9vreTLSLru9VAPJD56fxOQC5b52kz2HG78/4Azrp7GE7/OI1YtTTiGo/khNqoldvaBB9jKXEMP6yp14qQX7BVADP+y7wxz/bw5e3323P+GvQ+KdOpjK2gja9Po2XbmIqV6MkAE2Pnvfowpkcnc4/4OWPOk8WBABdIfds1+kO556xb8snrWvNPHQ7cY/8+1fidSgpe35wYks6Wr3+n25B7Tkfvv/cVzAxVCrrXfR3MQmkRHLuHNAZyZfxSfKsWCwjT5/o+cUBl++uov1F70ZFR0UB7Dp4TM9R5atF4drC3fl5gUKDCbDpCore07X/Y9q/o1Wt35utaRWFU7KIiAhhnjACsCnixJV+NzAwUPQtUMGFEg4VRAUFas0URYlNbA78z/j5E/uFBoK0A/5YAAAAAElFTkSuQmCC&quot; alt=&quot;Acymailing&quot;&gt; &lt;b&gt; &amp;nbsp;   Acymailing: &lt;/b&gt;   &lt;a target=&quot;_blank&quot; href=&quot;https://www.acyba.com/acymailing/&quot;&gt; Acymailing.com &lt;/a&gt; "/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_acy_enabled"
+                    label="Подписки в AcyMailing"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_acy_subscribe"
+                    label="ID рассылок "
+                    default="1,2,3"
+                    description=""></field>
+
+                    <field
+                    type="spacer"
+                    name="simplecallback_acy_extra1"
+                    class="text"
+                     label="Extra-поле (телефон) - phone">
+                    </field>
+
+                    <field
+                    type="spacer"
+                    name="simplecallback_acy_extra2"
+                    class="text"
+                     label="Extra-поле (сообщение) - message">
+
+                    </field>
+
+
+                <field
+                    type="radio"
+                    name="simplecallback_acy_subscribe_active"
+                    label="Активировать подписку?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+            </fieldset>
+
+    <fieldset name="crmintegration" label="Интеграция с CRM">
+
+                <field
+                    type="spacer"
+                    name="myspacer512"
+                    class="text"
+                    label="&lt;a target=&quot;_blank&quot;  style=&quot;color: white;font-weight:bold;font-size:1.5em;background: linear-gradient(0deg, rgb(255, 255, 255), rgb(218, 28, 92)) 0% 0% / 200% 200%;padding: 15px;    display: inline-block;&quot; href=&quot;https://seosm.ru/simplecallback/&quot;&gt;ЛЮБЫЕ ИНТЕГРАЦИИ с другими CRM и ПРАВКИ текущих &lt;/a&gt; "/>
+
+                <field
+                    type="spacer"
+                    name="myspacer5856"
+                    class="text"
+                    label="&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMMAAAAkCAMAAAAD4H6iAAAAq1BMVEUvx/f///8vx/cAZqEvx/cvx/cvx/cvx/cvx/cAZqEAZqEAZqEvx/cAZqEvx/cvx/cvx/cvx/cAZqEvx/cvx/cvx/cAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEAZqEvx/cObcQDAAAAN3RSTlMAALu7RHcR7mbudzMiEZlVzN3MM6qImYhEAN0kCGbV7ajAIqpCRYF+li08VfnbB/DSpcMQBD/8rFerTAAAA5lJREFUeF7t11l7ojAUBuAQSEDZxL1a93acbtN2tsP//2UjSTyQBB5t7TN64blKaD+bt3ASJM6FVDxuj1x31H6KzcDM3V03AvfD7l/oDu/F5DIM4WgC+2qNdMW4uOhqgekKVK2ml2LoglaTsBJYtyzD4wLm2/C3E27nsHjcGXK9+uQ/V2HYgF5dzWcapgtY3srh7RIWU8sQnMMwkwDXnShEGwlDsAwrWJaTJawsAz+HIQbYzNbi4Tf+7TOwDHcwF3cB4Obmxrmdw51hoOQcBkcCJKeolpqFYBu+wzenNDjf4Ls0kPOVY5QrEArUqjG8wEPV8AAvF2XAHp5UPOa+9Aw/xEBZf8BzrcHbVU8bc88oXvyIsT6lA9ZrzKm8py4llAZymDK6S6aGAZ+eoRiPxOrbhuEVfh1jqHQGk2MvN4qQfjnJgqYcqXx+gD9OMxX0e4Yhlj09xn6exEPDMIeHcmI/S7bBy+sNfQnFotzMWYbI3xuSMucRk4ArDkUzhI5b09NY2NOyaJ9FpoFnDYbAMOTUyNmGgWIhwTaMZQ+34oIzUQeFW7e3Ytl7a8J1Q5I3GLgyBF468OVIz9mGgtVhAQlEMGOelya6oQ2SEOLZvXFsg7OC93Lybp9xflQ1pNqpgesxJrwjFqXlTIO6FgkLPnsk6hGzFaAbomcS1xmmr9V3jdcpGuqeicg/ykAiMYzsHBoUNNlbfG7traE6C9y4mD2JsdC4de98b9udNNy+weKP4+BSeEpVl6GhuOB3DhuISKb1OYmhmfxstWENCJZBaFdmXbcoMWxp3yGmP0HVz+luai2FoYGJ5s2PMDARrM/pfY9eLI3QmsnpBmrK1b8DgfwOZBi0v0sjX8w+asCcbRigwTMM8QS7WZR7wIBlGTzNQEWLH2UYoMHO5Rqi4T6MkHCKAe9DXxk6eAwcNojf9cyc3dN5VN8PayhPZ2lysbR+OGjgWbUf0HPY0MMjA3OmQd3kpH5fGuJLklH2vtRs8HalzqqoNGT8KEOvI5bXkMNMJj+d++JuCQRnwhCDNLTLWn/YYPYdvggcNFDG+ng4ajnLwJSUyd9Pdkk/DwgeBlqNTzB0eGlg5LABKzBytiHaP0RU227xUfoig88qy+uQDxiC+pyW6Ssg71eCXKzyqww0CXhleX7veEMS2TnbEGA3B9k+KN6XWqcaPlVo8Bhj3ifCvWAfdE6s0w1f+n36argaroar4WqgRV2E4R++HZ00z7mkVgAAAABJRU5ErkJggg==&quot; alt=&quot;bitrix24&quot;&gt; &amp;nbsp; "/>
+                <field
+                    type="radio"
+                    name="simplecallback_bitrix24_enabled"
+                    label="Включить Битрикс24? (лид)"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+  
+                <field
+                    type="text"
+                    name="simplecallback_bitrix24_crm_host"
+                    label="CRM_HOST"
+                    default="mydomain.bitrix24.ru"
+                    description="">
+                </field>
+  
+                <field
+                    type="text"
+                    name="simplecallback_bitrix24_crm_port"
+                    label="CRM_PORT"
+                    default="443"
+                    description="">
+                </field>
+  
+                <field
+                    type="text"
+                    name="simplecallback_bitrix24_crm_path"
+                    label="CRM_PATH"
+                    default="/crm/configs/import/lead.php"
+                    description="">
+                </field>
+  
+  
+                <field
+                    type="text"
+                    name="simplecallback_bitrix24_crm_login"
+                    label="LOGIN"
+                    default=""
+                    description="">
+                </field>
+  
+  
+                <field
+                    type="text"
+                    name="simplecallback_bitrix24_crm_password"
+                    label="PASSWORD"
+                    default=""
+                    description="">
+                </field>
+  
+                <field
+                    type="text"
+                    name="simplecallback_bitrix24_crm_assigned"
+                    label="ID ответственного"
+                    default="1"
+                    description="">
+                </field>
+
+            <field
+                    type="spacer"
+                    name="myspacsdf523583"
+                    class="text"
+             label="&lt;b&gt; &lt;a href=&quot;https://seosm.ru/&quot; target=&quot;_blank&quot; &gt; Заказать интеграцию (или доработать модуль) &lt;/a&gt; &lt;/b&gt; "/>
+
+                <field
+                    type="spacer"
+                    name="myspacer727445"
+                    class="text"
+                    label="&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAoCAMAAACMwkUuAAAC+lBMVEVMaXE7W2QKCwwKDQ1wyNkICwzP0dQDCAlHyOapqawDBQY4SE1L0vK7vsEEBgcEBgY2nbfAx8oAAABGyOcmPkQBAQHT0dMMGR4CBQYEBgZK0vEwSE6trq8BAQEULDJi4PBjZGbFxMYEBwdHy+w9QkUCBAUMLDNQ1vbLztAhXGsYHyExiZ4GBwfBwsQQHyMFCAhN2vba2txiZGULFxoIDQ9L1PUUNz/Bw8UgXGxNSEd7goYjLC+txMsMGRwshZpM0/MPLjUQGh0cUl88q8bZ2t1FREUjjqRL1PYQMjorKywZHyEXRE9oamvBwsNAQEGIjI5K0fJCvNigoaI3m7APMTrb3eBU7P4gYHDCw8VJ0fNhXFtqz+lFqsITPUYzNDUYSVUeWWesrbDExsgZTltM1fZEREUthZmZmpxaWlw9o70XRVGChIcnc4VRUVJK0/SxsbRAt9RpamtN0/UfXWvd3d82mrOyoJ3DxMZVVlZT5f48q8Wtra9L0vMqeo5Cu9mdnZ9xcXIhYHElb4FiYmS5u7xL0fIviJo2ma2Wl5lL1PaIiYvDx8pX+P/e3d97e30rfpJEw984obg9ss9M1feoqasviZ54eXoykqlN2Pi1t7iSk5SJiovDxcc4oblR5//e4uU0l7BGwNiZmZvGx8lIy+bP0dM5pL5K0fF4pbFK1vfIyctU7v89r8o7qsOio6Xs7e8/uNSqq63V1ti5urtO3f3Ky81M1ffHyMqur7BEwuBBuddIzOlU8P+h0t/QubXIycu5urxIze3CwsS+vsBK0vJL1fdN1/rIyctN1vhN2PvHyMpO2vxW8P/Ky81S5f9T6f/e3uFM1flV7v/Q0dNR4v/LzM5U7P9O2/7Gx8lQ4P/U1dfW1tnb3N7Y2dtP3f9X9P9Y9//g4OPP0NHNztDS09Xi4uTl5ejFxshW8v/q6+5N1/xQ3/5Z+f9P3v/w8fNN1vpb//9P3PzPyspc///n6OpI2PtC2/5O2v5Z/P813P9N3PV85v/n0c3v2NTdBfVnAAAAxnRSTlMAAQQHCAsNEBISFRgaGhsiIiQnKCgrLi4wNTU1ODs7PT5BQ0ZJSkpMTU9QU1RWWFlZW11hZGRkZ2lpamxsbW5xc3R2dnd4en1/f4GCgoWHiImJi4uMjI2OkJGRkZKUlZacnZ6en6GhoaKio6Wlp6ioqKutrq6urrCxsrK1tra3uLq7vL29vr7AwsPExMTGx8jIycvMzs/R1NTW1tfZ29vb3N7f4OHh4+Pl5ubo6enp6+zs7O3u7/Dx8vT19fX19/j4+/v9/v57xGGMAAANZklEQVR42s1Ze1hU1RY/DOIY2pDoKFhYjaCpmBZklhcB32FmDyqzTFO0THuoda+apoI9tBIVFRUwUtMLgVfTVLRuInDmzOuceb9fDAxvEN/avff77n6dMwNI9fWHtb5P56y91z57/fZ67gN1J2jQtLU5OTnP3RsY6TVsWsbazZ+syJg0/B5hsM+YZzMynhsuyIx5Ze3ajKn9qb8KjdnM0AqaZrj2cWRk2NoiWqGgwT8V6z25Y1JvBCPjlEJFK4zta8KQUHIRZOmGH1+g/hI0KAdog4hh2cEIRg5EIZCKM383FcA9iccYxZUPodQKMq2zAf4vQNMYOkDqZcBhsIYKlcXtthDd3d41E4yClM02lKJWCyxzyTOW+rMp5F06mNTZ1D37GZqx6PWszaJStXJqmw5OXGRZHcOY1a2QUzXMo14KMhnj2R5G/cm0lu5ADZkDv2ti2Aa2JHv+9NSkpJSXP3ObddhmOqOnNLeyGTIt84d6ET63G5uoUoa9dMiQQdSfQh3tAQJ58Q4z21KZPV0m4U029Bu1Dk1eqsyMC5uohpZgt39jhMHh4TjzRcBb3OMpqkdyThVIGjkTqDtP0xQknG1sKwJSeajdU5mdJBUFCUkOscTtpCEUtd8NjdPq1tE6vSV7xsTtcFLFzqD67cduZru5hLrTdD9JOxxbXlbF0QzTXD7/08ykiBDoJV9+GUHEhqsxkEIxYNaYEWKwSn02PZKiwovcEEjK4B+b+CTnnUjdYSoioVq2MEE2YnsL676yKzJEHIIy8HW3JYmIifZboBxXFg2YJWaCXl+WiiL8NTCgqlx8ysjwoa8+JqHuKGHH0jWUJIVDdRcbb5YmhuCpftdotyWVF/wEhTRbBiN69TWsrZFNx5lq3E3AVtlAcuPJaHn4D+nT8w/i6FOlgBpx5akkdw6dES8mcysUtJtOElKbSgDSo4ikBW9mJJ6cZET+hMJDzcEMZ9HP+D2JH/43edYDPH/XB98/H/q7EPW4q2dIMP9KM9JA/XZ412IPJlorE3g2B8dIaRSegTrrz47m7VpFhmh9Ze4x40UA0jP/1zW5a9TsL/IP7t305CyHtu1NcozrXcqrS8HvgNn5xflv3NvN0rtHLcg/WFycv3OmcAJh54xw+4bDsttUF2ArY1kc3xuewjVmlwTEDjx6qOvbvPGetZDGxXM4NSLqCPubQHrMLJZDctgNBqtS3rgeIXnIYJXXNI6gJteAKZ+r7mlinL4D+sN5ws0GSzUaudzk9Pk3EbDJKgalmLe7FuV+l1CSkvIdJNK0ybwQSE7Dx28+G88LZ2BoF72F8cAz1qhh4f81IA/ma+SITC6gO6DGOdDR8sGT0rlllhaNKWsan4ayCw4CuW/fIMljFODwUoPd4Whri0Wjm1Goc+UJXfdaogcz3kxxsGcxXNloGOvYIOqVgj9upnHKOJYogrYE/npDP697HI9fRqpYDf6aA8cNSPvjIM8/gtDV21314AeNVkhEH2CtTVfzI9BSuQYttVcbKo7v27clazQ6dQanylxpl716nQIYLdxCElEvIUGVdyU8lz2kJUkKCOO++Zc0hHtPE4gutvtg/9tlpKbJ79v9VMxOJ2T8eSBtfKEhh+3QOpTw11D/xHoHGbO2fR4KsOJnU92FrWlx0tgp40egw0wmXeJtPOsxNwBprEqkhmVsXj1yghm37oUwZPpgtT0B+IOwiVo2RghnwFYldIfjoctIGV/dgTQpFfovqH2tIS2U6msiKmvPbzhqh0+aC6cd9aYaPFxbL6MG1GNL1uWlRlCi57+127VfPyn4iE2R1HW3T5DPlUhHenWgXhh1QHNLeynynGHIjhb9wlABNU5iJGaG4ACSdZdzTiN7GPwb4sAL7tNC5uruKJCGNQTH8VTxwNO1cFzjs9Y67U6rEppHM5r6CsdOdRZY2vdrLeR8bSCQ9uOgLYm5TX2BqrVkhq1VM6RocN7CxDBkRxRYbHlix7azyUyS2GNwXl8Q1Q2QfyB9a/xZaNdH4Bk7LqSCE/oAB4ZDnga22evAqBzyVVO22DXIInGx1UjCvxss7fm1XAlCxVDvqJeIf8SetSuia8GnyZVjwhXSdpjPrZSJcO1RoMAqjBbK2h40UEpskIG4zPDb47gPq1u3G5/e41DH6jwp0AynI03jKhCHPYpN2G6u1yMoidYHgZwfscmFUsAZGOAvKqGPna8wabRPROmxiuvEXYohLuOV4NAXG8064Ei2lQmSYK9TtKwUAqufDrqaEGlHVDClpYd0ZxCsDLHnTKiwdit4d1+MUHs8Hvrfzzgw6rIiQe38HmWAA1NccK2pehHQN+QgeK6Vp07RmvxzhuqRSuZlnWO9VxECoi+FpzZ4nR4KzRBqWRG+6U6nOoQIysxCKrSBNNGVsIZImVXhBIgGAtkAuIew6v5FcGaAkqACLyUh7trylh8BOp/IR5r2aGTvagBkghk7/3xRpw4oR8XgywfyucFeFXCVAh5tvyoczCCBBZoy+mJLJrFYMlp6OLqbEoJcxl7B45yNLPJWGJ9ZncfRex/E1cO/SCykOe3ypU70uw++uu9pJCzpf1WjnTMVAVGx8zt5wQr+8j4vFJngpAq62VD4LCQtfa40YCIAxMZO51fjM+jcxQuKI3UPAGUCrlX9FthoshypmYVMNQqjOhNP6g5C+7kDedsGKNHzB2Aznz06tq7GPgUAQZuu67CV8EnB3Ux6+B1m2MbwvpV8DS0KhMgQBIy3UI9T6OMRzs1d6Qs5VkYihAwP5EWUzDR4z8dxespCYgugjMH6zE5UXK5mAWGc1pSO9R8Z7BWyqTjYuY53oAl6/kpRSa4U73OwW1lG5l+9DkObDYTINJL6ArAC7f9L2zolEpyaGleJhJDpAMRQgSNtcj30rNqnQgTwzqPxe+34EBCQWX6Ytuw+q3+reBJHutjga+kYFd0ZyHMWVBwjgoqGuzUlUDubIZCFxELP4koqw9a7YR6LylLyq68NQSPFGMg7vKdpMBCRAATv+bwLJlzM9ChGMlujMRDtPuR8vZ21SjlacuDvP92icSt4bmAAh0XFdAbyWBPkqkYEX0wC96be5c3EQoE+1JMtwXF/g4PjY4ro69ylbf3B42nsWsuFooKUXB4Kzh1Ggq8+nsLnDVVUPhxktUXURy6keA1W5NGrBituMv/3061ruGv1bBMHu0lnICON0O09L5MTJ4EVykNX6GC6TQhqCVTqlaH4ZUY6Ed5fFLBT8xZJeCCu4+hUB/yAgWi3UHd/pcS9+Xj0mgWoNroQ0/dnOOFIoDbV4p54J9Y29gcfXn5Zc/061uqi+tDwMPidPYe+HZB7OdRKHYbO8wqZ1BcArQKFnuNvYENUMILM8zBknTc3igrZr8C7tCwDrqXEKi4ND+s78zSMbiX4r2LptxqCaTkGQlwuBAFBa7bsNShJzdz5qDi0592PnvCB0m+oqan5739uMcLHoCPvbgb55rZA+pxqQploBtVnxTUeyLEo3pdwwogmOY1PhL1Wg9eyl0BXO8jIrymRUO8hbZQa54kTP8MW2Aej2lqjhXiQ7vvEASDaA/C0el/wIfVxTEBxV/WJ/GJfnclqdVw4LzfV/Puft5qEr+2tlgACFdMBCLWtFZqkmf64COHAPeMIHiW+nAwl9sFvq/z4CKiil1o2RgLf49foz8ZQD7QhFZVyey1sCWvfOeoi6mGT1F6QISBIaUcFZET5dgLAoDVZSU/vAwJKZeP5tLiEpKT4qB0NOroTMQr9uXMqpFwVD2SJGv/pgA0yl2Js8F3Ewo4nHeNFJOrmLAxzqT0XOtz9CgX51lUCzPZmGzp8hMYFGsSP/MhEJq2jHg3Z0aZvGJARfIh5z4WtWG3aZ4eP/HJD45k0Etz9WXUACf+1s3D6IVtHi4xUC9NGNc3ghnJ08GX+hplkrUmsThBtL4wXwRM9hDdRtG8EnhK6vtGlQRYw1BlWRQMT1WpMhjpt3hZ47k5/FnLZpxuVgKnDTGybQWOq0dadeV36hKbRbuKXO/IShSoVe8rTFPy3EZXanB0n2X8D3UZK+T4i9CTH4Luupzy7UgWP3FsSwwNhYAanE8jRNDQT0QZjZhzObMO9HLw33ywZHYKUPOFyarVOlzUvLRKydlfthbxF0thGZ7X2xKIYVCofuOqCTDRgoIjTYZAfXTUapLrBS0/40HKHNe91MC3QwB16NQ4JoBDbwJXOBYewp5nWWby/pAt4h3vUboub83CHU2JOWsCkh51L2td72Cbwxwbvxgi+MfCaLSogai5Nl/I93Lgis17NFSSRmimdsnzDhuXPJEZhnCOeeSohCkwtPX/0HaArpqWnCcOLJMkIFzV+jrC8A00sMTfoIan15YVzZXCzF67oPVxBetB9a9w3NtZWljtXFkK93w4mD6dH8lPbrui93EZZ4H2HjKy7LHdeXFjQcb386bp0WdDGYeIwEdWZomPCOzLdkei2y6nwscu2FxQU5GbOTZDizUM/LMlNj+lwS5E8nJISj6bDPyvJnRs02X97ya704M8wEWNTUuIiAwL4lWIRdQcoPFIqjQgPbCWSdlCkk05SaYdOUBzFC/82/R/WMch1KF7WWwAAAABJRU5ErkJggg==&quot; alt=&quot;amocrm&quot;&gt; &amp;nbsp; "/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_amocrm_enabled"
+                    label="Включить amoCRM?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_amocrm_contacts_enabled"
+                    label="Включить создание контакта?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_amocrm_tasks_enabled"
+                    label="Включить раздел задачи?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+  
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_subdomain"
+                    label="Домен (subdomain)"
+                    default=""
+                    description="">
+                </field>
+  
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_login"
+                    label="Логин в amoCRM"
+                    default=""
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_hash"
+                    label="USER_HASH (API)"
+                    default=""
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_status_id"
+                    label="status_id"
+                    default="7829006"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_pipeline_id"
+                    label="pipeline_id"
+                    default="1222666"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_custom_fields_phone"
+                    label="phone"
+                    default="61348"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_custom_fields_emailclient"
+                    label="emailclient"
+                    default="61350"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_custom_fields_tags"
+                    label="tags"
+                    default="simplecallback"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_custom_fields_element_type"
+                    label="Контакт - 1 / Сделка - 2"
+                    default="2"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_custom_fields_task_type"
+                    label="Тип задачи (Встреча)"
+                    default="52426"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_amocrm_crm_custom_fields_complete_till"
+                    label="Время на выполнение задачи"
+                    default="1800"
+                    description="">
+                </field>
+
+                    <field
+                    type="spacer"
+                    name="myspacsdf6448583"
+                    class="text"
+                    label="&lt;b&gt; &lt;a href=&quot;https://seosm.ru/&quot; target=&quot;_blank&quot; &gt; Заказать интеграцию (или доработать модуль) &lt;/a&gt; &lt;/b&gt; "/>
+
+
+                <field
+                    type="spacer"
+                    name="myspacer73454535"
+                    class="text"
+                    label="&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;clientbase&quot;&gt; &amp;nbsp; "/>
+
+                    <field
+                    type="spacer"
+                    name="myspacsdf333244583"
+                    class="text"
+             label="&lt;b&gt; &lt;a href=&quot;https://seosm.ru/&quot; target=&quot;_blank&quot; &gt; Заказать интеграцию (или доработать модуль) &lt;/a&gt; &lt;/b&gt; "/>
+
+
+                <field
+                    type="spacer"
+                    name="myspacer734688545"
+                    class="text"
+                    label="&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;megaplan&quot;&gt; &amp;nbsp; "/>
+
+                    <field
+                    type="spacer"
+                    name="myspacsdf4432583"
+                    class="text"
+                      label="&lt;b&gt; &lt;a href=&quot;https://seosm.ru/&quot; target=&quot;_blank&quot; &gt; Заказать интеграцию (или доработать модуль) &lt;/a&gt; &lt;/b&gt; "/>
+
+                    <field
+                    type="radio"
+                    name="simplecallback_megaplan_enabled"
+                    label="Включить megaplan?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="text"
+                    name="simplecallback_megaplan_host"
+                    label="Host (поддомен)"
+                    default="example.megaplan.ru"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_megaplan_login"
+                    label="Логин"
+                    default=""
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_megaplan_password"
+                    label="Пароль"
+                    default=""
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_megaplan_deadline"
+                    label="Дедлайн (в днях)"
+                    default="+1 day"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_megaplan_responsible"
+                    label="Код ответственного"
+                    default="1000002"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_megaplan_severity"
+                    label="Важность"
+                    default="1"
+                    description="">
+                </field>
+                <field
+                    type="text"
+                    name="simplecallback_megaplan_middleName"
+                    label="Отчество (или подпись)"
+                    default=""
+                    description="">
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspacer7d34g445"
+                    class="text"
+                    label="&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;salesap&quot;&gt; &amp;nbsp; "/>
+
+             <field
+                    type="spacer"
+                    name="myspacer26744274553"
+                    class="text"
+                    label="&lt;a target=&quot;_blank&quot; style=&quot;color: black;font-weight:bold;font-size:1.1em;background: linear-gradient(270deg, rgb(255, 255, 255), rgb(65, 222, 0)) 0% 0% / 200% 200%;padding: 15px;    display: inline-block;&quot; href=&quot;https://seosm.ru/simplecallback/&quot;&gt; Salesap, PlanFix, retailCRM и многое другое - есть в PRO версии  &lt;/a&gt;  &lt;br&gt;&lt;img src=&quot;https://seosm.ru/salesap.png&quot;&gt; "/>
+
+            </fieldset>
+            <fieldset name="required" label="Настройка  полей">
+
+                <field
+                    type="spacer"
+                    name="myspacer274583"
+                    class="text"
+                    label="&lt;b&gt; Включить поле &lt;/b&gt; "/>
+
+                <field
+                    type="radio"
+                    name="namemod_enabled"
+                    label="Имя"
+                    description="MOD_SIMPLECALLBACK_MESSAGE_ENABLE_DESC"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="radio"
+                    name="emailclient_enabled"
+                    label="Email"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="telmod_enabled"
+                    label="Телефон"
+                    description="MOD_SIMPLECALLBACK_MESSAGE_ENABLE_DESC"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="city_enabled"
+                    label="Города (radio)"
+                    description="MOD_SIMPLECALLBACK_MESSAGE_ENABLE_DESC"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_message"
+                    label="Сообщение"
+                    description="MOD_SIMPLECALLBACK_MESSAGE_ENABLE_DESC"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_file_enabled"
+                    label="Файлы"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspacer2747553"
+                    class="text"
+                    label="&lt;a target=&quot;_blank&quot; style=&quot;color: black;font-weight:bold;font-size:1.1em;background: linear-gradient(270deg, rgb(255, 255, 255), rgb(65, 222, 0)) 0% 0% / 200% 200%;padding: 15px;    display: inline-block;&quot; href=&quot;https://seosm.ru/simplecallback/&quot;&gt; Файлы и другие поля в неограниченном кол-ве - есть в PRO версии &lt;/a&gt; "/>
+
+                <field
+                    type="spacer"
+                    name="myspacer274753"
+                    class="text"
+                    label="&lt;b&gt; Обязательно к заполнению поле &lt;/b&gt;"/>
+
+                <field
+                    type="radio"
+                    name="simplecallback_name_field_label_req"
+                    label="Имя"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="radio"
+                    name="simplecallback_custom_textsimple_req"
+                    label="Произвольный текст"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="radio"
+                    name="simplecallback_emailclient_field_label_req"
+                    label="E-mail"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="radio"
+                    name="simplecallback_phone_field_label_req"
+                    label="Телефон"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="simplecallback_message_req"
+                    label="Сообщения"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+            <fieldset name="custom_inputs3" label="Автоответчик">
+             <field
+                    type="spacer"
+                    name="myspacer267474553"
+                    class="text"
+                    label="&lt;a target=&quot;_blank&quot; style=&quot;color: black;font-weight:bold;font-size:1.1em;background: linear-gradient(270deg, rgb(255, 255, 255), rgb(65, 222, 0)) 0% 0% / 200% 200%;padding: 15px;    display: inline-block;&quot; href=&quot;https://seosm.ru/simplecallback/&quot;&gt; Автоответчик и многое другое - есть в PRO версии  &lt;/a&gt;  &lt;br&gt;&lt;img src=&quot;https://seosm.ru/otvet.png&quot;&gt; "/>
+            </fieldset>
+            <fieldset name="custom_inputs5" label="Дополнительные поля">
+             <field
+                    type="spacer"
+                    name="myspacer22474553"
+                    class="text"
+                    label="&lt;a target=&quot;_blank&quot; style=&quot;color: black;font-weight:bold;font-size:1.1em;background: linear-gradient(270deg, rgb(255, 255, 255), rgb(65, 222, 0)) 0% 0% / 200% 200%;padding: 15px;    display: inline-block;&quot; href=&quot;https://seosm.ru/simplecallback/&quot;&gt; Неограниченном кол-во полей, сортировка и многое другое - есть в PRO версии  &lt;/a&gt; &lt;br&gt;&lt;img src=&quot;https://seosm.ru/polemnogo.png&quot;&gt; "/>
+            </fieldset>
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea"
+                    rows="3"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" priority="1" name="mod_simplecallback">https://raw.githubusercontent.com/CB9TOIIIA/simplecallback_fork_cb9t/master/updatemysimplecallback.xml</server>
+    </updateservers>
+</extension>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="content" method="upgrade">
+	<name>plg_content_msourcecontent</name>
+	<author>Minitek.gr</author>
+	<creationDate>January 2019</creationDate>
+	<copyright>Copyright (C) 2011 - 2022 Minitek.gr. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorUrl>https://www.minitek.gr</authorUrl>
+	<version>4.2.1</version>
+	<description>Content source plugin for Minitek components.</description>
+
+	<files>
+		<folder>forms</folder>
+		<folder>helpers</folder>
+		<folder>images</folder>
+		<filename>index.html</filename>
+		<filename plugin="msourcecontent">msourcecontent.php</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">plg_content_msourcecontent.ini</language>
+		<language tag="en-GB">plg_content_msourcecontent.sys.ini</language>
+	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Minitek Source - Content"><![CDATA[https://update.minitek.gr/joomla-extensions/minitek-source-plugins/plg_content_msourcecontent.xml]]></server>
+	</updateservers>
+</extension>

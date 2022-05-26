@@ -1,0 +1,162 @@
+/*
+ * ================================================================
+   RAXO All-mode PRO J2.5 - Template CSS
+ * ----------------------------------------------------------------
+ * @package		RAXO All-mode PRO
+ * @subpackage	All-mode Pagination Template
+ * @copyright	Copyright (C) 2009-2012 RAXO Group
+ * @license		Copyrighted Commercial Software
+ * 				This file is forbidden for redistribution
+ * @link		http://raxo.org
+ * ================================================================
+*/
+
+
+/* ----- RESET Styles ----- */
+.allmode-pagination .allmode_name, .allmode-pagination .allmode_showall,
+.allmode-pagination .allmode_title, .allmode-pagination img,
+.allmode-pagination ul, .allmode-pagination li {
+	margin: 0; padding: 0;
+	text-transform: none;
+	background: none; border: 0 none;
+}
+.allmode-pagination a {
+	color: #990000 !important;
+	text-decoration: none;
+}
+.allmode-pagination a:hover {
+	text-decoration: underline;
+}
+
+
+/* ----- MODULE BOX Styles ----- */
+.allmode-pagination {
+	overflow: hidden;
+}
+.allmode-pagination .allmode_name {
+	margin: 8px 0 -4px;
+	font-size: 15px; font-weight: bold;
+	color: #333333;
+}
+.allmode-pagination .allmode_showall {
+	padding-right: 10px;
+	text-align: right;
+	color: #666666;
+}
+
+
+/* ----- ITEMS Styles ----- */
+.allmode-pagination .allmode_itemsbox {
+	position: relative;
+	margin-bottom: 4px;
+	overflow: hidden;
+}
+.allmode-pagination .allmode_item {
+	display: none;
+	padding: 18px 0;
+	overflow: hidden;
+	list-style: none; text-align: left;
+	border-bottom: 1px dashed #999999;
+}
+
+
+/* ----- FIELDS Styles ----- */
+.allmode-pagination .allmode_img {
+	float: left;
+	margin-right: 10px;
+}
+.allmode-pagination .allmode_img img {
+	padding: 1px;
+	border: 1px solid #666666;
+}
+.allmode-pagination .allmode_title {
+	font: bold 14px/16px "Arial","Helvetica",sans-serif;
+	color: #333333;
+}
+.allmode-pagination .allmode_title a {
+	font-weight: bold;
+	color: #333333 !important;
+}
+.allmode-pagination .allmode_text {
+	padding-top: 7px;
+	font: 12px/15px "Arial","Helvetica",sans-serif;
+	color: #545454;
+}
+.allmode-pagination .allmode_readmore {
+	padding-left: 5px;
+	font-size: 11px; line-height: 15px;
+}
+
+
+/* ----- INFO FIELDS Styles ----- */
+.allmode-pagination .allmode_info {
+	padding: 0 0 4px 0;
+	font: 9px/12px "Verdana","Geneva",sans-serif;
+	text-transform: uppercase;
+	color: #666666;
+}
+.allmode-pagination .allmode_info span {
+	margin-right: 12px;
+}
+
+
+/* ----- DETAILS FIELDS Styles ----- */
+.allmode-pagination .allmode_details {
+	padding: 6px 0 0 2px;
+	font: 9px/13px "Verdana","Geneva",sans-serif;
+	color: #666666;
+}
+.allmode-pagination .allmode_author,
+.allmode-pagination .allmode_hits,
+.allmode-pagination .allmode_comments a {
+	margin-right: 12px; padding-left: 15px;
+	background: url(icons.png) no-repeat 0 0;
+}
+.allmode-pagination .allmode_hits {
+	padding-left: 16px;
+	background-position: 0 -50px;
+}
+.allmode-pagination .allmode_comments a {
+	background-position: 0 -100px;
+}
+.allmode-pagination .allmode_comments a:hover {
+	background-position: 0 -150px;
+}
+
+
+/* ----- PAGES Swither ----- */
+.allmode-pagination .allmode_pagenav {
+	margin-top: 2px; padding: 4px 8px;
+	overflow: hidden;
+	font: 11px/17px "Verdana","Geneva",sans-serif;
+	background-color: #f7f7f7;
+}
+.allmode-pagination .allmode_pagenav a {
+	float: left;
+	display: block;
+	margin: 0 2px; padding: 0 4px;
+	height: 17px;
+	line-height: 17px;
+}
+.allmode-pagination .allmode_pagenav a:hover {
+	background-color: #ffffff;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.allmode-pagination .allmode_pagenav a.active_page {
+	color: #333333 !important;
+	background-color: #d1d1d1;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.allmode-pagination .allmode_pagenav .previous_link,
+.allmode-pagination .allmode_pagenav .next_link {
+	color: #777777 !important;
+}
+.allmode-pagination .allmode_pagenav .first_link,
+.allmode-pagination .allmode_pagenav .last_link {
+	display: none;
+	font-size: 14px;
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>Tile Menu</name>
+     <author>Pixel Point Creative</author>
+     <creationDate>Nov 2013</creationDate>
+     <copyright>Copyright (c) Pixel Point Creative LLC.</copyright>
+     <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+     <authorEmail>info@pixelpointcreative.com</authorEmail>
+     <authorUrl>www.pixelpointcreative.com</authorUrl>
+     <version>1.2</version>
+	<description> Tile menu is a responsive horizontal menu with animated text effects.</description>
+	
+	<files>
+		<filename module="mod_tile_menu">mod_tile_menu.php</filename>		
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+        <folder>core</folder>
+         <folder>elements</folder>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_tile_menu/elements">
+            <fieldset name="basic" label = "Menu Options">
+				<field label="Version Check" type="upgradecheck" />
+            	<field name="moduleclass_sfx" type="text" default = "" label="Module class sufix" description="module class sufix"/>
+				<field name="menutype" type="menu" label="Select a Menu" description="choose a menu for the module" />                
+				<field name="startlevel" type="list" default="1" label="Start level" description="start level">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field name="endlevel" type="list" default="all" label="End level" description="end level">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="all">All</option>
+				</field>
+			
+				
+            	<field name="menu_color1" type="text" default="#e61e20"  label="Background Color 1" description="Background Color for Menu Item 1"/>
+				<field name="menu_color2" type="text" default="#e61e20"  label="Background Color 2" description="Background Color for Menu Item 2"/>
+				<field name="menu_color3" type="text" default="#e61e20"  label="Background Color 3" description="Background Color for Menu Item 3"/>
+				<field name="menu_color4" type="text" default="#e61e20"  label="Background Color 4" description="Background Color for Menu Item 4"/>
+				<field name="menu_color5" type="text" default="#e61e20"  label="Background Color 5" description="Background Color for Menu Item 5"/>
+				<field name="menu_color6" type="text" default="#e61e20"  label="Background Color 6" description="Background Color for Menu Item 6"/>
+				 
+				<field name="jquery" type="radio" default="0" class="btn-group" label="Include jQuery Library" description="Include jQuery Library">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>    
+			</fieldset>
+            
+			
+      </fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Tile Menu Auto Updater">http://www.pixelpointcreative.com/autoupdates/tilemenu.xml</server>
+	</updateservers>
+
+</extension>

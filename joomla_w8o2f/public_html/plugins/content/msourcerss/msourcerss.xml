@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="content" method="upgrade">
+	<name>plg_content_msourcerss</name>
+	<author>Minitek.gr</author>
+	<creationDate>January 2019</creationDate>
+	<copyright>Copyright (C) 2011 - 2019 Minitek.gr. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorUrl>https://www.minitek.gr</authorUrl>
+	<version>1.0.2</version>
+	<description>RSS source plugin for Minitek components.</description>
+
+	<files>
+ 	  <folder>forms</folder>
+		<folder>helpers</folder>
+		<folder>images</folder>
+		<filename>index.html</filename>
+		<filename plugin="msourcerss">msourcerss.php</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">en-GB.plg_content_msourcerss.ini</language>
+		<language tag="en-GB">en-GB.plg_content_msourcerss.sys.ini</language>
+	</languages>
+
+	<updateservers>
+  	<server type="extension" priority="1" name="Minitek Source - RSS"><![CDATA[http://update.minitek.gr/joomla-extensions/minitek-source-plugins/plg_content_msourcerss.xml]]></server>
+  </updateservers>
+
+</extension>

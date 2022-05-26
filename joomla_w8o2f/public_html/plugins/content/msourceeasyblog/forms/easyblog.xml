@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="source_params">
+		<fieldset 
+			name="easyblog_source"
+			addfieldpath="/administrator/components/com_easyblog/elements"
+		>
+
+			<field
+				name="source_type"
+				type="hidden"
+			/>
+
+			<field
+				name="eb_offset"
+				type="number"
+				default="0"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OFFSET_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OFFSET_DESC"
+			/>
+
+			<field type="spacer" hr="true" />
+
+			<field
+				name="eb_category_filtering_type"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_CATEGORY_FILTERING_TYPE_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_CATEGORY_FILTERING_TYPE_DESC"
+			>
+				<option value="1">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_INCLUSIVE</option>
+				<option value="0">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_EXCLUSIVE</option>
+			</field>
+
+			<field
+				name="eb_catids"
+				type="multicategories"
+				layout="joomla.form.field.list-fancy-select"
+				default=""
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_CATEGORIES_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_CATEGORIES_DESC"
+			/>
+
+			<field
+				name="eb_getChildren"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_INCLUDE_CHILDREN_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_INCLUDE_CHILDREN_DESC"
+			>
+				<option value="1">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_INCLUDE</option>
+				<option value="0">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_EXCLUDE</option>
+			</field>
+
+			<field type="spacer" hr="true" />
+
+			<field
+				name="eb_tag_filtering_type"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_TAG_FILTERING_TYPE_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_TAG_FILTERING_TYPE_DESC"
+			>
+				<option value="1">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_INCLUSIVE</option>
+				<option value="0">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_EXCLUSIVE</option>
+			</field>
+
+			<field
+				name="eb_tagids"
+				type="multitags"
+				default=""
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_TAGS_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_TAGS_DESC"
+			/>
+
+			<field type="spacer" hr="true" />
+
+			<field
+				name="eb_team_filtering_type"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_TEAM_FILTERING_TYPE_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_TEAM_FILTERING_TYPE_DESC"
+			>
+				<option value="1">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_INCLUSIVE</option>
+				<option value="0">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_EXCLUSIVE</option>
+			</field>
+
+			<field
+				name="eb_teamids"
+				type="text"
+				default=""
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_TEAMS_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_TEAMS_DESC"
+			/>
+
+			<field type="spacer" hr="true" />
+
+			<field
+				name="eb_bloggerlisttype"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_AUTHOR_FILTERING_TYPE_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_AUTHOR_FILTERING_TYPE_DESC"
+			>
+				<option value="1">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_INCLUSIVE</option>
+				<option value="0">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_EXCLUSIVE</option>
+			</field>
+
+			<field
+				name="eb_bloggerlist"
+				type="text"
+				default=""
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_AUTHORS_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_AUTHORS_DESC"
+			/>
+
+			<field type="spacer" hr="true" />
+
+			<field
+				name="eb_exclude_items"
+				type="text"
+				default=""
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_EXCLUDE_ARTICLES_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_EXCLUDE_ARTICLES_DESC"
+			/>
+
+			<field
+				name="eb_usefeatured"
+				type="radio"
+				layout="joomla.form.field.radio.switcher"
+				default="0"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_ONLY_FEATURED_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_ONLY_FEATURED_DESC"
+			>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field
+				name="eb_showFrontpage"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_FRONTPAGE_ARTICLES_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_FRONTPAGE_ARTICLES_DESC"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+				<option value="2">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_ONLY_FRONTPAGE</option>
+			</field>
+
+			<field
+				name="eb_sortby"
+				type="list"
+				default="latest"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_ORDERING_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_ORDERING_DESC"
+			>
+				<option value="latest">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_CREATED_DATE</option>
+				<option value="published">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_START_PUBLISHING_DATE</option>
+				<option value="modified">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_MODIFIED_DATE</option>
+				<option value="popular">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_VIEWS</option>
+				<option value="alphabet">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_TITLE</option>
+				<option value="random">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_RANDOM</option>
+			</field>
+
+			<field
+				name="eb_sortDirection"
+				type="list"
+				default="DESC"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_ORDERING_DIRECTION_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_ORDERING_DIRECTION_DESC"
+			>
+				<option value="ASC">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_ASCENDING</option>
+				<option value="DESC">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_OPTION_DESCENDING</option>
+			</field>
+
+			<field type="spacer" hr="true" />
+
+			<field
+				name="eb_image_type"
+				type="list"
+				default="1"
+				label="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_IMAGE_TYPE_LABEL"
+				description="PLG_CONTENT_MSOURCEEASYBLOG_FIELD_IMAGE_TYPE_DESC"
+			>
+				<option value="article">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_ARTICLE_IMAGE</option>
+				<option value="inline">PLG_CONTENT_MSOURCEEASYBLOG_FIELD_INLINE_IMAGE</option>
+			</field>
+
+		</fieldset>
+	</fields>
+</form>

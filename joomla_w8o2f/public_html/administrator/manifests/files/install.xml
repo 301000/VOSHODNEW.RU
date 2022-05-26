@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="file" version="1.3.4" client="site" method="upgrade">
+  <name>Language pack for DJ-Tabs</name>
+  <creationDate>17.July.2017</creationDate>
+  <author>DJ-Extensions.com</author>
+  <copyright>Copyright (C) 2017 DJ-Extensions.com, All rights reserved</copyright>
+  <license>http://www.gnu.org/licenses GNU/GPL</license>
+  <authorEmail>contact@dj-extensions.com</authorEmail>
+  <authorUrl>http://dj-extensions.com</authorUrl>
+  <version>1.3.4</version>
+  <description>Translation for DJ-Tabs</description>
+  <fileset>
+    <files folder="administrator" target="administrator/language/ru-RU">
+      <filename>ru-RU.plg_editors-xtd_djtabs.sys.ini</filename>
+      <filename>ru-RU.plg_editors-xtd_djtabs.ini</filename>
+      <filename>ru-RU.plg_content_djtabs.sys.ini</filename>
+      <filename>ru-RU.com_djtabs.sys.ini</filename>
+      <filename>ru-RU.com_djtabs.ini</filename>
+      <filename>ru-RU.plg_content_djtabs.ini</filename>
+    </files>
+    <files folder="site" target="language/ru-RU">
+      <filename>ru-RU.mod_djtabs.ini</filename>
+      <filename>ru-RU.com_djtabs.ini</filename>
+    </files>
+  </fileset>
+</extension>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="content" method="upgrade">
+	<name>plg_content_msourcecustom</name>
+	<author>Minitek.gr</author>
+	<creationDate>March 2020</creationDate>
+	<copyright>Copyright (C) 2011 - 2020 Minitek.gr. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorUrl>https://www.minitek.gr</authorUrl>
+	<version>1.0.1</version>
+	<description>Custom items source plugin for Minitek components.</description>
+
+	<files>
+ 	  <folder>forms</folder>
+		<folder>helpers</folder>
+		<folder>images</folder>
+		<filename>index.html</filename>
+		<filename plugin="msourcecustom">msourcecustom.php</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">en-GB.plg_content_msourcecustom.ini</language>
+		<language tag="en-GB">en-GB.plg_content_msourcecustom.sys.ini</language>
+	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Minitek Source - Custom Items"><![CDATA[http://update.minitek.gr/joomla-extensions/minitek-source-plugins/plg_content_msourcecustom.xml]]></server>
+	</updateservers>
+
+</extension>

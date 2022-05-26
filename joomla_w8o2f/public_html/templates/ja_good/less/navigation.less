@@ -1,0 +1,607 @@
+/**
+* $JA#COPYRIGHT$
+*/
+ 
+
+// ------------------------------------------------------
+// CORE NAVIGATIONS ELEMENTS
+// ------------------------------------------------------
+
+//
+// DROPDOWN (dropdowns.less)
+// --------------------------------------------------
+
+// Dropdown arrow/caret
+// --------------------
+.caret {
+}
+
+
+// The dropdown wrapper (div)
+// --------------------------
+.dropdown {
+}
+
+
+// The dropdown menu (ul)
+// ----------------------
+.dropdown-menu {
+  box-shadow: 4px 4px 5px rgba(0,0,0,0.1);
+  // Dividers (basically an hr) within the dropdown
+  .divider {
+    background: transparent;
+    height: auto;
+    overflow: visible;
+    margin: 0;
+  }
+
+  // Links within the dropdown menu
+  li {
+    > a,
+    > span {
+      color: @dropdown-link-color;
+      display: block;
+      padding: 5px 20px;
+
+      &:hover,&:focus,&:active {
+        background: @dropdown-link-hover-bg;
+        color: @dropdown-link-hover-color;
+      }
+    }
+
+    &.open {
+      > a,
+      > span {
+        &,&:hover,&:focus,&:active {
+          background: @dropdown-link-hover-bg;
+        }
+      }
+    }
+
+    &.active {
+      > a,
+      > span {
+        &,&:hover,&:focus,&:active {
+          background: @dropdown-link-active-bg;
+          color: @dropdown-link-active-color;
+        }
+      }
+    }
+  }
+}
+
+// Hover/Focus state
+.dropdown-menu > li > a {
+  &:hover,
+  &:focus {
+  }
+}
+
+// Active state
+.dropdown-menu > .active > a {
+  &,
+  &:hover,
+  &:focus {
+  }
+}
+
+// Disabled state
+.dropdown-menu > .disabled > a {
+  &,
+  &:hover,
+  &:focus {
+  }
+}
+
+// Nuke hover/focus effects
+.dropdown-menu > .disabled > a {
+  &:hover,
+  &:focus {
+  }
+}
+
+
+// Dropdown section headers
+// ------------------------
+.dropdown-header {
+  padding: 3px 20px;
+  font-size: @font-size-base;
+  // T3: Links in Header
+  a {
+    color: @dropdown-header-color;
+  }
+}
+
+
+// T3 Note: Extend BS3 Dropdown Menu to multi level
+// See "base-bs3/less/legacy-navigation.less"
+// Dropdown Sub Menus
+// ------------------
+.dropdown-submenu > .dropdown-menu {
+}
+
+// Caret to indicate there is a submenu
+.dropdown-submenu > a:after {
+  border-left-color: @dropdown-link-color;
+}
+
+.dropdown-submenu:hover > a:after {
+  border-left-color: @dropdown-link-hover-color;
+}
+
+
+
+//
+// NAVS (navs.less)
+// --------------------------------------------------
+
+// Base class
+// ----------
+.nav {
+
+  // Nav Items
+  > li {
+    > a {
+      // Hover state
+      &:hover,
+      &:focus {
+      }
+    }
+
+    // Disabled state
+    &.disabled > a {
+      // Hover state
+      &:hover,
+      &:focus {
+      }
+    }
+  }
+
+  // Seperator
+  > li > .separator {
+    position: relative;
+    display: block;
+    padding: @nav-link-padding;
+    line-height: @line-height-computed;
+
+    @media (min-width: @grid-float-breakpoint) {
+      padding-top: ((@navbar-height - @line-height-computed) / 2);
+      padding-bottom: ((@navbar-height - @line-height-computed) / 2);
+    }
+  }
+
+  > li > span {
+    @media (max-width: @screen-sm-max) {
+      padding: @nav-link-padding;
+      display: inline-block;
+    }
+  }
+
+
+  // Open dropdowns
+  .open > a {
+    &,
+    &:hover,
+    &:focus {
+      // The caret
+      .caret {
+      }
+    }
+  }
+
+  //End
+}
+
+
+// Tabs
+// ----
+.nav-tabs {
+  border: none;
+  margin-bottom: @t3-global-margin;
+
+  > li {
+
+    // Actual tabs (as links)
+    > a {
+      border: none;
+      color: @text-color;
+      padding: 0;
+      margin-right: @t3-global-margin;
+
+      // Hover state
+      &:hover,
+      &:focus, 
+      &:active {
+        border: none;
+        background: transparent;
+        color: @brand-primary;
+      }
+
+    }
+
+    &:hover {
+      background: transparent;
+    }
+
+    // Active state, and it's :hover to override normal :hover
+    &.active > a {
+      color: @brand-primary;
+      &,
+      &:hover,
+      &:focus, 
+      &:active {
+        background: transparent;
+        border: none;
+        color: darken(@brand-primary, 10%);
+      }
+    }
+
+    &.open {
+      &:hover,
+      &:focus, 
+      &:active {
+
+        a {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  .dropdown {
+    .dropdown-menu {
+      >li {
+        padding: 0 8px;
+      }
+    }
+
+    &.open {
+      > a {
+        color: @brand-primary;
+        background: transparent;
+      }
+    }
+  }
+
+  //End
+}
+
+
+.example-navigation {
+  .tab-content {
+    border: none !important;
+    padding: 0 !important;
+  }
+}
+
+// Pills
+// -----
+.nav-pills {
+  > li {
+
+    // Links rendered as pills
+    > a {
+    }
+
+    + li {
+    }
+
+    // Active state
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: darken(@brand-primary, 6.5%);
+        // The caret
+        .caret {
+        }
+      }
+    }
+
+  }
+
+  // End
+}
+
+
+// Dropdowns Caret in Nav
+// ----------------------
+// Make dropdown carets use link color in navs
+.nav {
+  .caret {
+    border-top-color: @navbar-default-link-color;
+    border-bottom-color: @navbar-default-link-color;
+    border-bottom-width: 0;
+    border-style: solid;
+  }
+
+  a:hover,
+  .open > a,
+  .open > span,
+  .active > a,
+  .active > span {
+    .caret {
+      border-top-color: @navbar-default-link-hover-color;
+      border-bottom-color: @navbar-default-link-hover-color;
+    }
+  }
+}
+
+
+
+// 
+// BREADCRUMS (breadcrums.less)
+// -------------------------------------------------------
+.t3-navhelper {
+  background: @breadcrumb-bg;
+  border-top: 1px solid @t3-border-color;
+  color: @gray;
+  padding: 5px 0;
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+
+  > li {
+    + li:before {
+      content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+    }
+  }
+
+  // Active
+  > .active {
+    color: @breadcrumb-active-color;
+
+    + li:before {
+      content: "";
+      padding: 0;
+    }
+
+    .hasTooltip {
+      padding-right: (@t3-global-padding / 2);
+    }
+  }
+
+  // T3 Note: Hide default Joomla! arrow in breadcrum
+  .divider {
+    display: none;
+  }
+}
+
+
+
+//
+// PAGINATION (MULTIPLE PAGES) (pagination.less)
+// --------------------------------------------------
+.pagination-wrap {
+}
+
+.view-search {
+  .pagination {
+    width: 100%;
+  }
+}
+
+.pagination {
+
+  .pagination {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  > li {
+    > a,
+    > span {
+      color: @text-color;
+      font-size: 11px;
+      font-weight: 700;
+      height: 40px;
+      line-height: 38px;
+      margin: @t3-global-margin / 6;
+      padding: 0;
+      text-align: center;
+      text-transform: uppercase;
+      width: 40px;
+    }
+
+
+    // Replace text = icon
+    >a[title="Next"],
+    >a[title="End"],
+    >a[title="Start"],
+    >a[title="Prev"]
+    {
+      position: relative;
+      text-indent: -100000px;
+
+      &:after {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 16px;
+        left: 50%;
+        position: absolute;
+        text-indent: 0px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+        z-index: 10;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    >a[title="Next"] {
+      &:after {
+        content: "\f105";
+      }
+    }
+
+    >a[title="End"] {
+      &:after {
+        content: "\f101";
+      }
+    }
+
+    >a[title="Prev"] {
+      &:after {
+        content: "\f104";
+      }
+    }
+
+    >a[title="Start"]{
+      &:after {
+        content: "\f100";
+      }
+    }
+  }
+
+  // Hover state
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      color: @text-color;
+    }
+  }
+
+  // Active state
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      border-color: @pagination-active-bg;
+      //background: @btn-primary-bg;
+    }
+  }
+
+  // Disabled state
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      display: none;
+    }
+  }
+}
+
+.infinity-wrap {
+  padding: 0 0 @grid-gutter-width;
+
+  // Mobile view
+  @media (max-width: @screen-sm-max) {
+    padding: 0 0 @t3-global-padding;
+  }
+}
+
+.pagenav-article {
+  padding-left: 0;
+  padding-right: 0;
+
+  .btn {
+    // Mobile view
+    @media (max-width: @screen-xs-max) {
+      margin-bottom: @t3-global-margin / 4;
+      margin-top: @t3-global-margin / 4;
+    }
+  }
+}
+
+// T3 Note: Fix for Joomla! Pagination
+// ------------------------------------
+.pagination {
+  .clearfix();
+  display: block;
+  // left align on Tablets / Desktop
+  @media screen and (min-width: @screen-sm) {
+    float: left;
+  }
+  // re-defined nested class - joomla structure
+  .pagination {
+    //display: inline-block;
+  }
+}
+
+
+// Counter
+// -------
+.counter {
+  display: inline-block;
+  margin-top: @line-height-computed;
+  padding: @padding-base-vertical @padding-base-horizontal;
+  background-color: @pagination-bg;
+  border: 1px solid @pagination-border;
+  border-radius: @border-radius-base;
+  // Right align on Tablets / Desktop
+  @media screen and (min-width: @screen-sm) {
+    float: right;
+  }
+}
+
+
+// Sizing
+// ------
+// Large
+.pagination-lg {
+}
+
+// Small
+.pagination-sm {
+}
+
+
+
+//
+// PAGER PAGINATION (pager.less)
+// --------------------------------------------------
+.pager {
+
+  li {
+    > a,
+    > span {
+    }
+
+    // Hover state
+    > a:hover,
+    > a:focus {
+    }
+
+    // Active state
+    &.active,
+    &.active:hover,
+    &.active:focus {
+    }
+  }
+
+  .next {
+    > a,
+    > span {
+    }
+  }
+
+  .previous {
+    > a,
+    > span {
+    }
+  }
+
+  // Disabled state
+  .disabled {
+    > a,
+    > a:hover,
+    > a:focus,
+    > span {
+    }
+  }
+
+}

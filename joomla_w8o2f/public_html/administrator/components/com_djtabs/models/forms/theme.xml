@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="hidden" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" />
+		
+		<field name="title"
+			type="text"
+			label="JGLOBAL_TITLE"
+			description="JGLOBAL_TITLE"
+			class="inputbox"
+			size="30"
+			required="true"
+		 />
+
+		<field id="random"
+			name="random"
+			type="list"
+			label="COM_DJTABS_FORM_RANDOM"
+			description="COM_DJTABS_FORM_RANDOM_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		>
+			<option value="1">
+				JYES</option>
+			<option value="0">
+				JNO</option>			
+		</field>
+		
+		<field id="published"
+			name="published"
+			type="radio"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="btn-group btn-group-yesno"
+			size="1"
+			default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>	
+		</field>
+			
+	</fieldset>
+	
+	<fields name="params">
+		
+		<fieldset name="basic" label="COM_DJTABS_BASIC_ATTRIBUTES"
+		addfieldpath="/administrator/components/com_djtabs/models/fields/" >
+
+			<field name="section_tabs" type="note" class="alert alert-info djsection" label="COM_DJTABS_THEME_PARAMS_SECTION_TABS"/>
+			<field name="note_tabs_general" type="note" class="djnote" label="COM_DJTABS_THEME_PARAMS_NOTE_TABS_GENERAL"/>
+			<field name="tb-hght" type="text" class="input-mini" filter="integer" default="47" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_TB_HGHT"/>
+			<field name="tb-wdth" type="text" class="input-mini" default="134" description="COM_DJTABS_THEME_PARAMS_TB_WDTH_DESC" label="COM_DJTABS_THEME_PARAMS_TB_WDTH"/>
+			<field name="tb-dir" type="list" default="left" label="COM_DJTABS_THEME_PARAMS_TB_DIR">
+				<option value="left">COM_DJTABS_THEME_PARAMS_TB_DIR_LFT_RGHT</option>
+				<option value="right">COM_DJTABS_THEME_PARAMS_TB_DIR_RGHT_LFT</option>
+			</field>
+			<field name="tb-brdr-rds" type="text" class="input-mini" filter="integer" default="0" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_TB_BRDR_RDS"/>
+			<field name="tb-brdr-rds-bttm" type="text" class="input-mini" filter="integer" default="0" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_TB_BRDR_RDS_BTTM"/>
+			<field name="tb-pddng-lft-rght" type="text" class="input-mini" filter="integer" default="5" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_TB_PDDNG_LFT_RGHT"/>
+			<field name="tb-spc" type="text" class="input-mini" filter="integer" default="0" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_TB_SPC"/>
+
+			<field name="note_tab_separator" type="note" class="djnote" label="COM_DJTABS_THEME_PARAMS_NOTE_TAB_SEPARATOR"/>
+			<field name="tb-brdr-stl" type="list" default="dotted" label="COM_DJTABS_THEME_PARAMS_TB_BRDR_STL" >
+				<option value="solid">solid</option>
+				<option value="none">none</option>
+				<option value="dotted">dotted</option>
+				<option value="dashed">dashed</option>
+				<option value="double">double</option>
+				<option value="groove">groove</option>
+				<option value="ridge">ridge</option>
+			</field>
+			<field name="tb-brdr-clr" type="djcolor" default="#585452" label="COM_DJTABS_THEME_PARAMS_TB_BRDR_CLR"/>
+
+			<field name="note_tab_text" type="note" class="djnote" label="COM_DJTABS_THEME_PARAMS_NOTE_TAB_TEXT"/>
+			<field name="tb-txt-trnsfrm" type="list" default="uppercase" label="COM_DJTABS_THEME_PARAMS_TB_TXT_TRNSFRM">
+				<option value="none">none</option>
+				<option value="capitalize">capitalize</option>
+				<option value="uppercase">uppercase</option>
+				<option value="lowercase">lowercase</option>
+			</field>
+			<field name="tb-fnt-sz" type="text" class="input-mini" filter="integer" default="12" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_TB_FNT_SZ"/>
+			<field name="tb-fnt-fml" type="text" default="arial, sans-serif" description="COM_DJTABS_THEME_PARAMS_DESC_FONT" label="COM_DJTABS_THEME_PARAMS_TB_FNT_FML"/>
+
+			<field name="note_tab_active" type="note" class="djnote" label="COM_DJTABS_THEME_PARAMS_NOTE_TAB_ACTIVE"/>
+			<field name="tb-ctv-bck-clr" type="djcolor" default="#308806" label="COM_DJTABS_THEME_PARAMS_TB_CTV_BCK_CLR"/>
+			<field name="tb-ctv-ttl-clr" type="djcolor" default="#F7F2EB" label="COM_DJTABS_THEME_PARAMS_TB_CTV_TTL_CLR"/>
+
+			<field name="note_tab_inactive" type="note" class="djnote" label="COM_DJTABS_THEME_PARAMS_NOTE_TAB_INACTIVE"/>
+			<field name="tb-nctv-bck-clr" type="djcolor" default="#302C2C" label="COM_DJTABS_THEME_PARAMS_TB_NCTV_BCK_CLR"/>
+			<field name="tb-nctv-ttl-clr" type="djcolor" default="#F7F2EB" label="COM_DJTABS_THEME_PARAMS_TB_NCTV_TTL_CLR"/>	
+
+			<field name="note_tabs_bottomline" type="note" class="djnote" label="COM_DJTABS_THEME_PARAMS_NOTE_TABS_BOTTOMLINE"/>
+			<field name="tb-ln-width" type="text" class="input-mini" filter="integer" default="4" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_TB_LN_WIDTH"/>
+			<field name="tb-ln-clr" type="djcolor" label="COM_DJTABS_THEME_PARAMS_TB_LN_CLR"/>
+
+			<field name="section_tab_content" type="note" class="alert alert-info djsection" label="COM_DJTABS_THEME_PARAMS_SECTION_TAB_CONTENT"/>
+			<field name="cntnt-fnt-sz" type="text" class="input-mini" filter="integer" default="13" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_CNTNT_FNT_SZ"/>
+			<field name="cntnt-fnt-fml" type="text" default="arial, sans-serif" description="COM_DJTABS_THEME_PARAMS_DESC_FONT" label="COM_DJTABS_THEME_PARAMS_CNTNT_FNT_FML"/>
+			<field name="cntnt-dt-fnt-sz" type="text" class="input-mini" filter="integer" default="12" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_CNTNT_DT_FNT_SZ"/>
+			<field name="cntnt-clr" type="djcolor" default="#666666" label="COM_DJTABS_THEME_PARAMS_CNTNT_CLR"/>
+			<field name="mg-brdr-rds" type="text" class="input-mini" filter="integer" default="0" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_MG_BRDR_RDS"/>
+			<field name="cntnt-fll-brdr" type="list" label="COM_DJTABS_THEME_PARAMS_CNTNT_FLL_BRDR" description="COM_DJTABS_THEME_PARAMS_CNTNT_FLL_BRDR_DESC" default="0">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="section_panel" type="note" class="alert alert-info djsection" label="COM_DJTABS_THEME_PARAMS_SECTION_PANEL"/>
+			<field name="note_panel_general" type="note" class="djnote" label="COM_DJTABS_THEME_PARAMS_NOTE_PANEL_GENERAL"/>
+			<field name="pnl-brdr-rds" type="text" class="input-mini" filter="integer" default="0" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_PNL_BRDR_RDS"/>
+			<field name="pnl-fnt-sz" type="text" class="input-mini" filter="integer" default="14" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_PNL_FNT_SZ"/>
+			<field name="pnl-fnt-fml" type="text" default="arial, sans-serif" description="COM_DJTABS_THEME_PARAMS_DESC_FONT" label="COM_DJTABS_THEME_PARAMS_PNL_FNT_FML"/>
+			<field name="pnl-dt-clr" type="djcolor" default="#308806" label="COM_DJTABS_THEME_PARAMS_PNL_DT_CLR"/>
+
+			<field name="note_panel_active" type="note" class="djnote" label="COM_DJTABS_THEME_PARAMS_NOTE_PANEL_ACTIVE"/>
+			<field name="pnl-ctv-clr" type="djcolor" label="COM_DJTABS_THEME_PARAMS_PNL_CTV_CLR"/>
+			<field name="pnl-ctv-ttl-clr" type="djcolor" default="#302C2C" label="COM_DJTABS_THEME_PARAMS_PNL_CTV_TTL_CLR"/>
+			<field name="pnl-ctv-brdrs-stl" type="list" label="COM_DJTABS_THEME_PARAMS_PNL_CTV_BRDRS_STL" >
+				<option value="solid">solid</option>
+				<option value="none">none</option>
+				<option value="dotted">dotted</option>
+				<option value="dashed">dashed</option>
+				<option value="double">double</option>
+				<option value="groove">groove</option>
+				<option value="ridge">ridge</option>	
+			</field>
+			<field name="pnl-ctv-brdrs-clr" type="djcolor" default="#E2E2E2" label="COM_DJTABS_THEME_PARAMS_PNL_CTV_BRDRS_CLR"/>
+
+			<field name="note_panel_inactive" type="note" class="djnote" label="COM_DJTABS_THEME_PARAMS_NOTE_PANEL_INACTIVE"/>
+			<field name="pnl-nctv-clr" type="djcolor" label="COM_DJTABS_THEME_PARAMS_PNL_NCTV_CLR"/>
+			<field name="pnl-nctv-ttl-clr" type="djcolor" default="#302C2C" label="COM_DJTABS_THEME_PARAMS_PNL_NCTV_TTL_CLR"/>
+			<field name="pnl-nctv-brdrs-stl" type="list" label="COM_DJTABS_THEME_PARAMS_PNL_NCTV_BRDRS_STL" >
+				<option value="solid">solid</option>
+				<option value="none">none</option>
+				<option value="dotted">dotted</option>
+				<option value="dashed">dashed</option>
+				<option value="double">double</option>
+				<option value="groove">groove</option>
+				<option value="ridge">ridge</option>
+			</field>
+			<field name="pnl-nctv-brdrs-clr" type="djcolor" default="#E2E2E2" label="COM_DJTABS_THEME_PARAMS_PNL_NCTV_BRDRS_CLR"/>
+
+			<field name="section_toggler" type="note" class="alert alert-info djsection" label="COM_DJTABS_THEME_PARAMS_SECTION_TOGGLER"/>
+			<field name="tgglr-nctv-bck-clr" type="djcolor" default="#E2E2E2" label="COM_DJTABS_THEME_PARAMS_TGGLR_NCTV_BCK_CLR"/>
+			<field name="tgglr-ctv-bck-clr" type="djcolor" default="#308806" label="COM_DJTABS_THEME_PARAMS_TGGLR_CTV_BCK_CLR"/>
+			<field name="tgglr-brdr-rds" type="text" class="input-mini" filter="integer" default="0" description="COM_DJTABS_THEME_PARAMS_DESC_IN_PIXELS" label="COM_DJTABS_THEME_PARAMS_TGGLR_BRDR_RDS"/>
+
+		</fieldset>
+	</fields>	
+	
+</form>

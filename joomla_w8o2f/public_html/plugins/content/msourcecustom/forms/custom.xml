@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="source_params">
+		<fieldset name="custom_source">
+
+			<field
+				name="source_type"
+				type="hidden"
+			/>
+
+			<field
+				name="custom_title"
+				type="text"
+				label="PLG_CONTENT_MSOURCECUSTOM_FIELD_CONTENT_TYPE_TITLE_LABEL"
+				description="PLG_CONTENT_MSOURCECUSTOM_FIELD_CONTENT_TYPE_TITLE_DESC"
+				class="inputbox"
+				size="5"
+				default="CUSTOM_ITEMS"
+			/>
+
+			<field
+				name="custom_groupid"
+				type="groupid"
+				default=""
+				label="PLG_CONTENT_MSOURCECUSTOM_FIELD_CUSTOM_SELECT_GROUP_LABEL"
+				description="PLG_CONTENT_MSOURCECUSTOM_FIELD_CUSTOM_SELECT_GROUP_DESC"
+			/>
+
+			<field
+				name="custom_ordering"
+				type="list"
+				default="created"
+				label="PLG_CONTENT_MSOURCECUSTOM_FIELD_ORDERING_LABEL"
+				description="PLG_CONTENT_MSOURCECUSTOM_FIELD_ORDERING_DESC"
+			>
+				<option value="ordering">PLG_CONTENT_MSOURCECUSTOM_FIELD_OPTION_ORDERING</option>
+				<option value="title">JGLOBAL_TITLE</option>
+				<option value="id">PLG_CONTENT_MSOURCECUSTOM_FIELD_OPTION_ID</option>
+				<option value="created">PLG_CONTENT_MSOURCECUSTOM_FIELD_OPTION_CREATED_DATE</option>
+				<option value="modified">PLG_CONTENT_MSOURCECUSTOM_FIELD_OPTION_MODIFIED_DATE</option>
+				<option value="publish_up">PLG_CONTENT_MSOURCECUSTOM_FIELD_OPTION_START_PUBLISHING_DATE</option>
+				<option value="publish_down">PLG_CONTENT_MSOURCECUSTOM_FIELD_OPTION_FINISH_PUBLISHING_DATE</option>
+				<option value="RAND()">PLG_CONTENT_MSOURCECUSTOM_FIELD_OPTION_RANDOM</option>
+			</field>
+
+			<field
+				name="custom_ordering_direction"
+				type="radio"
+				class="btn-group btn-group-yesno"
+				default="DESC"
+				label="PLG_CONTENT_MSOURCECUSTOM_FIELD_ORDERING_DIRECTION_LABEL"
+				description="PLG_CONTENT_MSOURCECUSTOM_FIELD_ORDERING_DIRECTION_DESC"
+			>
+				<option value="ASC">PLG_CONTENT_MSOURCECUSTOM_FIELD_OPTION_ASCENDING</option>
+				<option value="DESC">PLG_CONTENT_MSOURCECUSTOM_FIELD_OPTION_DESCENDING</option>
+			</field>
+
+		</fieldset>
+	</fields>
+</form>

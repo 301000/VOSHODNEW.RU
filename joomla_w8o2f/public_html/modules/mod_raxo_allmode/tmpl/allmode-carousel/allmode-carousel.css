@@ -1,0 +1,251 @@
+/*
+ * ================================================================
+   RAXO All-mode PRO J2.5 - Template CSS
+ * ----------------------------------------------------------------
+ * @package		RAXO All-mode PRO
+ * @subpackage	All-mode Carousel Template
+ * @copyright	Copyright (C) 2009-2012 RAXO Group
+ * @license		Copyrighted Commercial Software
+ * 				This file is forbidden for redistribution
+ * @link		http://raxo.org
+ * ================================================================
+*/
+
+
+/* ----- RESET Styles ----- */
+.allmode-carousel .allmode_name, .allmode-carousel .allmode_showall,
+.allmode-carousel .allmode_item,
+.allmode-carousel .allmode_title, .allmode-carousel img {
+	margin: 0; padding: 0;
+	text-transform: none;
+	background: none; border: 0 none;
+}
+.allmode-carousel .allmode_clear {clear: both;}
+.allmode-carousel a {text-decoration: none;}
+.allmode-carousel :focus {outline: 0;}
+
+
+/* ----- MODULE BOX Styles ----- */
+.allmode-carousel {
+	position: relative;
+	margin-bottom: 16px;
+	overflow: hidden;
+	background-repeat: repeat;
+		-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+.allmode-carousel .allmode_itemsbox {
+	position: relative;
+	margin: 8px;
+	border-width: 1px 0 1px 0; border-style: solid;
+}
+.allmode-carousel .allmode_left {
+	position: absolute;
+	top: 0; left: -8px;
+	width: 34px; height: 100%;
+	background-position: 0 50%; background-repeat: no-repeat;
+}
+.allmode-carousel .allmode_right {
+	position: absolute;
+	top: 0; right: -8px;
+	width: 34px; height: 100%;
+	background-position: 0 50%; background-repeat: no-repeat;
+}
+.allmode-carousel .allmode_prev, .allmode-carousel .allmode_next {
+	position: absolute; display: block;
+	top: 50%; margin-top: -17px;
+	width: 32px; height: 33px;
+	background-repeat: no-repeat;
+}
+.allmode-carousel .allmode_prev {left: 0; background-position: 0 50%;}
+.allmode-carousel .allmode_next {right: 0; background-position: -150px 50%;}
+.allmode-carousel .allmode_prev:hover {background-position: -50px 50%;}
+.allmode-carousel .allmode_next:hover {background-position: -100px 50%;}
+.allmode-carousel .allmode_center {
+	margin: 0 26px; padding: 14px 0;
+	min-height: 45px;
+	overflow: hidden;
+}
+.allmode-carousel .allmode_name {
+	margin: 4px 16px -4px;
+	font: normal 14px/20px "Verdana","Geneva",sans-serif;
+	text-transform: none;
+}
+.allmode-carousel .allmode_showall {
+	position: absolute;
+	top: 6px; right: 10px;
+	font: normal 12px/18px "Arial","Helvetica",sans-serif;
+}
+
+
+/* ----- SLIDER Styles ----- */
+.allmode-carousel .allmode_slider {
+	position: relative;
+	margin: 0 -10px;
+	overflow: hidden;
+}
+.allmode-carousel .allmode_items {
+	position: absolute;
+}
+.allmode-carousel .allmode_item {
+	margin: 0 16px;
+	float: left;
+	overflow: hidden;
+}
+
+
+/* ----- IMAGE Block ----- */
+.allmode-carousel .allmode_show {
+	border-width: 1px; border-style: solid;
+}
+.allmode-carousel .allmode_img {
+	position: relative;
+	margin-bottom: 3px;
+}
+.allmode-carousel .allmode_show .allmode_img {
+	margin: 3px;
+}
+.allmode-carousel .allmode_info {
+	padding: 3px 0 2px;
+	font: bold 11px/14px "Arial","Helvetica",sans-serif;
+	background-repeat: repeat;
+}
+.allmode-carousel .allmode_show .allmode_info {
+	position: absolute;
+	bottom: 0; left: 0;
+	padding: 5px 0 4px 0;
+	width: 100%;
+}
+.allmode-carousel .allmode_info span {
+	margin-left: 10px;
+}
+.allmode-carousel .allmode_info a {
+	font-weight: bold;
+}
+
+
+/* ----- FIELDS Styles ----- */
+.allmode-carousel .allmode_title {
+	margin-top: 6px;
+	font: bold 12px/18px "Verdana","Geneva",sans-serif;
+	text-transform: none;
+}
+.allmode-carousel .allmode_title a {
+	font-weight: bold;
+}
+.allmode-carousel .allmode_text {
+	padding-top: 4px;
+	font: 11px/18px "Verdana","Geneva",sans-serif;
+}
+.allmode-carousel .allmode_title a:hover,
+.allmode-carousel .allmode_text a:hover {
+	text-decoration: underline;
+}
+.allmode-carousel .allmode_readmore {
+	font-size: 11px; line-height: 18px;
+}
+
+
+/* ----- DETAILS FIELDS Styles ----- */
+.allmode-carousel .allmode_details {
+	margin-top: 8px; padding: 2px 0;
+	font: 10px/13px "Arial","Helvetica",sans-serif;
+	border-top-width: 1px; border-top-style: solid;
+}
+.allmode-carousel span {
+	padding-right: 6px;
+}
+
+
+/* ----- COLOR Schemes ----- */
+	/* --- Carousel White (default) --- */
+.allmode-carousel {background-image: url(white_bkg.png);}
+.allmode-carousel .allmode_name, .allmode-carousel .allmode_showall,
+.allmode-carousel .allmode_name a:hover, .allmode-carousel .allmode_showall a:hover {color: #3c3c3c;}
+.allmode-carousel .allmode_itemsbox {border-color: #afafaf;}
+.allmode-carousel .allmode_left {background-image: url(white_left-bkg.png);}
+.allmode-carousel .allmode_right {background-image: url(white_right-bkg.png);}
+.allmode-carousel .allmode_prev, .allmode-carousel .allmode_next {background-image: url(white_arrows.png);}
+.allmode-carousel .allmode_center {background-color: #ffffff;}
+
+.allmode-carousel .allmode_show {border-color: #cccdcf;}
+.allmode-carousel .allmode_show:hover {border-color: #174499;}
+.allmode-carousel .allmode_info {color: #000000; background-image: url(white_info_bkg.png);}
+.allmode-carousel .allmode_title {color: #174499;}
+.allmode-carousel .allmode_text {color: #464646;}
+.allmode-carousel .allmode_details, .allmode-carousel .allmode_details a {color: #888787; border-color: #f4f4f4;}
+
+.allmode-carousel a {color: #174499;}
+.allmode-carousel a:hover {color: #464646;}
+.allmode-carousel .allmode_info a {color: #000000;}
+.allmode-carousel .allmode_info a:hover,
+.allmode-carousel .allmode_details a:hover {color: #174499;}
+
+	/* --- Carousel Light --- */
+.carousel_light {background-image: url(light_bkg.png);}
+.carousel_light .allmode_name, .carousel_light .allmode_showall,
+.carousel_light .allmode_name a:hover, .carousel_light .allmode_showall a:hover {color: #3c3c3c;}
+.carousel_light .allmode_itemsbox {border-color: #696969;}
+.carousel_light .allmode_left {background-image: url(light_left-bkg.png);}
+.carousel_light .allmode_right {background-image: url(light_right-bkg.png);}
+.carousel_light .allmode_prev, .carousel_light .allmode_next {background-image: url(light_arrows.png);}
+.carousel_light .allmode_center {background-color: #dcdcdc;}
+
+.carousel_light .allmode_show {border-color: #828282;}
+.carousel_light .allmode_show:hover {border-color: #0a49c0;}
+.carousel_light .allmode_info {color: #000000; background-image: url(light_info_bkg.png);}
+.carousel_light .allmode_title {color: #174499;}
+.carousel_light .allmode_text {color: #1a1a1a;}
+.carousel_light .allmode_details, .carousel_light .allmode_details a {color: #6e6e6e; border-color: #a5a5a5;}
+
+.carousel_light a {color: #174499;}
+.carousel_light a:hover {color: #1a1a1a;}
+.carousel_light .allmode_info a {color: #000000;}
+.carousel_light .allmode_info a:hover,
+.carousel_light .allmode_details a:hover {color: #0a49c0;}
+
+	/* --- Carousel Dark --- */
+.carousel_dark {background-image: url(dark_bkg.png);}
+.carousel_dark .allmode_name, .carousel_dark .allmode_showall,
+.carousel_dark .allmode_name a:hover, .carousel_dark .allmode_showall a:hover {color: #787878;}
+.carousel_dark .allmode_itemsbox {border-color: #6e6e6e;}
+.carousel_dark .allmode_left {background-image: url(dark_left-bkg.png);}
+.carousel_dark .allmode_right {background-image: url(dark_right-bkg.png);}
+.carousel_dark .allmode_prev, .carousel_dark .allmode_next {background-image: url(dark_arrows.png);}
+.carousel_dark .allmode_center {background-color: #373737;}
+
+.carousel_dark .allmode_show {border-color: #9b9b9b;}
+.carousel_dark .allmode_show:hover {border-color: #ff8b02;}
+.carousel_dark .allmode_info {color: #e6e6e6; background-image: url(dark_info_bkg.png);}
+.carousel_dark .allmode_title {color: #ff8b02;}
+.carousel_dark .allmode_text {color: #d8d8d8;}
+.carousel_dark .allmode_details, .carousel_dark .allmode_details a {color: #7d7d7d; border-color: #555555;}
+
+.carousel_dark a {color: #ff8b02;}
+.carousel_dark a:hover {color: #d8d8d8;}
+.carousel_dark .allmode_info a {color: #e6e6e6;}
+.carousel_dark .allmode_info a:hover,
+.carousel_dark .allmode_details a:hover {color: #ff8b02;}
+
+	/* --- Carousel Black --- */
+.carousel_black {background-image: url(black_bkg.png);}
+.carousel_black .allmode_name, .carousel_black .allmode_showall,
+.carousel_black .allmode_name a:hover, .carousel_black .allmode_showall a:hover {color: #787878;}
+.carousel_black .allmode_itemsbox {border-color: #828282;}
+.carousel_black .allmode_left {background-image: url(black_left-bkg.png);}
+.carousel_black .allmode_right {background-image: url(black_right-bkg.png);}
+.carousel_black .allmode_prev, .carousel_black .allmode_next {background-image: url(black_arrows.png);}
+.carousel_black .allmode_center {background-color: #000000;}
+
+.carousel_black .allmode_show {border-color: #808080;}
+.carousel_black .allmode_show:hover {border-color: #ff8b02;}
+.carousel_black .allmode_info {color: #e6e6e6; background-image: url(black_info_bkg.png);}
+.carousel_black .allmode_title {color: #ff8b02;}
+.carousel_black .allmode_text {color: #a0a0a0;}
+.carousel_black .allmode_details, .carousel_black .allmode_details a {color: #646464; border-color: #2d2d2d;}
+
+.carousel_black a {color: #ff8b02;}
+.carousel_black a:hover {color: #a0a0a0;}
+.carousel_black .allmode_info a {color: #e6e6e6;}
+.carousel_black .allmode_info a:hover,
+.carousel_black .allmode_details a:hover {color: #ff8b02;}
